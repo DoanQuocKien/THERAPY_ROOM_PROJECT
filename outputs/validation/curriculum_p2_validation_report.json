@@ -1,0 +1,23 @@
+{
+  "file": "p2",
+  "total_majors": 8,
+  "major_ids": [
+    "TTNT",
+    "ATTT",
+    "TMDT",
+    "KHDL",
+    "KTMT",
+    "MMTT",
+    "TKVM",
+    "TTDPT"
+  ],
+  "total_curriculum_courses": 580,
+  "total_sample_plan_items": 326,
+  "warnings": [],
+  "warning_count": 0,
+  "errors": [],
+  "error_count": 0,
+  "notes": [
+    "Refreshed after migrating legacy major IDs to real major codes and removing blank course-code rows."
+  ]
+}

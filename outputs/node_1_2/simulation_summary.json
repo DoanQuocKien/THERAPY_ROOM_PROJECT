@@ -1,0 +1,103 @@
+{
+  "random_seed": 42,
+  "num_students": 1000,
+  "num_schedules": 1000,
+  "num_routes": 9830,
+  "route_choice_mode": "utility_based_choice",
+  "route_cache_entries": 897,
+  "year_distribution": {
+    "1": 264,
+    "2": 276,
+    "3": 262,
+    "4": 198
+  },
+  "active_semester_distribution": {
+    "2": 264,
+    "4": 276,
+    "6": 262,
+    "8": 198
+  },
+  "major_distribution": {
+    "ATTT": 92,
+    "CNTT": 84,
+    "CTTT": 62,
+    "HTTT": 106,
+    "KHDL": 89,
+    "KHMT": 133,
+    "KTMT": 91,
+    "KTPM": 99,
+    "MMTT": 58,
+    "TKVM": 52,
+    "TMDT": 46,
+    "TTDPT": 58,
+    "TTNT": 30
+  },
+  "major_class_counts": {
+    "TTNT": 1,
+    "ATTT": 3,
+    "CNTT": 3,
+    "TMDT": 2,
+    "HTTT": 4,
+    "CTTT": 2,
+    "KHDL": 3,
+    "KHMT": 4,
+    "KTMT": 3,
+    "MMTT": 2,
+    "KTPM": 3,
+    "TKVM": 2,
+    "TTDPT": 2
+  },
+  "transport_mode_distribution": {
+    "personal_transport": 714,
+    "public_transport": 286
+  },
+  "entry_gate_distribution": {
+    "UIT-GATE-A": 741,
+    "UIT-GATE-B": 259
+  },
+  "exit_gate_distribution": {
+    "UIT-GATE-A": 998,
+    "UIT-GATE-B": 2
+  },
+  "entry_node_distribution": {
+    "UIT-GARAGE": 714,
+    "UIT-GATE-A": 27,
+    "UIT-GATE-B": 259
+  },
+  "exit_node_distribution": {
+    "UIT-GARAGE": 714,
+    "UIT-GATE-A": 284,
+    "UIT-GATE-B": 2
+  },
+  "lunch_destination_distribution": {
+    "A-F1-LIBRARY-CENTER": 98,
+    "UIT-CANTEEN": 170,
+    "UIT-GATE-A": 564,
+    "UIT-GATE-B": 168
+  },
+  "route_leg_type_counts": {
+    "campus_entry": 4900,
+    "campus_exit": 528,
+    "campus_exit_garage": 111,
+    "campus_exit_garage_back_road": 360,
+    "campus_exit_garage_via_a": 1323,
+    "campus_exit_garage_via_e": 564,
+    "class_transition": 136,
+    "lunch_out": 1505,
+    "lunch_return": 403
+  },
+  "lunch_route_destination_counts": {
+    "A-F1-LIBRARY-CENTER": 152,
+    "UIT-CANTEEN": 247,
+    "UIT-GATE-A": 842,
+    "UIT-GATE-B": 264
+  },
+  "campus_exit_route_gate_counts": {
+    "UIT-GATE-A": 524,
+    "UIT-GATE-B": 4
+  },
+  "mental_instability_average": 0.295,
+  "path_randomness_average": 0.301,
+  "warnings_count": 892,
+  "validation_errors_count": 0
+}

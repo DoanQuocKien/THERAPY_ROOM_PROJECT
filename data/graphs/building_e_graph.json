@@ -1,0 +1,2694 @@
+{
+  "building": "E",
+  "coordinate_system": {
+    "type": "normalized",
+    "width": 1000,
+    "height": 1000
+  },
+  "floors": {
+    "1": {
+      "nodes": [
+        {
+          "id": "E-F1-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 1,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F1-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F1-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 1,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F1-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F1-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 1,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F1-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.1-ACCESS",
+          "label": "E1.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 1,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.1",
+          "label": "E1.1",
+          "type": "room",
+          "building": "E",
+          "floor": 1,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.2-ACCESS",
+          "label": "E1.2 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 1,
+          "x": 416.0,
+          "y": 500,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.2",
+          "label": "E1.2",
+          "type": "room",
+          "building": "E",
+          "floor": 1,
+          "x": 416.0,
+          "y": 700,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.3-ACCESS",
+          "label": "E1.3 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 1,
+          "x": 502.0,
+          "y": 500,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.3",
+          "label": "E1.3",
+          "type": "room",
+          "building": "E",
+          "floor": 1,
+          "x": 502.0,
+          "y": 315,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.4-ACCESS",
+          "label": "E1.4 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 1,
+          "x": 588.0,
+          "y": 500,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.4",
+          "label": "E1.4",
+          "type": "room",
+          "building": "E",
+          "floor": 1,
+          "x": 588.0,
+          "y": 700,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.5-ACCESS",
+          "label": "E1.5 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 1,
+          "x": 674.0,
+          "y": 500,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.5",
+          "label": "E1.5",
+          "type": "room",
+          "building": "E",
+          "floor": 1,
+          "x": 674.0,
+          "y": 315,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.7-ACCESS",
+          "label": "E1.7 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 1,
+          "x": 760.0,
+          "y": 500,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E1.7",
+          "label": "E1.7",
+          "type": "room",
+          "building": "E",
+          "floor": 1,
+          "x": 760.0,
+          "y": 700,
+          "zone": "E-F1-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F1-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 1,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F1-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F1-BUILDING-ENTRANCE",
+          "label": "Building E Entrance",
+          "type": "entrance",
+          "building": "E",
+          "floor": 1,
+          "x": 500,
+          "y": 850,
+          "zone": "E-F1-ENTRY",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F1-LOBBY",
+          "label": "Lobby",
+          "type": "junction",
+          "building": "E",
+          "floor": 1,
+          "x": 500,
+          "y": 720,
+          "zone": "E-F1-ENTRY",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E1.1-ACCESS",
+          "target": "E1.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.2-ACCESS",
+          "target": "E1.2",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.3-ACCESS",
+          "target": "E1.3",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.4-ACCESS",
+          "target": "E1.4",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.5-ACCESS",
+          "target": "E1.5",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.7-ACCESS",
+          "target": "E1.7",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F1-ELEVATOR",
+          "target": "E1.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.1-ACCESS",
+          "target": "E1.2-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.2-ACCESS",
+          "target": "E1.3-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.3-ACCESS",
+          "target": "E-F1-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F1-CORRIDOR",
+          "target": "E1.4-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.4-ACCESS",
+          "target": "E1.5-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.5-ACCESS",
+          "target": "E1.7-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E1.7-ACCESS",
+          "target": "E-F1-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F1-WC",
+          "target": "E-F1-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F1-BUILDING-ENTRANCE",
+          "target": "E-F1-LOBBY",
+          "distance": 8,
+          "type": "building_entry",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F1-LOBBY",
+          "target": "E-F1-CORRIDOR",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "2": {
+      "nodes": [
+        {
+          "id": "E-F2-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 2,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F2-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F2-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 2,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F2-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F2-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 2,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F2-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.1-ACCESS",
+          "label": "E2.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 2,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.1",
+          "label": "E2.1",
+          "type": "room",
+          "building": "E",
+          "floor": 2,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.2-ACCESS",
+          "label": "E2.2 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 2,
+          "x": 437.5,
+          "y": 500,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.2",
+          "label": "E2.2",
+          "type": "room",
+          "building": "E",
+          "floor": 2,
+          "x": 437.5,
+          "y": 700,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.3-ACCESS",
+          "label": "E2.3 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 2,
+          "x": 545.0,
+          "y": 500,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.3",
+          "label": "E2.3",
+          "type": "room",
+          "building": "E",
+          "floor": 2,
+          "x": 545.0,
+          "y": 315,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.4-ACCESS",
+          "label": "E2.4 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 2,
+          "x": 652.5,
+          "y": 500,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.4",
+          "label": "E2.4",
+          "type": "room",
+          "building": "E",
+          "floor": 2,
+          "x": 652.5,
+          "y": 700,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.5-ACCESS",
+          "label": "E2.5 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 2,
+          "x": 760.0,
+          "y": 500,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E2.5",
+          "label": "E2.5",
+          "type": "room",
+          "building": "E",
+          "floor": 2,
+          "x": 760.0,
+          "y": 315,
+          "zone": "E-F2-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F2-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 2,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F2-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E2.1-ACCESS",
+          "target": "E2.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.2-ACCESS",
+          "target": "E2.2",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.3-ACCESS",
+          "target": "E2.3",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.4-ACCESS",
+          "target": "E2.4",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.5-ACCESS",
+          "target": "E2.5",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F2-ELEVATOR",
+          "target": "E2.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.1-ACCESS",
+          "target": "E2.2-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.2-ACCESS",
+          "target": "E-F2-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F2-CORRIDOR",
+          "target": "E2.3-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.3-ACCESS",
+          "target": "E2.4-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.4-ACCESS",
+          "target": "E2.5-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E2.5-ACCESS",
+          "target": "E-F2-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F2-WC",
+          "target": "E-F2-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "3": {
+      "nodes": [
+        {
+          "id": "E-F3-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 3,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F3-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F3-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 3,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F3-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F3-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 3,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F3-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.1-ACCESS",
+          "label": "E3.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 3,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.1",
+          "label": "E3.1",
+          "type": "room",
+          "building": "E",
+          "floor": 3,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.2-ACCESS",
+          "label": "E3.2 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 3,
+          "x": 437.5,
+          "y": 500,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.2",
+          "label": "E3.2",
+          "type": "room",
+          "building": "E",
+          "floor": 3,
+          "x": 437.5,
+          "y": 700,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.3-ACCESS",
+          "label": "E3.3 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 3,
+          "x": 545.0,
+          "y": 500,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.3",
+          "label": "E3.3",
+          "type": "room",
+          "building": "E",
+          "floor": 3,
+          "x": 545.0,
+          "y": 315,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.4-ACCESS",
+          "label": "E3.4 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 3,
+          "x": 652.5,
+          "y": 500,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.4",
+          "label": "E3.4",
+          "type": "room",
+          "building": "E",
+          "floor": 3,
+          "x": 652.5,
+          "y": 700,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.5-ACCESS",
+          "label": "E3.5 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 3,
+          "x": 760.0,
+          "y": 500,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E3.5",
+          "label": "E3.5",
+          "type": "room",
+          "building": "E",
+          "floor": 3,
+          "x": 760.0,
+          "y": 315,
+          "zone": "E-F3-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F3-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 3,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F3-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E3.1-ACCESS",
+          "target": "E3.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.2-ACCESS",
+          "target": "E3.2",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.3-ACCESS",
+          "target": "E3.3",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.4-ACCESS",
+          "target": "E3.4",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.5-ACCESS",
+          "target": "E3.5",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F3-ELEVATOR",
+          "target": "E3.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.1-ACCESS",
+          "target": "E3.2-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.2-ACCESS",
+          "target": "E-F3-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F3-CORRIDOR",
+          "target": "E3.3-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.3-ACCESS",
+          "target": "E3.4-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.4-ACCESS",
+          "target": "E3.5-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E3.5-ACCESS",
+          "target": "E-F3-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F3-WC",
+          "target": "E-F3-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "4": {
+      "nodes": [
+        {
+          "id": "E-F4-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 4,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F4-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F4-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 4,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F4-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F4-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 4,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F4-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.1-ACCESS",
+          "label": "E4.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 4,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.1",
+          "label": "E4.1",
+          "type": "room",
+          "building": "E",
+          "floor": 4,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.2-ACCESS",
+          "label": "E4.2 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 4,
+          "x": 437.5,
+          "y": 500,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.2",
+          "label": "E4.2",
+          "type": "room",
+          "building": "E",
+          "floor": 4,
+          "x": 437.5,
+          "y": 700,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.3-ACCESS",
+          "label": "E4.3 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 4,
+          "x": 545.0,
+          "y": 500,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.3",
+          "label": "E4.3",
+          "type": "room",
+          "building": "E",
+          "floor": 4,
+          "x": 545.0,
+          "y": 315,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.4-ACCESS",
+          "label": "E4.4 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 4,
+          "x": 652.5,
+          "y": 500,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.4",
+          "label": "E4.4",
+          "type": "room",
+          "building": "E",
+          "floor": 4,
+          "x": 652.5,
+          "y": 700,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.5-ACCESS",
+          "label": "E4.5 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 4,
+          "x": 760.0,
+          "y": 500,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E4.5",
+          "label": "E4.5",
+          "type": "room",
+          "building": "E",
+          "floor": 4,
+          "x": 760.0,
+          "y": 315,
+          "zone": "E-F4-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F4-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 4,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F4-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E4.1-ACCESS",
+          "target": "E4.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.2-ACCESS",
+          "target": "E4.2",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.3-ACCESS",
+          "target": "E4.3",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.4-ACCESS",
+          "target": "E4.4",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.5-ACCESS",
+          "target": "E4.5",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F4-ELEVATOR",
+          "target": "E4.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.1-ACCESS",
+          "target": "E4.2-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.2-ACCESS",
+          "target": "E-F4-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F4-CORRIDOR",
+          "target": "E4.3-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.3-ACCESS",
+          "target": "E4.4-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.4-ACCESS",
+          "target": "E4.5-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E4.5-ACCESS",
+          "target": "E-F4-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F4-WC",
+          "target": "E-F4-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "5": {
+      "nodes": [
+        {
+          "id": "E-F5-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 5,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F5-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F5-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 5,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F5-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F5-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 5,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F5-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E5.1-ACCESS",
+          "label": "E5.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 5,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F5-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E5.1",
+          "label": "E5.1",
+          "type": "room",
+          "building": "E",
+          "floor": 5,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F5-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F5-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 5,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F5-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E5.1-ACCESS",
+          "target": "E5.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F5-ELEVATOR",
+          "target": "E-F5-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F5-CORRIDOR",
+          "target": "E5.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E5.1-ACCESS",
+          "target": "E-F5-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F5-WC",
+          "target": "E-F5-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "6": {
+      "nodes": [
+        {
+          "id": "E-F6-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 6,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F6-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F6-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 6,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F6-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F6-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 6,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F6-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E6.1-ACCESS",
+          "label": "E6.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 6,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F6-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E6.1",
+          "label": "E6.1",
+          "type": "room",
+          "building": "E",
+          "floor": 6,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F6-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F6-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 6,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F6-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E6.1-ACCESS",
+          "target": "E6.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F6-ELEVATOR",
+          "target": "E-F6-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F6-CORRIDOR",
+          "target": "E6.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E6.1-ACCESS",
+          "target": "E-F6-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F6-WC",
+          "target": "E-F6-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "7": {
+      "nodes": [
+        {
+          "id": "E-F7-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 7,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F7-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F7-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 7,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F7-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F7-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 7,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F7-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E7.1-ACCESS",
+          "label": "E7.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 7,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F7-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E7.1",
+          "label": "E7.1",
+          "type": "room",
+          "building": "E",
+          "floor": 7,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F7-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F7-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 7,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F7-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E7.1-ACCESS",
+          "target": "E7.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F7-ELEVATOR",
+          "target": "E-F7-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F7-CORRIDOR",
+          "target": "E7.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E7.1-ACCESS",
+          "target": "E-F7-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F7-WC",
+          "target": "E-F7-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "8": {
+      "nodes": [
+        {
+          "id": "E-F8-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 8,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F8-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F8-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 8,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F8-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F8-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 8,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F8-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E8.1-ACCESS",
+          "label": "E8.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 8,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F8-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E8.1",
+          "label": "E8.1",
+          "type": "room",
+          "building": "E",
+          "floor": 8,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F8-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F8-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 8,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F8-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E8.1-ACCESS",
+          "target": "E8.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F8-ELEVATOR",
+          "target": "E-F8-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F8-CORRIDOR",
+          "target": "E8.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E8.1-ACCESS",
+          "target": "E-F8-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F8-WC",
+          "target": "E-F8-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "9": {
+      "nodes": [
+        {
+          "id": "E-F9-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 9,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F9-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F9-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 9,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F9-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F9-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 9,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F9-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E9.1-ACCESS",
+          "label": "E9.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 9,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F9-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E9.1",
+          "label": "E9.1",
+          "type": "room",
+          "building": "E",
+          "floor": 9,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F9-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F9-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 9,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F9-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E9.1-ACCESS",
+          "target": "E9.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F9-ELEVATOR",
+          "target": "E-F9-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F9-CORRIDOR",
+          "target": "E9.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E9.1-ACCESS",
+          "target": "E-F9-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F9-WC",
+          "target": "E-F9-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "10": {
+      "nodes": [
+        {
+          "id": "E-F10-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 10,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F10-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F10-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 10,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F10-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F10-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 10,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F10-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E10.1-ACCESS",
+          "label": "E10.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 10,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F10-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E10.1",
+          "label": "E10.1",
+          "type": "room",
+          "building": "E",
+          "floor": 10,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F10-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F10-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 10,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F10-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E10.1-ACCESS",
+          "target": "E10.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F10-ELEVATOR",
+          "target": "E-F10-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F10-CORRIDOR",
+          "target": "E10.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E10.1-ACCESS",
+          "target": "E-F10-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F10-WC",
+          "target": "E-F10-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "11": {
+      "nodes": [
+        {
+          "id": "E-F11-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 11,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F11-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F11-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 11,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F11-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F11-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 11,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F11-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.1-ACCESS",
+          "label": "E11.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 11,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.1",
+          "label": "E11.1",
+          "type": "room",
+          "building": "E",
+          "floor": 11,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.2-ACCESS",
+          "label": "E11.2 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 11,
+          "x": 416.0,
+          "y": 500,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.2",
+          "label": "E11.2",
+          "type": "room",
+          "building": "E",
+          "floor": 11,
+          "x": 416.0,
+          "y": 700,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.3-ACCESS",
+          "label": "E11.3 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 11,
+          "x": 502.0,
+          "y": 500,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.3",
+          "label": "E11.3",
+          "type": "room",
+          "building": "E",
+          "floor": 11,
+          "x": 502.0,
+          "y": 315,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.4-ACCESS",
+          "label": "E11.4 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 11,
+          "x": 588.0,
+          "y": 500,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.4",
+          "label": "E11.4",
+          "type": "room",
+          "building": "E",
+          "floor": 11,
+          "x": 588.0,
+          "y": 700,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.6-ACCESS",
+          "label": "E11.6 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 11,
+          "x": 674.0,
+          "y": 500,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.6",
+          "label": "E11.6",
+          "type": "room",
+          "building": "E",
+          "floor": 11,
+          "x": 674.0,
+          "y": 315,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.8-ACCESS",
+          "label": "E11.8 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 11,
+          "x": 760.0,
+          "y": 500,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E11.8",
+          "label": "E11.8",
+          "type": "room",
+          "building": "E",
+          "floor": 11,
+          "x": 760.0,
+          "y": 700,
+          "zone": "E-F11-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F11-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 11,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F11-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E11.1-ACCESS",
+          "target": "E11.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.2-ACCESS",
+          "target": "E11.2",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.3-ACCESS",
+          "target": "E11.3",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.4-ACCESS",
+          "target": "E11.4",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.6-ACCESS",
+          "target": "E11.6",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.8-ACCESS",
+          "target": "E11.8",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F11-ELEVATOR",
+          "target": "E11.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.1-ACCESS",
+          "target": "E11.2-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.2-ACCESS",
+          "target": "E11.3-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.3-ACCESS",
+          "target": "E-F11-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F11-CORRIDOR",
+          "target": "E11.4-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.4-ACCESS",
+          "target": "E11.6-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.6-ACCESS",
+          "target": "E11.8-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E11.8-ACCESS",
+          "target": "E-F11-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F11-WC",
+          "target": "E-F11-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    },
+    "12": {
+      "nodes": [
+        {
+          "id": "E-F12-ELEVATOR",
+          "label": "Elevator",
+          "type": "elevator",
+          "building": "E",
+          "floor": 12,
+          "x": 260,
+          "y": 500,
+          "zone": "E-F12-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F12-STAIR",
+          "label": "Stair",
+          "type": "stair",
+          "building": "E",
+          "floor": 12,
+          "x": 820,
+          "y": 500,
+          "zone": "E-F12-CORE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F12-WC",
+          "label": "WC",
+          "type": "wc",
+          "building": "E",
+          "floor": 12,
+          "x": 520,
+          "y": 620,
+          "zone": "E-F12-SERVICE",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E12.1-ACCESS",
+          "label": "E12.1 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 12,
+          "x": 330.0,
+          "y": 500,
+          "zone": "E-F12-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E12.1",
+          "label": "E12.1",
+          "type": "room",
+          "building": "E",
+          "floor": 12,
+          "x": 330.0,
+          "y": 315,
+          "zone": "E-F12-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E12.2-ACCESS",
+          "label": "E12.2 Access",
+          "type": "access",
+          "building": "E",
+          "floor": 12,
+          "x": 760.0,
+          "y": 500,
+          "zone": "E-F12-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E12.2",
+          "label": "E12.2",
+          "type": "room",
+          "building": "E",
+          "floor": 12,
+          "x": 760.0,
+          "y": 700,
+          "zone": "E-F12-ROOMS",
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "id": "E-F12-CORRIDOR",
+          "label": "Corridor Mid",
+          "type": "corridor",
+          "building": "E",
+          "floor": 12,
+          "x": 520,
+          "y": 500,
+          "zone": "E-F12-CORRIDOR",
+          "accessible": true,
+          "notes": ""
+        }
+      ],
+      "edges": [
+        {
+          "source": "E12.1-ACCESS",
+          "target": "E12.1",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E12.2-ACCESS",
+          "target": "E12.2",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F12-ELEVATOR",
+          "target": "E12.1-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E12.1-ACCESS",
+          "target": "E-F12-CORRIDOR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F12-CORRIDOR",
+          "target": "E12.2-ACCESS",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E12.2-ACCESS",
+          "target": "E-F12-STAIR",
+          "distance": 9,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        },
+        {
+          "source": "E-F12-WC",
+          "target": "E-F12-CORRIDOR",
+          "distance": 6,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "inter_floor_edges": [
+    {
+      "source": "E-F1-ELEVATOR",
+      "target": "E-F2-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F1-STAIR",
+      "target": "E-F2-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F2-ELEVATOR",
+      "target": "E-F3-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F2-STAIR",
+      "target": "E-F3-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F3-ELEVATOR",
+      "target": "E-F4-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F3-STAIR",
+      "target": "E-F4-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F4-ELEVATOR",
+      "target": "E-F5-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F4-STAIR",
+      "target": "E-F5-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F5-ELEVATOR",
+      "target": "E-F6-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F5-STAIR",
+      "target": "E-F6-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F6-ELEVATOR",
+      "target": "E-F7-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F6-STAIR",
+      "target": "E-F7-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F7-ELEVATOR",
+      "target": "E-F8-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F7-STAIR",
+      "target": "E-F8-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F8-ELEVATOR",
+      "target": "E-F9-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F8-STAIR",
+      "target": "E-F9-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F9-ELEVATOR",
+      "target": "E-F10-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F9-STAIR",
+      "target": "E-F10-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F10-ELEVATOR",
+      "target": "E-F11-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F10-STAIR",
+      "target": "E-F11-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F11-ELEVATOR",
+      "target": "E-F12-ELEVATOR",
+      "distance": 10,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "E-F11-STAIR",
+      "target": "E-F12-STAIR",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    }
+  ]
+}

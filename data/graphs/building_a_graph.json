@@ -1,0 +1,2040 @@
+{
+  "building": "A",
+  "coordinate_system": {
+    "type": "normalized",
+    "width": 1000,
+    "height": 1000
+  },
+  "floors": {
+    "1": {
+      "nodes": [
+        {
+          "id": "A-F1-RING-TOP-LEFT",
+          "label": "Ring Top Left",
+          "type": "junction",
+          "floor": 1,
+          "x": 250,
+          "y": 220,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-TOP-MID",
+          "label": "Ring Top Mid",
+          "type": "junction",
+          "floor": 1,
+          "x": 500,
+          "y": 220,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-TOP-RIGHT",
+          "label": "Ring Top Right",
+          "type": "junction",
+          "floor": 1,
+          "x": 750,
+          "y": 220,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-LEFT-MID",
+          "label": "Ring Left Mid",
+          "type": "junction",
+          "floor": 1,
+          "x": 250,
+          "y": 500,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-RIGHT-MID",
+          "label": "Ring Right Mid",
+          "type": "junction",
+          "floor": 1,
+          "x": 750,
+          "y": 500,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-BOTTOM-LEFT",
+          "label": "Ring Bottom Left",
+          "type": "junction",
+          "floor": 1,
+          "x": 250,
+          "y": 780,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-BOTTOM-MID",
+          "label": "Ring Bottom Mid",
+          "type": "junction",
+          "floor": 1,
+          "x": 500,
+          "y": 780,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RING-BOTTOM-RIGHT",
+          "label": "Ring Bottom Right",
+          "type": "junction",
+          "floor": 1,
+          "x": 750,
+          "y": 780,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-CENTER-CROSS",
+          "label": "Center Cross",
+          "type": "junction",
+          "floor": 1,
+          "x": 500,
+          "y": 500,
+          "zone": "A-F1-CENTER-CROSS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LIBRARY-CENTER",
+          "label": "Library Center",
+          "type": "library",
+          "floor": 1,
+          "x": 90,
+          "y": 720,
+          "zone": "A-F1-LIBRARY",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LIBRARY-ENTRANCE",
+          "label": "Library Entrance",
+          "type": "entrance",
+          "floor": 1,
+          "x": 145,
+          "y": 635,
+          "zone": "A-F1-LIBRARY",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LIBRARY-CONNECTOR",
+          "label": "Library Connector",
+          "type": "corridor",
+          "floor": 1,
+          "x": 200,
+          "y": 560,
+          "zone": "A-F1-LIBRARY",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-STAIR-LEFT",
+          "label": "Stair Left",
+          "type": "stair",
+          "floor": 1,
+          "x": 165,
+          "y": 500,
+          "zone": "A-F1-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-STAIR-RIGHT",
+          "label": "Stair Right",
+          "type": "stair",
+          "floor": 1,
+          "x": 835,
+          "y": 500,
+          "zone": "A-F1-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-STAIR-BOTTOM",
+          "label": "Stair Bottom",
+          "type": "stair",
+          "floor": 1,
+          "x": 500,
+          "y": 870,
+          "zone": "A-F1-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-STAIR-TOP",
+          "label": "Stair Top",
+          "type": "stair",
+          "floor": 1,
+          "x": 500,
+          "y": 130,
+          "zone": "A-F1-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-01-ACCESS",
+          "label": "Top Room 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 320,
+          "y": 220,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-01",
+          "label": "Top Room 01",
+          "type": "room",
+          "floor": 1,
+          "x": 210,
+          "y": 95,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-02-ACCESS",
+          "label": "Top Room 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 420,
+          "y": 220,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-02",
+          "label": "Top Room 02",
+          "type": "room",
+          "floor": 1,
+          "x": 390,
+          "y": 90,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-03-ACCESS",
+          "label": "Top Room 03 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 555,
+          "y": 220,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-03",
+          "label": "Top Room 03",
+          "type": "room",
+          "floor": 1,
+          "x": 530,
+          "y": 90,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-04-ACCESS",
+          "label": "Top Room 04 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 650,
+          "y": 220,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-04",
+          "label": "Top Room 04",
+          "type": "room",
+          "floor": 1,
+          "x": 680,
+          "y": 95,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-05-ACCESS",
+          "label": "Top Room 05 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 725,
+          "y": 220,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-TOP-ROOM-05",
+          "label": "Top Room 05",
+          "type": "room",
+          "floor": 1,
+          "x": 820,
+          "y": 100,
+          "zone": "A-F1-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-01-ACCESS",
+          "label": "Bottom Room 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 320,
+          "y": 780,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-01",
+          "label": "Bottom Room 01",
+          "type": "room",
+          "floor": 1,
+          "x": 210,
+          "y": 930,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-02-ACCESS",
+          "label": "Bottom Room 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 440,
+          "y": 780,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-02",
+          "label": "Bottom Room 02",
+          "type": "room",
+          "floor": 1,
+          "x": 380,
+          "y": 935,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-03-ACCESS",
+          "label": "Bottom Room 03 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 555,
+          "y": 780,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-03",
+          "label": "Bottom Room 03",
+          "type": "room",
+          "floor": 1,
+          "x": 530,
+          "y": 935,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-04-ACCESS",
+          "label": "Bottom Room 04 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 650,
+          "y": 780,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-04",
+          "label": "Bottom Room 04",
+          "type": "room",
+          "floor": 1,
+          "x": 680,
+          "y": 930,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-05-ACCESS",
+          "label": "Bottom Room 05 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 725,
+          "y": 780,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BOTTOM-ROOM-05",
+          "label": "Bottom Room 05",
+          "type": "room",
+          "floor": 1,
+          "x": 820,
+          "y": 925,
+          "zone": "A-F1-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LEFT-ROOM-01-ACCESS",
+          "label": "Left Room 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 250,
+          "y": 420,
+          "zone": "A-F1-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LEFT-ROOM-01",
+          "label": "Left Room 01",
+          "type": "room",
+          "floor": 1,
+          "x": 105,
+          "y": 395,
+          "zone": "A-F1-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LEFT-ROOM-02-ACCESS",
+          "label": "Left Room 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 250,
+          "y": 580,
+          "zone": "A-F1-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-LEFT-ROOM-02",
+          "label": "Left Room 02",
+          "type": "room",
+          "floor": 1,
+          "x": 105,
+          "y": 565,
+          "zone": "A-F1-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RIGHT-ROOM-01-ACCESS",
+          "label": "Right Room 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 750,
+          "y": 420,
+          "zone": "A-F1-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RIGHT-ROOM-01",
+          "label": "Right Room 01",
+          "type": "room",
+          "floor": 1,
+          "x": 900,
+          "y": 395,
+          "zone": "A-F1-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RIGHT-ROOM-02-ACCESS",
+          "label": "Right Room 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 750,
+          "y": 580,
+          "zone": "A-F1-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-RIGHT-ROOM-02",
+          "label": "Right Room 02",
+          "type": "room",
+          "floor": 1,
+          "x": 900,
+          "y": 565,
+          "zone": "A-F1-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-RIGHT-ROOM-01-ACCESS",
+          "label": "Inner Top Right 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 600,
+          "y": 220,
+          "zone": "A-F1-INNER-TOP-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-RIGHT-ROOM-01",
+          "label": "Inner Top Right 01",
+          "type": "room",
+          "floor": 1,
+          "x": 620,
+          "y": 365,
+          "zone": "A-F1-INNER-TOP-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-RIGHT-ROOM-02-ACCESS",
+          "label": "Inner Top Right 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 700,
+          "y": 220,
+          "zone": "A-F1-INNER-TOP-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-RIGHT-ROOM-02",
+          "label": "Inner Top Right 02",
+          "type": "room",
+          "floor": 1,
+          "x": 645,
+          "y": 305,
+          "zone": "A-F1-INNER-TOP-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-RIGHT-ROOM-03-ACCESS",
+          "label": "Inner Top Right 03 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 750,
+          "y": 330,
+          "zone": "A-F1-INNER-TOP-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-RIGHT-ROOM-03",
+          "label": "Inner Top Right 03",
+          "type": "room",
+          "floor": 1,
+          "x": 650,
+          "y": 405,
+          "zone": "A-F1-INNER-TOP-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "label": "Inner Bottom Right 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 700,
+          "y": 780,
+          "zone": "A-F1-INNER-BOTTOM-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-RIGHT-ROOM-01",
+          "label": "Inner Bottom Right 01",
+          "type": "room",
+          "floor": 1,
+          "x": 625,
+          "y": 610,
+          "zone": "A-F1-INNER-BOTTOM-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "label": "Inner Bottom Right 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 600,
+          "y": 780,
+          "zone": "A-F1-INNER-BOTTOM-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-RIGHT-ROOM-02",
+          "label": "Inner Bottom Right 02",
+          "type": "room",
+          "floor": 1,
+          "x": 645,
+          "y": 690,
+          "zone": "A-F1-INNER-BOTTOM-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-RIGHT-ROOM-03-ACCESS",
+          "label": "Inner Bottom Right 03 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 750,
+          "y": 670,
+          "zone": "A-F1-INNER-BOTTOM-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-RIGHT-ROOM-03",
+          "label": "Inner Bottom Right 03",
+          "type": "room",
+          "floor": 1,
+          "x": 650,
+          "y": 635,
+          "zone": "A-F1-INNER-BOTTOM-RIGHT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-LEFT-ROOM-01-ACCESS",
+          "label": "Inner Top Left 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 455,
+          "y": 220,
+          "zone": "A-F1-INNER-TOP-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-LEFT-ROOM-01",
+          "label": "Inner Top Left 01",
+          "type": "room",
+          "floor": 1,
+          "x": 380,
+          "y": 365,
+          "zone": "A-F1-INNER-TOP-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-LEFT-ROOM-02-ACCESS",
+          "label": "Inner Top Left 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 250,
+          "y": 330,
+          "zone": "A-F1-INNER-TOP-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-TOP-LEFT-ROOM-02",
+          "label": "Inner Top Left 02",
+          "type": "room",
+          "floor": 1,
+          "x": 365,
+          "y": 405,
+          "zone": "A-F1-INNER-TOP-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-LEFT-ROOM-01-ACCESS",
+          "label": "Inner Bottom Left 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 380,
+          "y": 780,
+          "zone": "A-F1-INNER-BOTTOM-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-LEFT-ROOM-01",
+          "label": "Inner Bottom Left 01",
+          "type": "room",
+          "floor": 1,
+          "x": 380,
+          "y": 610,
+          "zone": "A-F1-INNER-BOTTOM-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-LEFT-ROOM-02-ACCESS",
+          "label": "Inner Bottom Left 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 250,
+          "y": 670,
+          "zone": "A-F1-INNER-BOTTOM-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-INNER-BOTTOM-LEFT-ROOM-02",
+          "label": "Inner Bottom Left 02",
+          "type": "room",
+          "floor": 1,
+          "x": 365,
+          "y": 635,
+          "zone": "A-F1-INNER-BOTTOM-LEFT",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-UPPER-ROOM-01-ACCESS",
+          "label": "Mid Left Upper 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 320,
+          "y": 500,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-UPPER-ROOM-01",
+          "label": "Mid Left Upper 01",
+          "type": "room",
+          "floor": 1,
+          "x": 330,
+          "y": 385,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-UPPER-ROOM-02-ACCESS",
+          "label": "Mid Left Upper 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 420,
+          "y": 500,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-UPPER-ROOM-02",
+          "label": "Mid Left Upper 02",
+          "type": "room",
+          "floor": 1,
+          "x": 445,
+          "y": 385,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-LOWER-ROOM-01-ACCESS",
+          "label": "Mid Left Lower 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 370,
+          "y": 500,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-LOWER-ROOM-01",
+          "label": "Mid Left Lower 01",
+          "type": "room",
+          "floor": 1,
+          "x": 330,
+          "y": 615,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-LOWER-ROOM-02-ACCESS",
+          "label": "Mid Left Lower 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 455,
+          "y": 500,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-LEFT-LOWER-ROOM-02",
+          "label": "Mid Left Lower 02",
+          "type": "room",
+          "floor": 1,
+          "x": 445,
+          "y": 615,
+          "zone": "A-F1-MID-LEFT-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-TOP-RIGHT-ROOM-01-ACCESS",
+          "label": "Mid Top Right 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 500,
+          "y": 420,
+          "zone": "A-F1-MID-TOP-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-TOP-RIGHT-ROOM-01",
+          "label": "Mid Top Right 01",
+          "type": "room",
+          "floor": 1,
+          "x": 610,
+          "y": 440,
+          "zone": "A-F1-MID-TOP-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-TOP-RIGHT-ROOM-02-ACCESS",
+          "label": "Mid Top Right 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 500,
+          "y": 310,
+          "zone": "A-F1-MID-TOP-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-TOP-RIGHT-ROOM-02",
+          "label": "Mid Top Right 02",
+          "type": "room",
+          "floor": 1,
+          "x": 620,
+          "y": 320,
+          "zone": "A-F1-MID-TOP-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "label": "Mid Bottom Right 01 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 500,
+          "y": 580,
+          "zone": "A-F1-MID-BOTTOM-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-BOTTOM-RIGHT-ROOM-01",
+          "label": "Mid Bottom Right 01",
+          "type": "room",
+          "floor": 1,
+          "x": 615,
+          "y": 560,
+          "zone": "A-F1-MID-BOTTOM-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "label": "Mid Bottom Right 02 Access",
+          "type": "access",
+          "floor": 1,
+          "x": 500,
+          "y": 690,
+          "zone": "A-F1-MID-BOTTOM-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-MID-BOTTOM-RIGHT-ROOM-02",
+          "label": "Mid Bottom Right 02",
+          "type": "room",
+          "floor": 1,
+          "x": 620,
+          "y": 680,
+          "zone": "A-F1-MID-BOTTOM-CORRIDOR",
+          "accessible": true
+        },
+        {
+          "id": "A-F1-BUILDING-ENTRANCE",
+          "label": "Building A Entrance",
+          "type": "entrance",
+          "building": "A",
+          "floor": 1,
+          "x": 220,
+          "y": 610,
+          "zone": "A-F1-ENTRY",
+          "accessible": true,
+          "notes": "Entrance used by campus graph"
+        }
+      ],
+      "edges": [
+        {
+          "source": "A-F1-RING-TOP-LEFT",
+          "target": "A-F1-TOP-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-01-ACCESS",
+          "target": "A-F1-TOP-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-TOP-LEFT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-LEFT-ROOM-01-ACCESS",
+          "target": "A-F1-RING-TOP-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-TOP-MID",
+          "target": "A-F1-TOP-ROOM-03-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-03-ACCESS",
+          "target": "A-F1-INNER-TOP-RIGHT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-TOP-ROOM-04-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-04-ACCESS",
+          "target": "A-F1-INNER-TOP-RIGHT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-TOP-ROOM-05-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-05-ACCESS",
+          "target": "A-F1-RING-TOP-RIGHT",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-TOP-LEFT",
+          "target": "A-F1-INNER-TOP-LEFT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-LEFT-ROOM-02-ACCESS",
+          "target": "A-F1-LEFT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LEFT-ROOM-01-ACCESS",
+          "target": "A-F1-RING-LEFT-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-LEFT-MID",
+          "target": "A-F1-LEFT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LEFT-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-LEFT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-LEFT-ROOM-02-ACCESS",
+          "target": "A-F1-RING-BOTTOM-LEFT",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-TOP-RIGHT",
+          "target": "A-F1-INNER-TOP-RIGHT-ROOM-03-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-RIGHT-ROOM-03-ACCESS",
+          "target": "A-F1-RIGHT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-RING-RIGHT-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-RIGHT-MID",
+          "target": "A-F1-RIGHT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-RIGHT-ROOM-03-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-RIGHT-ROOM-03-ACCESS",
+          "target": "A-F1-RING-BOTTOM-RIGHT",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-BOTTOM-LEFT",
+          "target": "A-F1-BOTTOM-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-01-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-LEFT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-LEFT-ROOM-01-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-02-ACCESS",
+          "target": "A-F1-RING-BOTTOM-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-BOTTOM-MID",
+          "target": "A-F1-BOTTOM-ROOM-03-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-03-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-04-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-04-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-05-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-05-ACCESS",
+          "target": "A-F1-RING-BOTTOM-RIGHT",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-CENTER-CROSS",
+          "target": "A-F1-MID-TOP-RIGHT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-TOP-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-MID-TOP-RIGHT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-TOP-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-RING-TOP-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-CENTER-CROSS",
+          "target": "A-F1-MID-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-MID-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-RING-BOTTOM-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RING-LEFT-MID",
+          "target": "A-F1-MID-LEFT-UPPER-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-UPPER-ROOM-01-ACCESS",
+          "target": "A-F1-MID-LEFT-LOWER-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-LOWER-ROOM-01-ACCESS",
+          "target": "A-F1-MID-LEFT-UPPER-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-UPPER-ROOM-02-ACCESS",
+          "target": "A-F1-MID-LEFT-LOWER-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-LOWER-ROOM-02-ACCESS",
+          "target": "A-F1-CENTER-CROSS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-CENTER-CROSS",
+          "target": "A-F1-RING-RIGHT-MID",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LIBRARY-CENTER",
+          "target": "A-F1-LIBRARY-ENTRANCE",
+          "distance": 22,
+          "type": "connector",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LIBRARY-ENTRANCE",
+          "target": "A-F1-LIBRARY-CONNECTOR",
+          "distance": 20,
+          "type": "connector",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LIBRARY-CONNECTOR",
+          "target": "A-F1-RING-LEFT-MID",
+          "distance": 24,
+          "type": "connector",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-STAIR-LEFT",
+          "target": "A-F1-RING-LEFT-MID",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-STAIR-RIGHT",
+          "target": "A-F1-RING-RIGHT-MID",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-STAIR-BOTTOM",
+          "target": "A-F1-RING-BOTTOM-MID",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-STAIR-TOP",
+          "target": "A-F1-RING-TOP-MID",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-01-ACCESS",
+          "target": "A-F1-TOP-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-02-ACCESS",
+          "target": "A-F1-TOP-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-03-ACCESS",
+          "target": "A-F1-TOP-ROOM-03",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-04-ACCESS",
+          "target": "A-F1-TOP-ROOM-04",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-TOP-ROOM-05-ACCESS",
+          "target": "A-F1-TOP-ROOM-05",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-01-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-02-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-03-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-03",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-04-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-04",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BOTTOM-ROOM-05-ACCESS",
+          "target": "A-F1-BOTTOM-ROOM-05",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LEFT-ROOM-01-ACCESS",
+          "target": "A-F1-LEFT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-LEFT-ROOM-02-ACCESS",
+          "target": "A-F1-LEFT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-RIGHT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-RIGHT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-INNER-TOP-RIGHT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-TOP-RIGHT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-RIGHT-ROOM-03-ACCESS",
+          "target": "A-F1-INNER-TOP-RIGHT-ROOM-03",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-RIGHT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-RIGHT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-RIGHT-ROOM-03-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-RIGHT-ROOM-03",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-LEFT-ROOM-01-ACCESS",
+          "target": "A-F1-INNER-TOP-LEFT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-TOP-LEFT-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-TOP-LEFT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-LEFT-ROOM-01-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-LEFT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-INNER-BOTTOM-LEFT-ROOM-02-ACCESS",
+          "target": "A-F1-INNER-BOTTOM-LEFT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-UPPER-ROOM-01-ACCESS",
+          "target": "A-F1-MID-LEFT-UPPER-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-UPPER-ROOM-02-ACCESS",
+          "target": "A-F1-MID-LEFT-UPPER-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-LOWER-ROOM-01-ACCESS",
+          "target": "A-F1-MID-LEFT-LOWER-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-LEFT-LOWER-ROOM-02-ACCESS",
+          "target": "A-F1-MID-LEFT-LOWER-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-TOP-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-MID-TOP-RIGHT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-TOP-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-MID-TOP-RIGHT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-BOTTOM-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F1-MID-BOTTOM-RIGHT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-MID-BOTTOM-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F1-MID-BOTTOM-RIGHT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F1-BUILDING-ENTRANCE",
+          "target": "A-F1-RING-LEFT-MID",
+          "distance": 10,
+          "type": "building_entry",
+          "bidirectional": true,
+          "accessible": true,
+          "notes": "Connects Building A to campus graph"
+        }
+      ]
+    },
+    "2": {
+      "nodes": [
+        {
+          "id": "A-F2-RING-TOP",
+          "label": "Ring Top",
+          "type": "junction",
+          "floor": 2,
+          "x": 500,
+          "y": 230,
+          "zone": "A-F2-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RING-RIGHT",
+          "label": "Ring Right",
+          "type": "junction",
+          "floor": 2,
+          "x": 740,
+          "y": 500,
+          "zone": "A-F2-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RING-BOTTOM",
+          "label": "Ring Bottom",
+          "type": "junction",
+          "floor": 2,
+          "x": 500,
+          "y": 770,
+          "zone": "A-F2-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RING-LEFT",
+          "label": "Ring Left",
+          "type": "junction",
+          "floor": 2,
+          "x": 260,
+          "y": 500,
+          "zone": "A-F2-MAIN-RING",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LIBRARY-CENTER",
+          "label": "Library Center",
+          "type": "library",
+          "floor": 2,
+          "x": 90,
+          "y": 720,
+          "zone": "A-F2-LIBRARY",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LIBRARY-ENTRANCE",
+          "label": "Library Entrance",
+          "type": "entrance",
+          "floor": 2,
+          "x": 145,
+          "y": 635,
+          "zone": "A-F2-LIBRARY",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LIBRARY-CONNECTOR",
+          "label": "Library Connector",
+          "type": "corridor",
+          "floor": 2,
+          "x": 205,
+          "y": 555,
+          "zone": "A-F2-LIBRARY",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-STAIR-LEFT",
+          "label": "Stair Left",
+          "type": "stair",
+          "floor": 2,
+          "x": 165,
+          "y": 500,
+          "zone": "A-F2-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-STAIR-RIGHT",
+          "label": "Stair Right",
+          "type": "stair",
+          "floor": 2,
+          "x": 835,
+          "y": 500,
+          "zone": "A-F2-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-STAIR-BOTTOM",
+          "label": "Stair Bottom",
+          "type": "stair",
+          "floor": 2,
+          "x": 500,
+          "y": 870,
+          "zone": "A-F2-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-STAIR-TOP",
+          "label": "Stair Top",
+          "type": "stair",
+          "floor": 2,
+          "x": 500,
+          "y": 130,
+          "zone": "A-F2-STAIRS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-TOP-ROOM-01-ACCESS",
+          "label": "Top Room 01 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 560,
+          "y": 300,
+          "zone": "A-F2-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-TOP-ROOM-01",
+          "label": "Top Room 01",
+          "type": "room",
+          "floor": 2,
+          "x": 395,
+          "y": 85,
+          "zone": "A-F2-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-TOP-ROOM-02-ACCESS",
+          "label": "Top Room 02 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 640,
+          "y": 385,
+          "zone": "A-F2-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-TOP-ROOM-02",
+          "label": "Top Room 02",
+          "type": "room",
+          "floor": 2,
+          "x": 595,
+          "y": 85,
+          "zone": "A-F2-TOP-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-BOTTOM-ROOM-01-ACCESS",
+          "label": "Bottom Room 01 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 440,
+          "y": 720,
+          "zone": "A-F2-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-BOTTOM-ROOM-01",
+          "label": "Bottom Room 01",
+          "type": "room",
+          "floor": 2,
+          "x": 395,
+          "y": 930,
+          "zone": "A-F2-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-BOTTOM-ROOM-02-ACCESS",
+          "label": "Bottom Room 02 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 355,
+          "y": 625,
+          "zone": "A-F2-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-BOTTOM-ROOM-02",
+          "label": "Bottom Room 02",
+          "type": "room",
+          "floor": 2,
+          "x": 595,
+          "y": 930,
+          "zone": "A-F2-BOTTOM-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LEFT-ROOM-01-ACCESS",
+          "label": "Left Room 01 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 380,
+          "y": 340,
+          "zone": "A-F2-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LEFT-ROOM-01",
+          "label": "Left Room 01",
+          "type": "room",
+          "floor": 2,
+          "x": 100,
+          "y": 390,
+          "zone": "A-F2-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LEFT-ROOM-02-ACCESS",
+          "label": "Left Room 02 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 320,
+          "y": 420,
+          "zone": "A-F2-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-LEFT-ROOM-02",
+          "label": "Left Room 02",
+          "type": "room",
+          "floor": 2,
+          "x": 100,
+          "y": 590,
+          "zone": "A-F2-LEFT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RIGHT-ROOM-01-ACCESS",
+          "label": "Right Room 01 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 680,
+          "y": 580,
+          "zone": "A-F2-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RIGHT-ROOM-01",
+          "label": "Right Room 01",
+          "type": "room",
+          "floor": 2,
+          "x": 900,
+          "y": 390,
+          "zone": "A-F2-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RIGHT-ROOM-02-ACCESS",
+          "label": "Right Room 02 Access",
+          "type": "access",
+          "floor": 2,
+          "x": 610,
+          "y": 665,
+          "zone": "A-F2-RIGHT-ROOMS",
+          "accessible": true
+        },
+        {
+          "id": "A-F2-RIGHT-ROOM-02",
+          "label": "Right Room 02",
+          "type": "room",
+          "floor": 2,
+          "x": 900,
+          "y": 590,
+          "zone": "A-F2-RIGHT-ROOMS",
+          "accessible": true
+        }
+      ],
+      "edges": [
+        {
+          "source": "A-F2-RING-LEFT",
+          "target": "A-F2-LEFT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LEFT-ROOM-02-ACCESS",
+          "target": "A-F2-LEFT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LEFT-ROOM-01-ACCESS",
+          "target": "A-F2-RING-TOP",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RING-TOP",
+          "target": "A-F2-TOP-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-TOP-ROOM-01-ACCESS",
+          "target": "A-F2-TOP-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-TOP-ROOM-02-ACCESS",
+          "target": "A-F2-RING-RIGHT",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RING-RIGHT",
+          "target": "A-F2-RIGHT-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F2-RIGHT-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F2-RING-BOTTOM",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RING-BOTTOM",
+          "target": "A-F2-BOTTOM-ROOM-01-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-BOTTOM-ROOM-01-ACCESS",
+          "target": "A-F2-BOTTOM-ROOM-02-ACCESS",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-BOTTOM-ROOM-02-ACCESS",
+          "target": "A-F2-RING-LEFT",
+          "distance": 10,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LIBRARY-CENTER",
+          "target": "A-F2-LIBRARY-ENTRANCE",
+          "distance": 22,
+          "type": "connector",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LIBRARY-ENTRANCE",
+          "target": "A-F2-LIBRARY-CONNECTOR",
+          "distance": 20,
+          "type": "connector",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LIBRARY-CONNECTOR",
+          "target": "A-F2-RING-LEFT",
+          "distance": 24,
+          "type": "connector",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-STAIR-LEFT",
+          "target": "A-F2-RING-LEFT",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-STAIR-RIGHT",
+          "target": "A-F2-RING-RIGHT",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-STAIR-BOTTOM",
+          "target": "A-F2-RING-BOTTOM",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-STAIR-TOP",
+          "target": "A-F2-RING-TOP",
+          "distance": 12,
+          "type": "corridor",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-TOP-ROOM-01-ACCESS",
+          "target": "A-F2-TOP-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-TOP-ROOM-02-ACCESS",
+          "target": "A-F2-TOP-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-BOTTOM-ROOM-01-ACCESS",
+          "target": "A-F2-BOTTOM-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-BOTTOM-ROOM-02-ACCESS",
+          "target": "A-F2-BOTTOM-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LEFT-ROOM-01-ACCESS",
+          "target": "A-F2-LEFT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-LEFT-ROOM-02-ACCESS",
+          "target": "A-F2-LEFT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RIGHT-ROOM-01-ACCESS",
+          "target": "A-F2-RIGHT-ROOM-01",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        },
+        {
+          "source": "A-F2-RIGHT-ROOM-02-ACCESS",
+          "target": "A-F2-RIGHT-ROOM-02",
+          "distance": 8,
+          "type": "door",
+          "bidirectional": true,
+          "accessible": true
+        }
+      ]
+    }
+  },
+  "inter_floor_edges": [
+    {
+      "source": "A-F1-STAIR-LEFT",
+      "target": "A-F2-STAIR-LEFT",
+      "distance": 10,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Temporary vertical connector, needs verification"
+    },
+    {
+      "source": "A-F1-STAIR-RIGHT",
+      "target": "A-F2-STAIR-RIGHT",
+      "distance": 10,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Temporary vertical connector, needs verification"
+    },
+    {
+      "source": "A-F1-STAIR-BOTTOM",
+      "target": "A-F2-STAIR-BOTTOM",
+      "distance": 10,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Temporary vertical connector, needs verification"
+    },
+    {
+      "source": "A-F1-STAIR-TOP",
+      "target": "A-F2-STAIR-TOP",
+      "distance": 10,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Temporary vertical connector, needs verification"
+    },
+    {
+      "source": "A-F1-LIBRARY-CENTER",
+      "target": "A-F2-LIBRARY-CENTER",
+      "distance": 12,
+      "type": "stair",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Library vertical connection between floors"
+    }
+  ]
+}

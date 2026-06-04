@@ -1,0 +1,476 @@
+{
+  "campus": "UIT",
+  "coordinate_system": {
+    "type": "normalized",
+    "width": 1000,
+    "height": 1000
+  },
+  "nodes": [
+    {
+      "id": "UIT-GATE-A",
+      "label": "Gate A",
+      "type": "gate",
+      "building": null,
+      "floor": null,
+      "x": 230,
+      "y": 90,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-GATE-B",
+      "label": "Gate B",
+      "type": "gate",
+      "building": null,
+      "floor": null,
+      "x": 760,
+      "y": 900,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-GARAGE",
+      "label": "Garage",
+      "type": "garage",
+      "building": null,
+      "floor": null,
+      "x": 120,
+      "y": 150,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": "Personal transportation parking area linked to Gate A and rough back routes."
+    },
+    {
+      "id": "UIT-OUTDOOR-A-FRONT",
+      "label": "Outdoor A Front",
+      "type": "building_access",
+      "building": null,
+      "floor": null,
+      "x": 310,
+      "y": 210,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-OUTDOOR-B-FRONT",
+      "label": "Outdoor B Front",
+      "type": "building_access",
+      "building": null,
+      "floor": null,
+      "x": 720,
+      "y": 280,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-OUTDOOR-C-FRONT",
+      "label": "Outdoor C Front",
+      "type": "building_access",
+      "building": null,
+      "floor": null,
+      "x": 520,
+      "y": 620,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-OUTDOOR-D-FRONT",
+      "label": "Outdoor D Front",
+      "type": "building_access",
+      "building": null,
+      "floor": null,
+      "x": 520,
+      "y": 850,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-OUTDOOR-E-FRONT",
+      "label": "Outdoor E Front",
+      "type": "building_access",
+      "building": null,
+      "floor": null,
+      "x": 170,
+      "y": 430,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-WALKWAY-A-E",
+      "label": "Walkway A E",
+      "type": "walkway",
+      "building": null,
+      "floor": null,
+      "x": 230,
+      "y": 330,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-WALKWAY-A-B",
+      "label": "Walkway A B",
+      "type": "walkway",
+      "building": null,
+      "floor": null,
+      "x": 540,
+      "y": 230,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-WALKWAY-A-C",
+      "label": "Walkway A C",
+      "type": "walkway",
+      "building": null,
+      "floor": null,
+      "x": 410,
+      "y": 390,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-WALKWAY-B-C",
+      "label": "Walkway B C",
+      "type": "walkway",
+      "building": null,
+      "floor": null,
+      "x": 650,
+      "y": 460,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-WALKWAY-E-C",
+      "label": "Walkway E C",
+      "type": "walkway",
+      "building": null,
+      "floor": null,
+      "x": 300,
+      "y": 520,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-INTERSECTION-CENTER",
+      "label": "Center Intersection",
+      "type": "intersection",
+      "building": null,
+      "floor": null,
+      "x": 500,
+      "y": 500,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-INTERSECTION-CANTEEN",
+      "label": "Canteen Intersection",
+      "type": "intersection",
+      "building": null,
+      "floor": null,
+      "x": 560,
+      "y": 740,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "id": "UIT-CANTEEN",
+      "label": "Canteen",
+      "type": "canteen",
+      "building": null,
+      "floor": null,
+      "x": 690,
+      "y": 720,
+      "zone": "UIT-CAMPUS",
+      "accessible": true,
+      "notes": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "UIT-GATE-A",
+      "target": "UIT-OUTDOOR-A-FRONT",
+      "distance": 20,
+      "type": "gate_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-GATE-A",
+      "target": "UIT-GARAGE",
+      "distance": 12,
+      "type": "garage_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Gate A connection to bike/motorbike garage."
+    },
+    {
+      "source": "UIT-OUTDOOR-A-FRONT",
+      "target": "UIT-WALKWAY-A-E",
+      "distance": 18,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-WALKWAY-A-E",
+      "target": "UIT-OUTDOOR-E-FRONT",
+      "distance": 25,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-A-FRONT",
+      "target": "UIT-WALKWAY-A-B",
+      "distance": 22,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-WALKWAY-A-B",
+      "target": "UIT-OUTDOOR-B-FRONT",
+      "distance": 25,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-A-FRONT",
+      "target": "UIT-WALKWAY-A-C",
+      "distance": 26,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-WALKWAY-A-C",
+      "target": "UIT-INTERSECTION-CENTER",
+      "distance": 24,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-B-FRONT",
+      "target": "UIT-WALKWAY-B-C",
+      "distance": 20,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-WALKWAY-B-C",
+      "target": "UIT-INTERSECTION-CENTER",
+      "distance": 20,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-E-FRONT",
+      "target": "UIT-WALKWAY-E-C",
+      "distance": 22,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-WALKWAY-E-C",
+      "target": "UIT-INTERSECTION-CENTER",
+      "distance": 22,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-INTERSECTION-CENTER",
+      "target": "UIT-OUTDOOR-C-FRONT",
+      "distance": 25,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-C-FRONT",
+      "target": "UIT-INTERSECTION-CANTEEN",
+      "distance": 25,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-INTERSECTION-CANTEEN",
+      "target": "UIT-CANTEEN",
+      "distance": 12,
+      "type": "campus_connector",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-INTERSECTION-CANTEEN",
+      "target": "UIT-OUTDOOR-D-FRONT",
+      "distance": 35,
+      "type": "outdoor_walk",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-INTERSECTION-CANTEEN",
+      "target": "UIT-GATE-B",
+      "distance": 30,
+      "type": "gate_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    }
+  ],
+  "building_entry_edges": [
+    {
+      "source": "UIT-OUTDOOR-A-FRONT",
+      "target": "A-F1-BUILDING-ENTRANCE",
+      "distance": 8,
+      "type": "building_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-GATE-A",
+      "target": "A-F1-RING-BOTTOM-RIGHT",
+      "distance": 24,
+      "type": "gate_to_building_a_ring",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Rough public-transport path from Gate A into Building A ring bottom right."
+    },
+    {
+      "source": "UIT-GARAGE",
+      "target": "A-F1-RING-LEFT-MID",
+      "distance": 18,
+      "type": "garage_to_building_a_ring",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Garage route to Building A ring left middle."
+    },
+    {
+      "source": "UIT-GARAGE",
+      "target": "A-F1-RING-TOP-LEFT",
+      "distance": 20,
+      "type": "garage_to_building_a_ring",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Garage route to Building A ring top left."
+    },
+    {
+      "source": "UIT-GARAGE",
+      "target": "B-F1-BUILDING-ENTRANCE",
+      "distance": 65,
+      "type": "garage_back_road",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Long direct back road between Building B and the garage."
+    },
+    {
+      "source": "UIT-GARAGE",
+      "target": "E-F1-LOBBY",
+      "distance": 52,
+      "type": "garage_e_route",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Garage route through Building E / across Building A."
+    },
+    {
+      "source": "A-F1-RING-RIGHT-MID",
+      "target": "E-F1-LOBBY",
+      "distance": 22,
+      "type": "building_a_to_e_crossing",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Preferred Building A exit toward E/C crossing."
+    },
+    {
+      "source": "A-F1-RING-TOP-MID",
+      "target": "B-F1-BUILDING-ENTRANCE",
+      "distance": 24,
+      "type": "building_a_to_b_crossing",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Preferred Building A top route toward B/C."
+    },
+    {
+      "source": "A-F1-RING-TOP-RIGHT",
+      "target": "B-F1-BUILDING-ENTRANCE",
+      "distance": 22,
+      "type": "building_a_to_b_crossing",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": "Preferred Building A top-right route toward B/C."
+    },
+    {
+      "source": "UIT-OUTDOOR-B-FRONT",
+      "target": "B-F1-BUILDING-ENTRANCE",
+      "distance": 8,
+      "type": "building_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-C-FRONT",
+      "target": "C-F1-BUILDING-ENTRANCE",
+      "distance": 8,
+      "type": "building_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-D-FRONT",
+      "target": "D-F1-BUILDING-ENTRANCE",
+      "distance": 8,
+      "type": "building_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    },
+    {
+      "source": "UIT-OUTDOOR-E-FRONT",
+      "target": "E-F1-BUILDING-ENTRANCE",
+      "distance": 8,
+      "type": "building_entry",
+      "bidirectional": true,
+      "accessible": true,
+      "notes": ""
+    }
+  ]
+}

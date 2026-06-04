@@ -1,0 +1,100 @@
+{
+  "random_seed": 42,
+  "num_students": 1000,
+  "route_choice_mode": "utility_based_choice",
+  "k_shortest_paths": 3,
+  "default_walking_speed_mps": 1.25,
+  "enable_route_cache": true,
+  "enable_congestion_feedback": false,
+  "campus_start_time": "07:00",
+  "lunch_start_time": "11:30",
+  "lunch_end_time": "12:30",
+  "campus_end_time": "18:00",
+  "output_dir": "outputs/node_1_2",
+  "timetable_path": "data/normalized/normalized_timetable.json",
+  "curriculum_path": "data/normalized/normalized_curriculum_all.json",
+  "entry_gates": {
+    "UIT-GATE-A": 0.75,
+    "UIT-GATE-B": 0.25
+  },
+  "exit_same_as_entry": true,
+  "transport_modes": {
+    "personal_transport": 0.7,
+    "public_transport": 0.3
+  },
+  "personal_transport_entry_gate": "UIT-GATE-A",
+  "personal_transport_exit_gate": "UIT-GATE-A",
+  "personal_transport_anchor": "UIT-GARAGE",
+  "public_transport_entry_gates": {
+    "UIT-GATE-B": 0.9,
+    "UIT-GATE-A": 0.1
+  },
+  "public_transport_exit_gates": {
+    "UIT-GATE-A": 0.99,
+    "UIT-GATE-B": 0.01
+  },
+  "personal_exit_from_building_b": {
+    "garage_back_road": 0.5,
+    "building_a_route": 0.5
+  },
+  "personal_exit_from_building_c": {
+    "building_e_route": 0.9,
+    "building_a_route": 0.1
+  },
+  "personal_exit_from_building_e": {
+    "building_e_route": 1.0
+  },
+  "lunch_destinations": {
+    "UIT-GATE-A": 0.54,
+    "UIT-GATE-B": 0.18,
+    "UIT-CANTEEN": 0.18,
+    "A-F1-LIBRARY-CENTER": 0.1
+  },
+  "mental_instability_alpha": 2.0,
+  "mental_instability_beta": 5.0,
+  "base_path_randomness": 0.05,
+  "mental_instability_randomness_multiplier": 0.85,
+  "majors": {
+    "TTNT": 0.0294,
+    "ATTT": 0.0882,
+    "CNTT": 0.0882,
+    "TMDT": 0.0588,
+    "HTTT": 0.1176,
+    "CTTT": 0.0588,
+    "KHDL": 0.0882,
+    "KHMT": 0.1176,
+    "KTMT": 0.0882,
+    "MMTT": 0.0588,
+    "KTPM": 0.0882,
+    "TKVM": 0.0588,
+    "TTDPT": 0.0588
+  },
+  "major_class_counts": {
+    "TTNT": 1,
+    "ATTT": 3,
+    "CNTT": 3,
+    "TMDT": 2,
+    "HTTT": 4,
+    "CTTT": 2,
+    "KHDL": 3,
+    "KHMT": 4,
+    "KTMT": 3,
+    "MMTT": 2,
+    "KTPM": 3,
+    "TKVM": 2,
+    "TTDPT": 2
+  },
+  "years": {
+    "1": 0.28,
+    "2": 0.27,
+    "3": 0.25,
+    "4": 0.2
+  },
+  "behavior_profiles": {
+    "efficient": 0.35,
+    "familiar": 0.25,
+    "new_student": 0.15,
+    "crowd_avoiding": 0.15,
+    "explorer": 0.1
+  }
+}
