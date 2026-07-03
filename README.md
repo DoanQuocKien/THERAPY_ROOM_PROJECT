@@ -53,7 +53,32 @@ python src/simulate_students.py --config config/simulation_config.json
 python src/validate_simulation.py
 ```
 
-Generate weekly whole-campus heatmap visuals:
+## Candidate Room Evaluation & GUI Portal
+
+Evaluate candidate rooms for the counseling space and run the interactive dashboard:
+
+1. Run the Python candidate room ranking engine:
+
+```bash
+python src/rank_candidates.py
+```
+
+2. Export the latest simulation databases and graph nodes to the web GUI:
+
+```bash
+python src/export_gui_data.py
+```
+
+3. Launch the local web server to host the GUI:
+
+```bash
+python -m http.server 8000
+```
+
+4. View the dashboard:
+Open `http://localhost:8000/gui/index.html` in your web browser.
+
+## Weekly whole-campus heatmap visuals
 
 ```bash
 python src/visualize_weekly_heatmap.py

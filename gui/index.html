@@ -389,6 +389,7 @@
       font-size: 0.75rem;
       color: var(--text-main);
       line-height: 1.5;
+      white-space: pre-line;
     }
 
     /* Node Tooltip */
@@ -452,7 +453,7 @@
         <h2>Bộ Dữ liệu Đầu vào</h2>
         
         <div class="form-group">
-          <label for="candidates-json">Danh sách Phòng Ứng viên ($D_3$ - Định dạng JSON):</label>
+          <label for="candidates-json">Danh sách Phòng Ứng viên (D<sub>3</sub> - Định dạng JSON):</label>
           <textarea id="candidates-json" class="input-field" placeholder='["B1.02", "C103"]'></textarea>
         </div>
 
@@ -460,7 +461,7 @@
         <div class="form-group">
           <details>
             <summary style="cursor:pointer; color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;">
-              Đồ thị Không gian (D2 - Đỉnh & Cạnh JSON)
+              Đồ thị Không gian (D<sub>2</sub> - Đỉnh & Cạnh JSON)
             </summary>
             <textarea id="graph-json" class="input-field" style="height:120px;" placeholder="Dán file đồ thị D2 tại đây..."></textarea>
           </details>
@@ -469,30 +470,30 @@
         <div class="form-group">
           <details>
             <summary style="cursor:pointer; color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;">
-              Thời khóa biểu (D1 - Events JSON Subset)
+              Thời khóa biểu (D<sub>1</sub> - Events JSON Subset)
             </summary>
             <textarea id="timetable-json" class="input-field" style="height:120px;" placeholder="Dán TKB D1 tại đây..."></textarea>
           </details>
         </div>
         
         <div class="form-group">
-          <label>Trọng số Điểm số Ưu tiên ($w_A, w_V, w_P$):</label>
+          <label>Trọng số Điểm số Ưu tiên (w<sub>A</sub>, w<sub>V</sub>, w<sub>P</sub>):</label>
           <div class="form-group">
-            <label style="margin-bottom:0.25rem;">Accessibility ($w_A$):</label>
+            <label style="margin-bottom:0.25rem;">Tiếp cận (w<sub>A</sub>):</label>
             <div class="slider-container">
               <input type="range" id="weight-acc" min="0" max="1" step="0.05" value="0.35">
               <span class="slider-val" id="val-acc">0.35</span>
             </div>
           </div>
           <div class="form-group">
-            <label style="margin-bottom:0.25rem;">Visibility ($w_V$):</label>
+            <label style="margin-bottom:0.25rem;">Độ hiển thị (w<sub>V</sub>):</label>
             <div class="slider-container">
               <input type="range" id="weight-vis" min="0" max="1" step="0.05" value="0.15">
               <span class="slider-val" id="val-vis">0.15</span>
             </div>
           </div>
           <div class="form-group">
-            <label style="margin-bottom:0.25rem;">Privacy ($w_P$):</label>
+            <label style="margin-bottom:0.25rem;">Riêng tư (w<sub>P</sub>):</label>
             <div class="slider-container">
               <input type="range" id="weight-priv" min="0" max="1" step="0.05" value="0.50">
               <span class="slider-val" id="val-priv">0.50</span>
@@ -504,10 +505,38 @@
       </div>
 
       <!-- Rankings Card -->
-      <div class="card" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+      <div class="card" style="display: flex; flex-direction: column; gap: 0.85rem;">
         <h2>Bảng Xếp hạng Đề xuất</h2>
-        <div class="ranking-list" id="rankings-container" style="flex: 1; overflow-y: auto;">
-          <!-- Items will be injected by JavaScript -->
+        
+        <!-- Primary Recommendation Section -->
+        <div id="primary-recommendation-container" style="display: flex; flex-direction: column;">
+          <!-- Will be injected by JS -->
+        </div>
+
+        <!-- Alternative Recommendations Section -->
+        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+          <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase;">Ứng viên thay thế (Alternatives)</span>
+          <div id="alternative-rooms-container" style="display: flex; flex-direction: column; gap: 0.45rem;">
+            <!-- Will be injected by JS -->
+          </div>
+        </div>
+
+        <!-- Full Rankings Section -->
+        <div style="display: flex; flex-direction: column; gap: 0.4rem; border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 0.25rem;">
+          <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase;">Bảng xếp hạng đầy đủ (Full Rankings)</span>
+          
+          <div style="display: grid; grid-template-columns: 2.2rem 5.2rem 1fr 1fr 1fr 3.2rem; gap: 0.25rem; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.68rem; color: var(--text-muted); border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; font-weight: 600;">
+            <div>HẠNG</div>
+            <div>PHÒNG</div>
+            <div style="text-align: right;">A</div>
+            <div style="text-align: right;">V</div>
+            <div style="text-align: right;">P</div>
+            <div style="text-align: right; color: var(--success);">SCORE</div>
+          </div>
+          
+          <div id="rankings-container" style="display: flex; flex-direction: column;">
+            <!-- Will be injected by JS -->
+          </div>
         </div>
       </div>
 
@@ -534,11 +563,11 @@
         <div class="legend-overlay">
           <div class="legend-item">
             <div class="legend-rect" style="border: 2.5px dashed var(--primary); background: rgba(224, 242, 254, 0.9);"></div>
-            <span>Phòng ứng cử đề xuất ($D_3$)</span>
+            <span>Phòng ứng cử đề xuất (D<sub>3</sub>)</span>
           </div>
           <div class="legend-item">
             <div class="legend-rect" style="background: var(--success); border-color: var(--success);"></div>
-            <span>Đề xuất tối ưu nhất ($r^*$)</span>
+            <span>Đề xuất tối ưu nhất (r<sup>*</sup>)</span>
           </div>
           <div class="legend-item">
             <div class="legend-rect" style="background: #ffffff; border-color: #475569;"></div>
@@ -575,8 +604,8 @@
     </div>
   </div>
 
-  <!-- Include our bundled graphs and traffic data -->
-  <script src="gui_data.js"></script>
+  <!-- Include our bundled graphs and traffic data with cache-busting -->
+  <script src="gui_data.js?v=1.0.2"></script>
 
   <script>
     // Local copy of ranked candidates
@@ -600,11 +629,43 @@
     // Initialize components
     document.addEventListener("DOMContentLoaded", () => {
       // Set default input fields in textareas from bundled js
-      document.getElementById("graph-json").value = JSON.stringify(DEFAULT_UNIFIED_GRAPH, null, 2);
-      document.getElementById("timetable-json").value = JSON.stringify(DEFAULT_TIMETABLE_SUBSET, null, 2);
+      // Safeguard variables to prevent crashes if files are cached/missing
+      const graph = (typeof DEFAULT_UNIFIED_GRAPH !== "undefined" && DEFAULT_UNIFIED_GRAPH) ? DEFAULT_UNIFIED_GRAPH : { nodes: [], edges: [] };
+      const timetable = (typeof DEFAULT_TIMETABLE_SUBSET !== "undefined" && DEFAULT_TIMETABLE_SUBSET) ? DEFAULT_TIMETABLE_SUBSET : [];
+      
+      document.getElementById("graph-json").value = JSON.stringify(graph, null, 2);
+      document.getElementById("timetable-json").value = JSON.stringify(timetable, null, 2);
 
-      // Populate candidates with the official candidate rooms from DEFAULT_RANKED_CANDIDATES
-      const initialCandidates = DEFAULT_RANKED_CANDIDATES.map(item => item.candidate_room);
+      // Select 1/3 of all rooms in each building deterministically (every 3rd room)
+      const roomsByBuilding = { A: [], B: [], C: [], D: [], E: [] };
+      if (graph.nodes) {
+        graph.nodes.forEach(n => {
+          if (n.type === "room" && n.building) {
+            const b = n.building;
+            if (roomsByBuilding[b] !== undefined) {
+              roomsByBuilding[b].push(n.id);
+            }
+          }
+        });
+      }
+      
+      const initialCandidates = [];
+      Object.keys(roomsByBuilding).forEach(b => {
+        const list = roomsByBuilding[b];
+        list.sort(); // Sort to ensure stable results
+        for (let i = 0; i < list.length; i += 3) {
+          initialCandidates.push(list[i]);
+        }
+      });
+      
+      // Ensure the official candidate rooms are always included in this list
+      const officialRooms = ["B1.02", "A-F2-RIGHT-ROOM-01", "A-F1-TOP-ROOM-01", "C103"];
+      officialRooms.forEach(r => {
+        if (!initialCandidates.includes(r)) {
+          initialCandidates.push(r);
+        }
+      });
+      
       document.getElementById("candidates-json").value = JSON.stringify(initialCandidates, null, 2);
       
       // Setup sliders interactions
@@ -740,29 +801,51 @@
 
     // Direct JS implementation of ranking calculations with loading overlay
     function runEvaluation() {
+      console.log("runEvaluation() called!");
       const loader = document.getElementById("loading-overlay");
-      loader.style.display = "flex";
+      if (loader) loader.style.display = "flex";
 
       // Allow 60ms delay for DOM renderer to display the spinner before blocking calculations
       setTimeout(() => {
         try {
+          console.log("Calling evaluateEngine()...");
           evaluateEngine();
+          console.log("evaluateEngine() finished executing!");
+        } catch (err) {
+          console.error("Lỗi khi chạy đánh giá:", err);
+          alert("Lỗi hệ thống khi tính toán xếp hạng: " + err.message + "\nVui lòng kiểm tra Developer Console để biết chi tiết.");
         } finally {
-          loader.style.display = "none";
+          if (loader) loader.style.display = "none";
         }
       }, 60);
     }
 
     function evaluateEngine() {
+      console.log("evaluateEngine() started execution.");
       let customGraph, customTimetable;
       try {
         currentCandidates = JSON.parse(document.getElementById("candidates-json").value);
         customGraph = JSON.parse(document.getElementById("graph-json").value);
         customTimetable = JSON.parse(document.getElementById("timetable-json").value);
+        console.log("Successfully parsed JSON inputs.");
+        console.log("Candidates parsed count:", currentCandidates.length);
       } catch (err) {
+        console.error("Lỗi định dạng JSON nhập liệu:", err);
         alert("Lỗi định dạng JSON nhập liệu: " + err.message);
         return;
       }
+      
+      // Defensive checks against missing or corrupt inputs
+      if (!customGraph || !customGraph.nodes || !customGraph.edges) {
+        console.warn("Dữ liệu đồ thị không hợp lệ hoặc thiếu nodes/edges!");
+        return;
+      }
+      if (!customTimetable) {
+        console.warn("Dữ liệu thời khóa biểu không hợp lệ!");
+        return;
+      }
+      console.log("Graph nodes count:", customGraph.nodes.length, "edges count:", customGraph.edges.length);
+      console.log("Timetable events count:", customTimetable.length);
       
       // Parse custom graph nodes and edges
       const allGraphNodes = {};
@@ -928,20 +1011,116 @@
       const rankedList = [];
       validCandidates.forEach(r => {
         const scores = window.allRoomsScoreMap[r];
+        if (!scores) return; // Skip if no scorecard exists (e.g. if the node is not of type 'room')
         
-        // Generate qualitative trade-off explanation
+        // Parse location context
+        let bldName = "khu học xá";
+        let floorNum = 1;
+        if (r.startsWith("A-")) {
+          bldName = "Tòa A";
+          floorNum = r.includes("-F1-") ? 1 : 2;
+        } else if (r.startsWith("B")) {
+          bldName = "Tòa B";
+          const m = r.match(/B(\d+)\./);
+          if (m) floorNum = parseInt(m[1]);
+        } else if (r.startsWith("C")) {
+          bldName = "Tòa C";
+          const m = r.match(/C(\d)/);
+          if (m) floorNum = parseInt(m[1]);
+        } else if (r.startsWith("D")) {
+          bldName = "Tòa D";
+          const m = r.match(/D-F(\d)-/);
+          if (m) floorNum = parseInt(m[1]);
+        } else if (r.startsWith("E")) {
+          bldName = "Tòa E";
+          const m = r.match(/E(\d+)\./);
+          if (m) floorNum = parseInt(m[1]);
+        }
+
+        // Parse building characteristics
+        let bldDesc = "";
+        if (bldName === "Tòa A") {
+          bldDesc = "Tòa nhà hành chính và văn phòng Đoàn hội. Tầng trệt nhộn nhịp nhưng các tầng trên tương đối yên tĩnh.";
+        } else if (bldName === "Tòa B") {
+          bldDesc = "Tòa nhà giảng đường chính của trường, có mật độ sinh viên tập trung cực kỳ đông đúc ở hành lang tầng 1 và tầng 2.";
+        } else if (bldName === "Tòa C") {
+          bldDesc = "Tòa nhà thực hành công nghệ thông tin. Tiếng ồn ở mức trung bình, dòng người tập trung nhiều vào các khung giờ đổi ca thực hành.";
+        } else if (bldName === "Tòa D") {
+          bldDesc = "Tòa nhà E-Learning và chuyển giao công nghệ. Không gian tại đây biệt lập hơn, tiếng ồn thấp, mật độ di chuyển thưa thớt.";
+        } else if (bldName === "Tòa E") {
+          bldDesc = "Tòa nhà giảng đường mới E. Mật độ di chuyển và tiếng ồn ở mức cao trung bình, đặc biệt tập trung tại khu vực thang máy.";
+        }
+
+        // Parse floor characteristics
+        let floorDesc = "";
+        if (floorNum === 1) {
+          floorDesc = "Nằm tại tầng trệt, gần lối ra vào chính của tòa nhà, dễ dàng tiếp cận mà không cần leo cầu thang bộ hay chờ thang máy.";
+        } else if (floorNum === 2) {
+          floorDesc = "Nằm tại tầng 2, dễ dàng tiếp cận bằng một tầng cầu thang bộ hoặc thang máy, mật độ người qua lại ở mức cao vừa phải.";
+        } else if (floorNum >= 3 && floorNum <= 5) {
+          floorDesc = `Nằm tại tầng trung (tầng ${floorNum}). Việc di chuyển đòi hỏi đi thang bộ hoặc thang máy, mức độ riêng tư được cải thiện đáng kể.`;
+        } else if (floorNum >= 6) {
+          floorDesc = `Nằm tại tầng cao biệt lập (tầng ${floorNum}). Mật độ giao thông tự nhiên cực thấp, tính bảo mật rất tốt nhưng khoảng cách di chuyển lớn.`;
+        }
+
         const explanations = [];
-        if (scores.priv < 0.3) {
-          explanations.push(`Mật độ giao thông trước phòng ${r} rất lớn (Exposure Risk thô: ${scores.rawRisk.toFixed(1)} lượt). Yêu cầu lắp đặt thêm vách cách âm, rèm cửa che tầm nhìn và biển báo hạn chế tụ tập trước cửa nếu lựa chọn vị trí này.`);
+
+        // 1. Privacy analysis (Exposure Risk)
+        if (scores.priv < 0.25) {
+          explanations.push(`CẢNH BÁO BẢO MẬT: Nằm sát trục giao thông trung tâm có lưu lượng qua lại cực lớn (Exposure Risk: ${scores.rawRisk.toFixed(0)} lượt/tuần). Bắt buộc phải lắp đặt các tấm bình phong che cửa ra vào, kính một chiều và rèm che khuất tầm nhìn.`);
+        } else if (scores.priv > 0.85) {
+          explanations.push(`ĐIỂM SÁNG RIÊNG TƯ: Không gian cô lập lý tưởng, cực kỳ kín đáo (Privacy: ${scores.priv.toFixed(4)}) với lưu lượng vắng vẻ (${scores.rawRisk.toFixed(0)} lượt/tuần). Phù hợp tối đa cho sinh viên ngại tiếp xúc đám đông.`);
+        } else if (scores.priv >= 0.5 && scores.priv <= 0.85) {
+          explanations.push(`Độ riêng tư ở mức tốt (Privacy: ${scores.priv.toFixed(4)}) với lượng người đi qua ở mức vừa phải (${scores.rawRisk.toFixed(0)} lượt/tuần).`);
+        } else {
+          explanations.push(`Mức độ riêng tư trung bình yếu (Privacy: ${scores.priv.toFixed(4)}), chịu ảnh hưởng bởi lưu lượng hành lang (${scores.rawRisk.toFixed(0)} lượt/tuần).`);
         }
-        if (scores.acc < 0.3) {
-          explanations.push(`Vị trí phòng ${r} cách xa giảng đường chính (nỗ lực đi bộ trung bình WTC: ${scores.wtc.toFixed(1)}m). Cần thiết lập sơ đồ hướng dẫn tại sảnh chính các tòa nhà để sinh viên dễ dàng định vị lối đi.`);
+
+        // 2. Accessibility analysis (WTC)
+        if (scores.acc < 0.25) {
+          explanations.push(`CẢNH BÁO TIẾP CẬN: Nằm ở vị trí góc khuất hoặc tầng cao biệt lập (WTC: ${scores.wtc.toFixed(1)}m). Cần xây dựng sơ đồ hướng dẫn tại chân cầu thang bộ và thang máy sảnh chính.`);
+        } else if (scores.acc > 0.85) {
+          explanations.push(`THUẬN TIỆN DI CHUYỂN: Khả năng tiếp cận tuyệt vời (WTC: ${scores.wtc.toFixed(1)}m), giúp tiết kiệm thời gian đi bộ tối đa cho sinh viên tranh thủ giữa các ca học.`);
+        } else if (scores.acc >= 0.5 && scores.acc <= 0.85) {
+          explanations.push(`Khoảng cách di chuyển hợp lý (WTC: ${scores.wtc.toFixed(1)}m), thuận tiện cho sinh viên từ các khu giảng đường lân cận.`);
+        } else {
+          explanations.push(`Quãng đường di chuyển tương đối xa (WTC: ${scores.wtc.toFixed(1)}m), đòi hỏi thời gian đi bộ lớn.`);
         }
-        if (scores.acc >= 0.5 && scores.acc <= 0.8 && scores.vis >= 0.5 && scores.vis <= 0.8 && scores.priv >= 0.5 && scores.priv <= 0.8) {
-          explanations.push(`Đây là vị trí cân bằng rất tốt, đáp ứng hài hòa cả 3 tiêu chí tiếp cận (Acc: ${scores.acc.toFixed(2)}), riêng tư (Priv: ${scores.priv.toFixed(2)}) và nhận diện tự nhiên (Vis: ${scores.vis.toFixed(2)}).`);
+
+        // 3. Visibility specific comments
+        if (scores.vis > 0.80) {
+          explanations.push(`Nhận diện tự nhiên rất cao (V: ${scores.vis.toFixed(4)}). Rất dễ dàng quảng bá dịch vụ tư vấn đến cộng đồng sinh viên UIT.`);
+        } else if (scores.vis < 0.20) {
+          explanations.push(`Độ nhận diện tự nhiên thấp (V: ${scores.vis.toFixed(4)}). Cần bù đắp bằng các kênh truyền thông trực tuyến và bảng hiệu trang nhã.`);
+        } else {
+          explanations.push(`Tầm nhìn tự nhiên ở mức trung bình (V: ${scores.vis.toFixed(4)}).`);
         }
-        if (explanations.length === 0) {
-          explanations.push(`Phòng ${r} có điểm tiếp cận ${scores.acc.toFixed(2)}, độ hiển thị ${scores.vis.toFixed(2)}, độ riêng tư ${scores.priv.toFixed(2)}. WTC đi bộ: ${scores.wtc.toFixed(1)}m, Visibility thô: ${scores.rawVis.toFixed(1)}, Risk thô: ${scores.rawRisk.toFixed(1)}.`);
+
+        // 4. Pairwise Trade-offs analysis
+        if (scores.acc > 0.75 && scores.priv < 0.35) {
+          explanations.push(`Đánh đổi tiếp cận - riêng tư: Phòng cực kỳ dễ tiếp cận nhưng thiếu bảo mật riêng tư tự nhiên. Khuyến nghị thiết kế thêm vách ngăn ziczac tại lối vào để che chắn trực tiếp từ hành lang chính.`);
+        }
+        if (scores.acc < 0.35 && scores.priv > 0.75) {
+          explanations.push(`Đánh đổi tiếp cận - riêng tư: Phòng cực kỳ riêng tư và an toàn nhưng khó tiếp cận. Cần tăng cường chỉ dẫn hoặc các kênh truyền thông trực tuyến để sinh viên chủ động đặt lịch.`);
+        }
+        if (scores.vis > 0.70 && scores.priv < 0.35) {
+          explanations.push(`Rủi ro lộ thông tin: Mức độ hiển thị quá cao đi kèm rủi ro bảo mật lớn. Sinh viên bước vào phòng dễ bị người đi đường nhìn thấy trực diện từ bên ngoài.`);
+        }
+        if (scores.vis < 0.30 && scores.priv > 0.70) {
+          explanations.push(`Ưu thế che chắn: Độ hiển thị thấp bổ trợ cực tốt cho tính riêng tư. Sinh viên ra vào phòng hoàn toàn không bị người khác chú ý.`);
+        }
+
+        // 5. Weight-based comments
+        if (currentWeights.priv > 0.45 && scores.priv > 0.70) {
+          explanations.push(`Ưu thế trọng số: Phòng phát huy tối đa lợi thế bảo mật dưới cấu hình ưu tiên riêng tư cao (wP = ${currentWeights.priv.toFixed(2)}).`);
+        }
+        if (currentWeights.acc > 0.45 && scores.acc > 0.70) {
+          explanations.push(`Ưu thế trọng số: Phòng đạt điểm tổng hợp cao nhờ khả năng tiếp cận nhanh dưới cấu hình ưu tiên di chuyển (wA = ${currentWeights.acc.toFixed(2)}).`);
+        }
+
+        // 6. Balanced position evaluation
+        if (scores.acc >= 0.45 && scores.acc <= 0.85 && scores.priv >= 0.45 && scores.priv <= 0.85) {
+          explanations.push(`TRẠNG THÁI CÂN BẰNG VÀNG: Phòng dung hòa xuất sắc giữa khoảng cách di chuyển và độ an tâm riêng tư bảo mật tốt, không đòi hỏi cải tạo không gian phức tạp.`);
         }
         
         rankedList.push({
@@ -950,9 +1129,11 @@
           visibility_indicator: scores.vis,
           privacy_indicator: scores.priv,
           final_score: scores.finalScore,
-          explanation: explanations.join(" ")
+          explanation: `Vị trí tại tầng ${floorNum} của ${bldName}. ${bldDesc}\n${floorDesc}\n${explanations.join("\n")}`
         });
       });
+      
+      console.log("Ranked candidates list built. Count:", rankedList.length);
       
       // Sort and rank candidates
       rankedList.sort((a, b) => b.final_score - a.final_score);
@@ -961,8 +1142,11 @@
       });
       
       currentRankedCandidates = rankedList;
+      console.log("Sorted candidates:", currentRankedCandidates.map(c => `${c.final_rank}: ${c.candidate_room} (${c.final_score.toFixed(4)})`));
       
+      console.log("Calling renderRankings()...");
       renderRankings();
+      console.log("renderRankings() executed.");
       drawGraph();
     }
 
@@ -1103,53 +1287,179 @@
     }
 
     function renderRankings() {
-      const container = document.getElementById("rankings-container");
-      container.innerHTML = "";
+      console.log("renderRankings() invoked. Candidates count:", currentRankedCandidates.length);
       
-      currentRankedCandidates.forEach(item => {
-        const el = document.createElement("div");
-        el.className = `ranking-item ${selectedRoom === item.candidate_room ? 'active' : ''}`;
-        
-        el.innerHTML = `
-          <div class="rank-num">${item.final_rank}</div>
-          <div class="rank-details">
-            <div class="rank-room">${item.candidate_room}</div>
-            <div class="rank-indicators" style="display: flex; gap: 0.75rem; font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">
-              <span>Acc: <strong style="color: #38bdf8;">${item.accessibility_indicator.toFixed(2)}</strong></span>
-              <span>Vis: <strong style="color: #fb7185;">${item.visibility_indicator.toFixed(2)}</strong></span>
-              <span>Priv: <strong style="color: #34d399;">${item.privacy_indicator.toFixed(2)}</strong></span>
-            </div>
+      const primaryContainer = document.getElementById("primary-recommendation-container");
+      const alternativesContainer = document.getElementById("alternative-rooms-container");
+      const listContainer = document.getElementById("rankings-container");
+      
+      if (!primaryContainer || !alternativesContainer || !listContainer) {
+        console.error("CRITICAL: DOM elements for rankings not found!");
+        return;
+      }
+      
+      primaryContainer.innerHTML = "";
+      alternativesContainer.innerHTML = "";
+      listContainer.innerHTML = "";
+      
+      if (currentRankedCandidates.length === 0) {
+        primaryContainer.innerHTML = "<div style='color: var(--text-muted); font-size: 0.75rem; padding: 0.5rem;'>Không có kết quả xếp hạng</div>";
+        return;
+      }
+      
+      // 1. Primary Recommendation (r*) - Rank 1
+      const topRoom = currentRankedCandidates[0];
+      const topCard = document.createElement("div");
+      topCard.style.background = "rgba(16, 185, 129, 0.06)";
+      topCard.style.border = "1.5px solid var(--success)";
+      topCard.style.borderRadius = "8px";
+      topCard.style.padding = "0.75rem";
+      topCard.style.display = "flex";
+      topCard.style.flexDirection = "column";
+      topCard.style.gap = "0.4rem";
+      topCard.style.cursor = "pointer";
+      topCard.style.transition = "background 0.2s";
+      if (selectedRoom === topRoom.candidate_room) {
+        topCard.style.background = "rgba(56, 189, 248, 0.15)";
+      }
+      
+      topCard.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.65rem; color: var(--success); font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase;">Đề xuất tối ưu (r*)</span>
+          <span style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.95rem; font-weight: bold; color: var(--success);">${topRoom.final_score.toFixed(4)}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 1.25rem; font-weight: bold; color: var(--primary);">${topRoom.candidate_room}</span>
+          <div style="display: flex; gap: 0.5rem; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.7rem; color: var(--text-muted);">
+            <span>A: <strong style="color: var(--text-main);">${topRoom.accessibility_indicator.toFixed(4)}</strong></span>
+            <span>V: <strong style="color: var(--text-main);">${topRoom.visibility_indicator.toFixed(4)}</strong></span>
+            <span>P: <strong style="color: var(--text-main);">${topRoom.privacy_indicator.toFixed(4)}</strong></span>
           </div>
-          <div class="rank-score" style="font-family: monospace; font-size: 0.95rem; font-weight: 700; color: var(--success);">${item.final_score.toFixed(3)}</div>
-        `;
+        </div>
+        <div style="font-size: 0.7rem; line-height: 1.35; color: var(--text-muted); border-top: 1px dashed var(--border); padding-top: 0.4rem; margin-top: 0.15rem; white-space: pre-line;">
+          ${topRoom.explanation}
+        </div>
+      `;
+      
+      topCard.addEventListener("click", () => {
+        selectAndFocusRoom(topRoom.candidate_room, topRoom.explanation);
+      });
+      primaryContainer.appendChild(topCard);
+      
+      // 2. Alternative Rooms - Rank 2, 3, 4
+      const alternatives = currentRankedCandidates.slice(1, 4);
+      alternatives.forEach(item => {
+        const card = document.createElement("div");
+        card.style.background = "rgba(255, 255, 255, 0.02)";
+        card.style.border = "1px solid var(--border)";
+        card.style.borderRadius = "8px";
+        card.style.padding = "0.65rem 0.75rem";
+        card.style.display = "flex";
+        card.style.flexDirection = "column";
+        card.style.gap = "0.25rem";
+        card.style.cursor = "pointer";
+        card.style.transition = "background 0.2s, border-color 0.2s";
         
-        el.addEventListener("click", () => {
-          if (selectedRoom === item.candidate_room) {
-            selectedRoom = null;
-            document.getElementById("explanation-overlay").style.display = "none";
-          } else {
-            selectedRoom = item.candidate_room;
-            
-            let bld = item.candidate_room[0];
-            if (bld !== 'A' && bld !== 'B' && bld !== 'C' && bld !== 'D' && bld !== 'E') {
-              bld = "CAMPUS";
-            }
-            if (currentView !== bld) {
-              const tab = document.querySelector(`.tab-btn[data-view="${bld}"]`);
-              if (tab) tab.click();
-            }
-            
-            document.getElementById("exp-room-name").textContent = `(${item.candidate_room})`;
-            document.getElementById("exp-text").textContent = item.explanation;
-            document.getElementById("explanation-overlay").style.display = "block";
-          }
-          
-          renderRankings();
-          drawGraph();
+        if (selectedRoom === item.candidate_room) {
+          card.style.background = "rgba(56, 189, 248, 0.12)";
+          card.style.borderColor = "var(--primary)";
+        }
+        
+        card.addEventListener("mouseover", () => {
+          card.style.background = selectedRoom === item.candidate_room ? "rgba(56, 189, 248, 0.15)" : "var(--bg-card-hover)";
+        });
+        card.addEventListener("mouseout", () => {
+          card.style.background = selectedRoom === item.candidate_room ? "rgba(56, 189, 248, 0.12)" : "rgba(255, 255, 255, 0.02)";
         });
         
-        container.appendChild(el);
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.76rem; font-weight: bold; color: var(--primary);">Hạng ${item.final_rank}: ${item.candidate_room}</span>
+            <span style="font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.82rem; font-weight: bold; color: var(--success);">${item.final_score.toFixed(4)}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.68rem; color: var(--text-muted);">
+            <span>A: <strong style="color: var(--text-main);">${item.accessibility_indicator.toFixed(4)}</strong></span>
+            <span>V: <strong style="color: var(--text-main);">${item.visibility_indicator.toFixed(4)}</strong></span>
+            <span>P: <strong style="color: var(--text-main);">${item.privacy_indicator.toFixed(4)}</strong></span>
+          </div>
+          <div style="font-size: 0.66rem; color: var(--text-muted); line-height: 1.3; border-top: 1px dashed var(--border); padding-top: 0.3rem; margin-top: 0.1rem; white-space: pre-line;">
+            ${item.explanation}
+          </div>
+        `;
+        
+        card.addEventListener("click", () => {
+          selectAndFocusRoom(item.candidate_room, item.explanation);
+        });
+        alternativesContainer.appendChild(card);
       });
+      
+      // 3. Full Rankings Table - Rank 5+
+      const remainingList = currentRankedCandidates.slice(4);
+      remainingList.forEach(item => {
+        const row = document.createElement("div");
+        row.style.display = "grid";
+        row.style.gridTemplateColumns = "2.2rem 5.2rem 1fr 1fr 1fr 3.2rem";
+        row.style.gap = "0.25rem";
+        row.style.fontFamily = "'JetBrains Mono', 'Fira Code', monospace";
+        row.style.fontSize = "0.74rem";
+        row.style.color = "var(--text-main)";
+        row.style.borderBottom = "1px solid var(--border)";
+        row.style.padding = "0.55rem 0";
+        row.style.alignItems = "center";
+        row.style.cursor = "pointer";
+        row.style.transition = "background 0.2s";
+        
+        if (selectedRoom === item.candidate_room) {
+          row.style.background = "rgba(56, 189, 248, 0.15)";
+        }
+        
+        row.addEventListener("mouseover", () => {
+          row.style.background = selectedRoom === item.candidate_room ? "rgba(56, 189, 248, 0.2)" : "var(--bg-card-hover)";
+        });
+        row.addEventListener("mouseout", () => {
+          row.style.background = selectedRoom === item.candidate_room ? "rgba(56, 189, 248, 0.15)" : "transparent";
+        });
+        
+        row.innerHTML = `
+          <div style="font-weight: bold; color: var(--text-muted);">${item.final_rank}</div>
+          <div style="font-weight: bold; color: var(--primary);">${item.candidate_room}</div>
+          <div style="text-align: right;">${item.accessibility_indicator.toFixed(4)}</div>
+          <div style="text-align: right;">${item.visibility_indicator.toFixed(4)}</div>
+          <div style="text-align: right;">${item.privacy_indicator.toFixed(4)}</div>
+          <div style="text-align: right; font-weight: bold; color: var(--success);">${item.final_score.toFixed(4)}</div>
+        `;
+        
+        row.addEventListener("click", () => {
+          selectAndFocusRoom(item.candidate_room, item.explanation);
+        });
+        
+        listContainer.appendChild(row);
+      });
+    }
+
+    function selectAndFocusRoom(room, explanation) {
+      if (selectedRoom === room) {
+        selectedRoom = null;
+        document.getElementById("explanation-overlay").style.display = "none";
+      } else {
+        selectedRoom = room;
+        
+        let bld = room[0];
+        if (bld !== 'A' && bld !== 'B' && bld !== 'C' && bld !== 'D' && bld !== 'E') {
+          bld = "CAMPUS";
+        }
+        if (currentView !== bld) {
+          const tab = document.querySelector(`.tab-btn[data-view="${bld}"]`);
+          if (tab) tab.click();
+        }
+        
+        document.getElementById("exp-room-name").textContent = `(${room})`;
+        document.getElementById("exp-text").textContent = explanation;
+        document.getElementById("explanation-overlay").style.display = "block";
+      }
+      
+      renderRankings();
+      drawGraph();
     }
 
     function drawGraph() {
@@ -1371,14 +1681,16 @@
         
         const isCandidate = currentCandidates.includes(n.id);
         const isSelected = selectedRoom === n.id;
+        const isTopCandidate = currentRankedCandidates.length > 0 && currentRankedCandidates[0].candidate_room === n.id;
+        const isGreenHighlight = isSelected || isTopCandidate;
         
         if (n.type === "room") {
-          // Rooms drawn as bright architectural blueprint rectangles
-          ctx.fillStyle = isCandidate ? "rgba(224, 242, 254, 0.95)" : "#ffffff";
+          // Rooms drawn as bright architectural blueprint rectangles (solid green for top/selected to match legend)
+          ctx.fillStyle = isGreenHighlight ? "#10b981" : (isCandidate ? "rgba(224, 242, 254, 0.95)" : "#ffffff");
           ctx.fillRect(cx - 9, cy - 6, 18, 12);
           
-          ctx.lineWidth = isSelected ? 2.5 : 1.2;
-          ctx.strokeStyle = isSelected ? "var(--success)" : (isCandidate ? "var(--primary)" : "#475569");
+          ctx.lineWidth = 1.2;
+          ctx.strokeStyle = isGreenHighlight ? "#10b981" : (isCandidate ? "#38bdf8" : "#475569");
           ctx.strokeRect(cx - 9, cy - 6, 18, 12);
         } else {
           // Junction/Access points as dots
@@ -1391,12 +1703,12 @@
           ctx.stroke();
         }
         
-        // Highlight candidates with pulsing green/blue rings
-        if (isCandidate) {
+        // Highlight blue candidates with pulsing rings, skip for top/selected solid green room
+        if (isCandidate && !isGreenHighlight) {
           ctx.beginPath();
           ctx.arc(cx, cy, 14, 0, 2 * Math.PI);
-          ctx.strokeStyle = isSelected ? "var(--success)" : "var(--primary)";
-          ctx.lineWidth = isSelected ? 3.0 : 1.8;
+          ctx.strokeStyle = "#38bdf8";
+          ctx.lineWidth = 1.8;
           ctx.setLineDash([4, 3]);
           ctx.stroke();
           ctx.setLineDash([]);
@@ -1405,8 +1717,8 @@
         // Render labels *only* on candidate, hovered, or selected rooms to prevent overlapping clutter
         const isHovered = hoverNode && hoverNode.id === n.id;
         if (isCandidate || isSelected || isHovered) {
-          ctx.fillStyle = isSelected ? "var(--primary-hover)" : "var(--vp-text-main)";
-          ctx.font = isSelected ? "bold 10.5px 'Inter', sans-serif" : "600 9px 'Inter', sans-serif";
+          ctx.fillStyle = isGreenHighlight ? "#047857" : (isSelected ? "#0ea5e9" : "#1e293b");
+          ctx.font = isGreenHighlight ? "bold 11px 'Inter', sans-serif" : (isSelected ? "bold 10.5px 'Inter', sans-serif" : "600 9px 'Inter', sans-serif");
           ctx.textAlign = "center";
           ctx.fillText(n.label || n.id, cx, cy - 10);
         }
@@ -1416,7 +1728,7 @@
       if (hoverNode) {
         ctx.beginPath();
         ctx.arc(transX(hoverNode.x), transY(hoverNode.y), 18, 0, 2 * Math.PI);
-        ctx.strokeStyle = "var(--primary)";
+        ctx.strokeStyle = "#38bdf8";
         ctx.lineWidth = 1.5;
         ctx.stroke();
       }
