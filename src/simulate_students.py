@@ -189,27 +189,32 @@ def choose_gate_pair(config: dict, rng: random.Random) -> tuple[str, str]:
 
 
 def choose_transport_profile(config: dict, rng: random.Random) -> dict:
-    mode = weighted_choice(rng, config.get("transport_modes", {"personal_transport": 0.7, "public_transport": 0.3}))
-    if mode == "personal_transport":
-        entry_gate = config.get("personal_transport_entry_gate", "UIT-GATE-A")
-        exit_gate = config.get("personal_transport_exit_gate", "UIT-GATE-A")
-        anchor = config.get("personal_transport_anchor", "UIT-GARAGE")
+    # Redefined constraint: entry/exit routes are divided equally among Gate A, Gate B, and Garage
+    mode = rng.choice(["gate_a", "gate_b", "garage"])
+    if mode == "garage":
         return {
-            "transport_mode": mode,
-            "entry_gate": entry_gate,
-            "exit_gate": exit_gate,
-            "entry_node": anchor,
-            "exit_node": anchor,
+            "transport_mode": "personal_transport",
+            "entry_gate": "UIT-GATE-A",
+            "exit_gate": "UIT-GATE-A",
+            "entry_node": "UIT-GARAGE",
+            "exit_node": "UIT-GARAGE",
         }
-    entry_gate = weighted_choice(rng, config.get("public_transport_entry_gates", {"UIT-GATE-B": 0.9, "UIT-GATE-A": 0.1}))
-    exit_gate = weighted_choice(rng, config.get("public_transport_exit_gates", {"UIT-GATE-A": 0.99, "UIT-GATE-B": 0.01}))
-    return {
-        "transport_mode": mode,
-        "entry_gate": entry_gate,
-        "exit_gate": exit_gate,
-        "entry_node": entry_gate,
-        "exit_node": exit_gate,
-    }
+    elif mode == "gate_b":
+        return {
+            "transport_mode": "public_transport",
+            "entry_gate": "UIT-GATE-B",
+            "exit_gate": "UIT-GATE-B",
+            "entry_node": "UIT-GATE-B",
+            "exit_node": "UIT-GATE-B",
+        }
+    else:
+        return {
+            "transport_mode": "public_transport",
+            "entry_gate": "UIT-GATE-A",
+            "exit_gate": "UIT-GATE-A",
+            "entry_node": "UIT-GATE-A",
+            "exit_node": "UIT-GATE-A",
+        }
 
 
 def choose_lunch_destination(config: dict, rng: random.Random) -> str:
@@ -425,7 +430,13 @@ def get_candidate_paths(graph: nx.Graph, source: str, target: str, k: int, route
     if cache_key in route_cache:
         return route_cache[cache_key]
     candidates = []
+    shortest_dist = None
     for path in nx.shortest_simple_paths(graph, source, target, weight="distance"):
+        dist = sum(graph[path[i]][path[i+1]].get("distance", 1.0) for i in range(len(path)-1))
+        if shortest_dist is None:
+            shortest_dist = dist
+        if dist > 1.2 * shortest_dist:
+            break
         candidates.append(path)
         if len(candidates) >= k:
             break

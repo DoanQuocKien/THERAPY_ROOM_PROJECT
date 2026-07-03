@@ -394,7 +394,7 @@
     {
       "source": "UIT-GARAGE",
       "target": "B-F1-BUILDING-ENTRANCE",
-      "distance": 65,
+      "distance": 150.0,
       "type": "garage_back_road",
       "bidirectional": true,
       "accessible": true,
@@ -403,7 +403,7 @@
     {
       "source": "UIT-GARAGE",
       "target": "E-F1-LOBBY",
-      "distance": 52,
+      "distance": 150.0,
       "type": "garage_e_route",
       "bidirectional": true,
       "accessible": true,
@@ -412,7 +412,7 @@
     {
       "source": "A-F1-RING-RIGHT-MID",
       "target": "E-F1-LOBBY",
-      "distance": 22,
+      "distance": 5.0,
       "type": "building_a_to_e_crossing",
       "bidirectional": true,
       "accessible": true,
@@ -421,7 +421,7 @@
     {
       "source": "A-F1-RING-TOP-MID",
       "target": "B-F1-BUILDING-ENTRANCE",
-      "distance": 24,
+      "distance": 40.0,
       "type": "building_a_to_b_crossing",
       "bidirectional": true,
       "accessible": true,
@@ -430,7 +430,7 @@
     {
       "source": "A-F1-RING-TOP-RIGHT",
       "target": "B-F1-BUILDING-ENTRANCE",
-      "distance": 22,
+      "distance": 40.0,
       "type": "building_a_to_b_crossing",
       "bidirectional": true,
       "accessible": true,

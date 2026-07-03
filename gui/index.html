@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIT Counseling Location Evaluation Portal</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --bg-card-hover: rgba(30, 41, 59, 0.9);
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      
+      /* Viewport light theme settings */
+      --vp-bg: #f8fafc;
+      --vp-text-main: #1e293b;
+      --vp-text-muted: #64748b;
+      --vp-border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    header .badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Main Container */
+    .app-container {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 60px);
+      overflow: hidden;
+    }
+
+    /* Sidebar controls */
+    .sidebar {
+      width: 440px;
+      background: rgba(15, 23, 42, 0.6);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(12px);
+      padding: 1.5rem;
+      gap: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .card h2 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Inputs fields */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    textarea.input-field {
+      width: 100%;
+      height: 80px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem;
+      color: var(--text-main);
+      font-family: monospace;
+      font-size: 0.75rem;
+      resize: none;
+    }
+
+    textarea.input-field:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Sliders */
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .slider-container input[type="range"] {
+      flex: 1;
+      accent-color: var(--primary);
+    }
+
+    .slider-val {
+      width: 45px;
+      text-align: right;
+      font-family: monospace;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .btn {
+      width: 100%;
+      background: var(--primary);
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Rankings list */
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ranking-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .ranking-item.active {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: var(--primary);
+    }
+
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 0.75rem;
+    }
+
+    .ranking-item.active .rank-num {
+      background: var(--primary);
+      color: #0f172a;
+    }
+
+    .rank-details {
+      flex: 1;
+    }
+
+    .rank-room {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .rank-indicators {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .rank-score {
+      font-family: monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    /* Viewport Area */
+    .viewport-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--vp-bg);
+      position: relative;
+    }
+
+    /* Tabs toggle bar */
+    .tabs-bar {
+      display: flex;
+      background: #1e293b;
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1rem 0 1rem;
+      gap: 0.25rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      border-bottom: none;
+      color: var(--text-muted);
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active {
+      color: var(--primary);
+      background: var(--vp-bg);
+      border-color: var(--vp-border);
+    }
+
+    /* Canvas Map container */
+    .map-canvas-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    canvas {
+      background: transparent;
+      display: block;
+    }
+
+    /* Legend Overlay */
+    .legend-overlay {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--glass-shadow);
+      color: var(--text-main);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .legend-rect {
+      width: 16px;
+      height: 12px;
+      border: 1.2px solid #475569;
+      border-radius: 2px;
+    }
+
+    .heat-gradient {
+      width: 80px;
+      height: 10px;
+      background: linear-gradient(to right, #64748b, #38bdf8, #f59e0b, #ef4444);
+      border-radius: 4px;
+    }
+
+    /* Explanation overlay panel */
+    .explanation-panel {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      max-width: 450px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--glass-shadow);
+      display: none;
+      color: var(--text-main);
+    }
+
+    .explanation-panel h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .explanation-panel p {
+      font-size: 0.75rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* Node Tooltip */
+    .tooltip {
+      position: absolute;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 0.7rem;
+      pointer-events: none;
+      z-index: 100;
+      box-shadow: var(--glass-shadow);
+      display: none;
+      min-width: 260px;
+      color: var(--text-main);
+    }
+
+    .tooltip-title {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .tooltip-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.15rem;
+    }
+
+    .tooltip-label {
+      color: var(--text-muted);
+    }
+
+    .tooltip-val {
+      font-weight: 500;
+      font-family: monospace;
+    }
+
+    /* Loading Overlay Animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UIT Counseling Location Evaluation Portal</h1>
+    <span class="badge">Model: CS117 CAT Xếp Hạng</span>
+  </header>
+
+  <div class="app-container">
+    <!-- Sidebar Controls -->
+    <div class="sidebar">
+      
+      <!-- Inputs Card -->
+      <div class="card">
+        <h2>Bộ Dữ liệu Đầu vào</h2>
+        
+        <div class="form-group">
+          <label for="candidates-json">Danh sách Phòng Ứng viên ($D_3$ - Định dạng JSON):</label>
+          <textarea id="candidates-json" class="input-field" placeholder='["B1.02", "C103"]'></textarea>
+        </div>
+
+        <!-- Collapsible inputs for D1 and D2 -->
+        <div class="form-group">
+          <details>
+            <summary style="cursor:pointer; color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;">
+              Đồ thị Không gian (D2 - Đỉnh & Cạnh JSON)
+            </summary>
+            <textarea id="graph-json" class="input-field" style="height:120px;" placeholder="Dán file đồ thị D2 tại đây..."></textarea>
+          </details>
+        </div>
+
+        <div class="form-group">
+          <details>
+            <summary style="cursor:pointer; color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;">
+              Thời khóa biểu (D1 - Events JSON Subset)
+            </summary>
+            <textarea id="timetable-json" class="input-field" style="height:120px;" placeholder="Dán TKB D1 tại đây..."></textarea>
+          </details>
+        </div>
+        
+        <div class="form-group">
+          <label>Trọng số Điểm số Ưu tiên ($w_A, w_V, w_P$):</label>
+          <div class="form-group">
+            <label style="margin-bottom:0.25rem;">Accessibility ($w_A$):</label>
+            <div class="slider-container">
+              <input type="range" id="weight-acc" min="0" max="1" step="0.05" value="0.35">
+              <span class="slider-val" id="val-acc">0.35</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom:0.25rem;">Visibility ($w_V$):</label>
+            <div class="slider-container">
+              <input type="range" id="weight-vis" min="0" max="1" step="0.05" value="0.15">
+              <span class="slider-val" id="val-vis">0.15</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom:0.25rem;">Privacy ($w_P$):</label>
+            <div class="slider-container">
+              <input type="range" id="weight-priv" min="0" max="1" step="0.05" value="0.50">
+              <span class="slider-val" id="val-priv">0.50</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn" id="btn-calculate">Tính toán & Xếp hạng</button>
+      </div>
+
+      <!-- Rankings Card -->
+      <div class="card" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+        <h2>Bảng Xếp hạng Đề xuất</h2>
+        <div class="ranking-list" id="rankings-container" style="flex: 1; overflow-y: auto;">
+          <!-- Items will be injected by JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Map Viewport -->
+    <div class="viewport-container">
+      
+      <!-- Tabs Bar -->
+      <div class="tabs-bar" id="tabs-container">
+        <button class="tab-btn active" data-view="CAMPUS">Campus (Toàn trường)</button>
+        <button class="tab-btn" data-view="A">Tòa nhà A</button>
+        <button class="tab-btn" data-view="B">Tòa nhà B</button>
+        <button class="tab-btn" data-view="C">Tòa nhà C</button>
+        <button class="tab-btn" data-view="D">Tòa nhà D</button>
+        <button class="tab-btn" data-view="E">Tòa nhà E</button>
+      </div>
+
+      <!-- Canvas Box -->
+      <div class="map-canvas-container" id="canvas-wrapper">
+        <canvas id="map-canvas"></canvas>
+        
+        <!-- Legend Overlay -->
+        <div class="legend-overlay">
+          <div class="legend-item">
+            <div class="legend-rect" style="border: 2.5px dashed var(--primary); background: rgba(224, 242, 254, 0.9);"></div>
+            <span>Phòng ứng cử đề xuất ($D_3$)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-rect" style="background: var(--success); border-color: var(--success);"></div>
+            <span>Đề xuất tối ưu nhất ($r^*$)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-rect" style="background: #ffffff; border-color: #475569;"></div>
+            <span>Phòng học thường (Room)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #64748b; width: 6px; height: 6px;"></div>
+            <span>Nút giao thông / Junction / Access</span>
+          </div>
+          <div class="legend-item">
+            <span style="margin-right: 0.25rem;">Tuyến di chuyển:</span>
+            <div class="heat-gradient"></div>
+            <span style="font-family: monospace; font-size: 0.65rem;">Nhạt → Rõ (Dày)</span>
+          </div>
+        </div>
+
+        <!-- Explanation Overlay Panel -->
+        <div class="explanation-panel" id="explanation-overlay">
+          <h3>Thuyết minh Đánh đổi <span id="exp-room-name" style="color:var(--text-main);"></span></h3>
+          <p id="exp-text"></p>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.75); z-index: 1000; align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(4px);">
+          <div style="border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 45px; height: 45px; animation: spin 1s linear infinite; margin-bottom: 1.25rem; box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);"></div>
+          <div style="color: white; font-weight: 600; font-size: 0.95rem; font-family: 'Inter', sans-serif; letter-spacing: 0.05em;">Đang chạy Dijkstra & Mô phỏng...</div>
+        </div>
+
+      </div>
+
+      <!-- Tooltip -->
+      <div class="tooltip" id="map-tooltip"></div>
+
+    </div>
+  </div>
+
+  <!-- Include our bundled graphs and traffic data -->
+  <script src="gui_data.js"></script>
+
+  <script>
+    // Local copy of ranked candidates
+    let currentRankedCandidates = [];
+    let currentCandidates = [];
+    let currentWeights = { acc: 0.35, vis: 0.15, priv: 0.50 };
+    let currentView = "CAMPUS"; // CAMPUS, A, B, C, D, E
+    let hoverNode = null;
+    let selectedRoom = null;
+
+    // Viewport scaling and panning parameters (initial zoom increased for better spacing)
+    let scale = 1.6;
+    let panX = 0;
+    let panY = 0;
+    
+    // Canvas setup
+    const canvas = document.getElementById("map-canvas");
+    const ctx = canvas.getContext("2d");
+    const wrapper = document.getElementById("canvas-wrapper");
+    
+    // Initialize components
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set default input fields in textareas from bundled js
+      document.getElementById("graph-json").value = JSON.stringify(DEFAULT_UNIFIED_GRAPH, null, 2);
+      document.getElementById("timetable-json").value = JSON.stringify(DEFAULT_TIMETABLE_SUBSET, null, 2);
+
+      // Populate candidates with the official candidate rooms from DEFAULT_RANKED_CANDIDATES
+      const initialCandidates = DEFAULT_RANKED_CANDIDATES.map(item => item.candidate_room);
+      document.getElementById("candidates-json").value = JSON.stringify(initialCandidates, null, 2);
+      
+      // Setup sliders interactions
+      setupSliders();
+      
+      // Setup tab toggles
+      setupTabs();
+      
+      // Setup calculate button
+      document.getElementById("btn-calculate").addEventListener("click", () => {
+        runEvaluation();
+      });
+      
+      // Canvas sizing and mouse listening
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+      setupCanvasInteractions();
+      
+      // Run initial ranking
+      runEvaluation();
+    });
+
+    function setupSliders() {
+      const accSlider = document.getElementById("weight-acc");
+      const visSlider = document.getElementById("weight-vis");
+      const privSlider = document.getElementById("weight-priv");
+      
+      const accVal = document.getElementById("val-acc");
+      const visVal = document.getElementById("val-vis");
+      const privVal = document.getElementById("val-priv");
+      
+      function balanceSliders(changedId) {
+        let acc = parseFloat(accSlider.value);
+        let vis = parseFloat(visSlider.value);
+        let priv = parseFloat(privSlider.value);
+        
+        let sum = acc + vis + priv;
+        if (sum === 0) {
+          acc = 0.34; vis = 0.33; priv = 0.33;
+        } else {
+          acc = acc / sum;
+          vis = vis / sum;
+          priv = priv / sum;
+        }
+        
+        accSlider.value = acc.toFixed(2);
+        visSlider.value = vis.toFixed(2);
+        privSlider.value = priv.toFixed(2);
+        
+        accVal.textContent = acc.toFixed(2);
+        visVal.textContent = vis.toFixed(2);
+        privVal.textContent = priv.toFixed(2);
+        
+        currentWeights = { acc, vis, priv };
+      }
+      
+      accSlider.addEventListener("input", () => balanceSliders("acc"));
+      visSlider.addEventListener("input", () => balanceSliders("vis"));
+      privSlider.addEventListener("input", () => balanceSliders("priv"));
+    }
+
+    function setupTabs() {
+      const tabs = document.querySelectorAll(".tab-btn");
+      tabs.forEach(tab => {
+        tab.addEventListener("click", (e) => {
+          tabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          currentView = tab.dataset.view;
+          
+          // Reset viewport zoom/pan (start at 1.6 scale for spacing out rooms)
+          scale = 1.6;
+          panX = 0;
+          panY = 0;
+          
+          drawGraph();
+        });
+      });
+    }
+
+    function resizeCanvas() {
+      const rect = wrapper.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      
+      // Scale canvas backing store
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      
+      // Scale coordinates in JS
+      ctx.resetTransform();
+      ctx.scale(dpr, dpr);
+      
+      drawGraph();
+    }
+
+    // Normalized Edge ID generator
+    function getEdgeKey(u, v) {
+      return u < v ? `${u}__${v}` : `${v}__${u}`;
+    }
+
+    // Reverted Dijkstra implementation (sorting nodesToVisit queue on each step as requested)
+    function dijkstra(start, graphNodes, adj) {
+      const dists = {};
+      const visited = {};
+      
+      Object.keys(graphNodes).forEach(nid => {
+        dists[nid] = Infinity;
+      });
+      dists[start] = 0;
+      
+      const nodesToVisit = [start];
+      
+      while (nodesToVisit.length > 0) {
+        // Sort queue by current distance
+        nodesToVisit.sort((a, b) => dists[a] - dists[b]);
+        const u = nodesToVisit.shift();
+        
+        if (visited[u]) continue;
+        visited[u] = true;
+        
+        const neighbors = adj[u] || {};
+        for (const v in neighbors) {
+          const alt = dists[u] + neighbors[v];
+          if (alt < dists[v]) {
+            dists[v] = alt;
+            nodesToVisit.push(v);
+          }
+        }
+      }
+      return dists;
+    }
+
+    // Direct JS implementation of ranking calculations with loading overlay
+    function runEvaluation() {
+      const loader = document.getElementById("loading-overlay");
+      loader.style.display = "flex";
+
+      // Allow 60ms delay for DOM renderer to display the spinner before blocking calculations
+      setTimeout(() => {
+        try {
+          evaluateEngine();
+        } finally {
+          loader.style.display = "none";
+        }
+      }, 60);
+    }
+
+    function evaluateEngine() {
+      let customGraph, customTimetable;
+      try {
+        currentCandidates = JSON.parse(document.getElementById("candidates-json").value);
+        customGraph = JSON.parse(document.getElementById("graph-json").value);
+        customTimetable = JSON.parse(document.getElementById("timetable-json").value);
+      } catch (err) {
+        alert("Lỗi định dạng JSON nhập liệu: " + err.message);
+        return;
+      }
+      
+      // Parse custom graph nodes and edges
+      const allGraphNodes = {};
+      const allGraphEdges = [];
+      
+      customGraph.nodes.forEach(n => {
+        allGraphNodes[n.id] = { ...n };
+      });
+      customGraph.edges.forEach(e => {
+        allGraphEdges.push(e);
+      });
+      
+      // Build adjacency list for Dijkstra routing
+      const adj = {};
+      Object.keys(allGraphNodes).forEach(nid => adj[nid] = {});
+      
+      allGraphEdges.forEach(e => {
+        if (allGraphNodes[e.source] && allGraphNodes[e.target]) {
+          const dist = parseFloat(e.distance || 0);
+          adj[e.source][e.target] = dist;
+          adj[e.target][e.source] = dist;
+        }
+      });
+      
+      // 1. Run in-browser student traffic simulation based on custom graph and timetable!
+      const simulatedTraffic = simulateTraffic(customTimetable, customGraph, adj);
+      const trafficMap = simulatedTraffic.nodeTraffic;
+      window.edgeTrafficMap = simulatedTraffic.edgeTraffic;
+      
+      // Save globally for canvas rendering
+      window.currentGraphNodes = allGraphNodes;
+      window.currentGraphEdges = allGraphEdges;
+      window.nodeTrafficMap = trafficMap;
+
+      // Safe building helper matching rank_candidates.py logic
+      function getNodeBuilding(nodeId, attrs) {
+        if (attrs.building) return attrs.building;
+        if (nodeId.startsWith("UIT-")) return "UIT";
+        const prefixes = ["A-", "B", "C", "D", "E"];
+        for (let i = 0; i < prefixes.length; i++) {
+          if (nodeId.startsWith(prefixes[i])) return prefixes[i].replace("-", "");
+        }
+        return null;
+      }
+      
+      // BFS single source Dijkstra for exposure zone calculations
+      function getZoneNodes(startNode, maxDist) {
+        if (!allGraphNodes[startNode]) return {};
+        const startAttrs = allGraphNodes[startNode];
+        const startBld = getNodeBuilding(startNode, startAttrs);
+        const startFloor = startAttrs.floor;
+        
+        const dists = dijkstra(startNode, allGraphNodes, adj);
+        const filtered = {};
+        
+        Object.keys(dists).forEach(nid => {
+          const d = dists[nid];
+          if (d <= maxDist) {
+            const nAttrs = allGraphNodes[nid];
+            const nBld = getNodeBuilding(nid, nAttrs);
+            
+            const sameBld = (nBld === startBld);
+            const sameFloor = (String(nAttrs.floor) === String(startFloor));
+            
+            if (sameBld && sameFloor) {
+              filtered[nid] = d;
+            }
+          }
+        });
+        return filtered;
+      }
+
+      // Gather list of all room nodes in graph
+      const allRooms = Object.keys(allGraphNodes).filter(nid => allGraphNodes[nid].type === "room");
+      const coreNodes = Object.keys(allGraphNodes).filter(nid => {
+        return allGraphNodes[nid].type === "room" && (trafficMap[nid] || 0) > 0;
+      });
+      
+      // Pre-compute Accessibility, Visibility, Privacy for EVERY room in the graph
+      const wtcScores = {};
+      const rawVisScores = {};
+      const rawRiskScores = {};
+      
+      allRooms.forEach(r => {
+        // WTC
+        let totalWeightedDist = 0.0;
+        let totalTraffic = 0.0;
+        const distsFromR = dijkstra(r, allGraphNodes, adj);
+        
+        coreNodes.forEach(v_c => {
+          const traffic = trafficMap[v_c] || 1.0;
+          const dist = distsFromR[v_c];
+          if (dist !== undefined && dist !== Infinity) {
+            totalWeightedDist += traffic * dist;
+            totalTraffic += traffic;
+          }
+        });
+        wtcScores[r] = totalTraffic > 0 ? (totalWeightedDist / totalTraffic) : 9999.0;
+        
+        // Visibility
+        let accessNode = r + "-ACCESS";
+        if (!allGraphNodes[accessNode]) accessNode = r;
+        const ez = getZoneNodes(accessNode, 10.0);
+        let visScore = 0.0;
+        Object.keys(ez).forEach(v => {
+          const d = ez[v];
+          const traffic = trafficMap[v] || 0.0;
+          const lam = 1.0 / (1.0 + 0.1 * d);
+          visScore += traffic * lam;
+        });
+        rawVisScores[r] = visScore;
+        
+        // Privacy
+        const sz = getZoneNodes(accessNode, 3.0);
+        let riskScore = 0.0;
+        Object.keys(sz).forEach(v => {
+          riskScore += (trafficMap[v] || 0.0);
+        });
+        rawRiskScores[r] = riskScore;
+      });
+      
+      // Normalize globally over all rooms in the graph
+      const wtcVals = Object.values(wtcScores);
+      const wtcMin = Math.min(...wtcVals);
+      const wtcMax = Math.max(...wtcVals);
+      
+      const visVals = Object.values(rawVisScores);
+      const visMin = Math.min(...visVals);
+      const visMax = Math.max(...visVals);
+      
+      const riskVals = Object.values(rawRiskScores);
+      const riskMin = Math.min(...riskVals);
+      const riskMax = Math.max(...riskVals);
+      
+      // Store globally for tooltip lookup
+      window.allRoomsScoreMap = {};
+      allRooms.forEach(r => {
+        const wtc = wtcScores[r];
+        const acc = wtcMax === wtcMin ? 1.0 : ((wtcMax - wtc) / (wtcMax - wtcMin));
+        
+        const visVal = rawVisScores[r];
+        const vis = visMax === visMin ? 1.0 : ((visVal - visMin) / (visMax - visMin));
+        
+        const riskVal = rawRiskScores[r];
+        const priv = riskMax === riskMin ? 1.0 : ((riskMax - riskVal) / (riskMax - riskMin));
+        
+        const finalScore = currentWeights.acc * acc + currentWeights.vis * vis + currentWeights.priv * priv;
+        
+        window.allRoomsScoreMap[r] = {
+          acc,
+          vis,
+          priv,
+          finalScore,
+          wtc,
+          rawVis: visVal,
+          rawRisk: riskVal
+        };
+      });
+
+      // Filter and score valid candidate rooms
+      const validCandidates = currentCandidates.filter(r => allGraphNodes[r]);
+      
+      const rankedList = [];
+      validCandidates.forEach(r => {
+        const scores = window.allRoomsScoreMap[r];
+        
+        // Generate qualitative trade-off explanation
+        const explanations = [];
+        if (scores.priv < 0.3) {
+          explanations.push(`Mật độ giao thông trước phòng ${r} rất lớn (Exposure Risk thô: ${scores.rawRisk.toFixed(1)} lượt). Yêu cầu lắp đặt thêm vách cách âm, rèm cửa che tầm nhìn và biển báo hạn chế tụ tập trước cửa nếu lựa chọn vị trí này.`);
+        }
+        if (scores.acc < 0.3) {
+          explanations.push(`Vị trí phòng ${r} cách xa giảng đường chính (nỗ lực đi bộ trung bình WTC: ${scores.wtc.toFixed(1)}m). Cần thiết lập sơ đồ hướng dẫn tại sảnh chính các tòa nhà để sinh viên dễ dàng định vị lối đi.`);
+        }
+        if (scores.acc >= 0.5 && scores.acc <= 0.8 && scores.vis >= 0.5 && scores.vis <= 0.8 && scores.priv >= 0.5 && scores.priv <= 0.8) {
+          explanations.push(`Đây là vị trí cân bằng rất tốt, đáp ứng hài hòa cả 3 tiêu chí tiếp cận (Acc: ${scores.acc.toFixed(2)}), riêng tư (Priv: ${scores.priv.toFixed(2)}) và nhận diện tự nhiên (Vis: ${scores.vis.toFixed(2)}).`);
+        }
+        if (explanations.length === 0) {
+          explanations.push(`Phòng ${r} có điểm tiếp cận ${scores.acc.toFixed(2)}, độ hiển thị ${scores.vis.toFixed(2)}, độ riêng tư ${scores.priv.toFixed(2)}. WTC đi bộ: ${scores.wtc.toFixed(1)}m, Visibility thô: ${scores.rawVis.toFixed(1)}, Risk thô: ${scores.rawRisk.toFixed(1)}.`);
+        }
+        
+        rankedList.push({
+          candidate_room: r,
+          accessibility_indicator: scores.acc,
+          visibility_indicator: scores.vis,
+          privacy_indicator: scores.priv,
+          final_score: scores.finalScore,
+          explanation: explanations.join(" ")
+        });
+      });
+      
+      // Sort and rank candidates
+      rankedList.sort((a, b) => b.final_score - a.final_score);
+      rankedList.forEach((item, index) => {
+        item.final_rank = index + 1;
+      });
+      
+      currentRankedCandidates = rankedList;
+      
+      renderRankings();
+      drawGraph();
+    }
+
+    // In-browser traffic simulation engine (runs Dijkstra transition-routing)
+    function simulateTraffic(timetable, graphData, adj) {
+      const nodeTraffic = {};
+      const edgeTraffic = {};
+      
+      // Initialize
+      graphData.nodes.forEach(n => {
+        nodeTraffic[n.id] = 0;
+      });
+      graphData.edges.forEach(e => {
+        const key = getEdgeKey(e.source, e.target);
+        edgeTraffic[key] = 0;
+      });
+      
+      // Group events by class_group and day
+      const groups = {};
+      timetable.forEach(evt => {
+        if (!evt.room_id || !evt.class_group || !evt.day) return;
+        const key = `${evt.class_group}__${evt.day}`;
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(evt);
+      });
+      
+      // Sort each group by start_period
+      Object.keys(groups).forEach(key => {
+        groups[key].sort((a, b) => a.start_period - b.start_period);
+      });
+      
+      // Shortest path helper
+      function getDijkstraPath(start, end) {
+        const dists = {};
+        const visited = {};
+        const parent = {};
+        
+        graphData.nodes.forEach(n => {
+          dists[n.id] = Infinity;
+        });
+        dists[start] = 0;
+        
+        const nodesToVisit = [start];
+        while (nodesToVisit.length > 0) {
+          nodesToVisit.sort((a, b) => dists[a] - dists[b]);
+          const u = nodesToVisit.shift();
+          
+          if (visited[u]) continue;
+          visited[u] = true;
+          
+          if (u === end) break;
+          
+          const neighbors = adj[u] || {};
+          for (const v in neighbors) {
+            const alt = dists[u] + neighbors[v];
+            if (alt < dists[v]) {
+              dists[v] = alt;
+              parent[v] = u;
+              nodesToVisit.push(v);
+            }
+          }
+        }
+        
+        const path = [];
+        let curr = end;
+        if (dists[end] === Infinity) return [];
+        while (curr) {
+          path.unshift(curr);
+          curr = parent[curr];
+        }
+        return path;
+      }
+      
+      // Accumulate counts along path
+      function addPathTraffic(path, weight) {
+        if (path.length === 0) return;
+        path.forEach(nid => {
+          if (nodeTraffic[nid] !== undefined) {
+            nodeTraffic[nid] += weight;
+          }
+        });
+        for (let i = 0; i < path.length - 1; i++) {
+          const ekey = getEdgeKey(path[i], path[i+1]);
+          if (edgeTraffic[ekey] !== undefined) {
+            edgeTraffic[ekey] += weight;
+          }
+        }
+      }
+      
+      // Run routing simulation
+      Object.keys(groups).forEach(gkey => {
+        const evts = groups[gkey];
+        if (evts.length === 0) return;
+        
+        const weight = parseInt(evts[0].enrollment_estimate || 45);
+        
+        // Redefined constraint: entry/exit routes are divided equally (1/3 each) among UIT-GATE-A, UIT-GATE-B, and UIT-GARAGE
+        let hashVal = 0;
+        for (let j = 0; j < gkey.length; j++) {
+          hashVal = (hashVal * 31 + gkey.charCodeAt(j)) % 99;
+        }
+        
+        let startNode, endNode;
+        if (hashVal < 33) {
+          // Garage (33%)
+          startNode = "UIT-GARAGE";
+          endNode = "UIT-GARAGE";
+        } else if (hashVal < 66) {
+          // Gate B (33%)
+          startNode = "UIT-GATE-B";
+          endNode = "UIT-GATE-B";
+        } else {
+          // Gate A (33%)
+          startNode = "UIT-GATE-A";
+          endNode = "UIT-GATE-A";
+        }
+        
+        // Entry path
+        const firstRoom = evts[0].room_id;
+        const entryPath = getDijkstraPath(startNode, firstRoom);
+        addPathTraffic(entryPath, weight);
+        
+        // Class-to-class transitions
+        for (let i = 0; i < evts.length - 1; i++) {
+          const fromRoom = evts[i].room_id;
+          const toRoom = evts[i+1].room_id;
+          const transPath = getDijkstraPath(fromRoom, toRoom);
+          addPathTraffic(transPath, weight);
+        }
+        
+        // Exit path
+        const lastRoom = evts[evts.length - 1].room_id;
+        const exitPath = getDijkstraPath(lastRoom, endNode);
+        addPathTraffic(exitPath, weight);
+      });
+      
+      return { nodeTraffic, edgeTraffic };
+    }
+
+    function renderRankings() {
+      const container = document.getElementById("rankings-container");
+      container.innerHTML = "";
+      
+      currentRankedCandidates.forEach(item => {
+        const el = document.createElement("div");
+        el.className = `ranking-item ${selectedRoom === item.candidate_room ? 'active' : ''}`;
+        
+        el.innerHTML = `
+          <div class="rank-num">${item.final_rank}</div>
+          <div class="rank-details">
+            <div class="rank-room">${item.candidate_room}</div>
+            <div class="rank-indicators" style="display: flex; gap: 0.75rem; font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">
+              <span>Acc: <strong style="color: #38bdf8;">${item.accessibility_indicator.toFixed(2)}</strong></span>
+              <span>Vis: <strong style="color: #fb7185;">${item.visibility_indicator.toFixed(2)}</strong></span>
+              <span>Priv: <strong style="color: #34d399;">${item.privacy_indicator.toFixed(2)}</strong></span>
+            </div>
+          </div>
+          <div class="rank-score" style="font-family: monospace; font-size: 0.95rem; font-weight: 700; color: var(--success);">${item.final_score.toFixed(3)}</div>
+        `;
+        
+        el.addEventListener("click", () => {
+          if (selectedRoom === item.candidate_room) {
+            selectedRoom = null;
+            document.getElementById("explanation-overlay").style.display = "none";
+          } else {
+            selectedRoom = item.candidate_room;
+            
+            let bld = item.candidate_room[0];
+            if (bld !== 'A' && bld !== 'B' && bld !== 'C' && bld !== 'D' && bld !== 'E') {
+              bld = "CAMPUS";
+            }
+            if (currentView !== bld) {
+              const tab = document.querySelector(`.tab-btn[data-view="${bld}"]`);
+              if (tab) tab.click();
+            }
+            
+            document.getElementById("exp-room-name").textContent = `(${item.candidate_room})`;
+            document.getElementById("exp-text").textContent = item.explanation;
+            document.getElementById("explanation-overlay").style.display = "block";
+          }
+          
+          renderRankings();
+          drawGraph();
+        });
+        
+        container.appendChild(el);
+      });
+    }
+
+    function drawGraph() {
+      if (!window.currentGraphNodes) return;
+      
+      // Clear viewport
+      ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      
+      let activeNodes = [];
+      let activeEdges = [];
+      
+      const trafficMap = window.nodeTrafficMap || {};
+      const edgeTrafficMap = window.edgeTrafficMap || {};
+      
+      const maxTrafficVal = Math.max(...Object.values(trafficMap), 1.0);
+      const maxEdgeTraffic = Math.max(...Object.values(edgeTrafficMap), 1.0);
+      
+      if (currentView === "CAMPUS") {
+        activeNodes = Object.values(window.currentGraphNodes).filter(n => n.building === "UIT");
+        activeEdges = window.currentGraphEdges.filter(e => {
+          const fromNode = window.currentGraphNodes[e.source];
+          const toNode = window.currentGraphNodes[e.target];
+          return fromNode && toNode && fromNode.building === "UIT" && toNode.building === "UIT";
+        });
+      } else {
+        const bg = BUILDING_GRAPHS[currentView];
+        if (!bg) return;
+        
+        // Find floor bounds to calculate horizontal spacing
+        let minFloorX = Infinity, maxFloorX = -Infinity;
+        let minFloorY = Infinity, maxFloorY = -Infinity;
+        Object.keys(bg.floors).forEach(fKey => {
+          bg.floors[fKey].nodes.forEach(n => {
+            if (n.x < minFloorX) minFloorX = n.x;
+            if (n.x > maxFloorX) maxFloorX = n.x;
+            if (n.y < minFloorY) minFloorY = n.y;
+            if (n.y > maxFloorY) maxFloorY = n.y;
+          });
+        });
+        const floorW = maxFloorX - minFloorX || 200;
+        const floorSpacing = floorW + 150; 
+        
+        Object.keys(bg.floors).forEach(fKey => {
+          const floor = bg.floors[fKey];
+          const fIndex = parseInt(fKey);
+          
+          floor.nodes.forEach(n => {
+            activeNodes.push({
+              ...n,
+              // Separate floors horizontally on a subplane
+              x: n.x + (fIndex - 1) * floorSpacing,
+              y: n.y
+            });
+          });
+          floor.edges.forEach(e => activeEdges.push(e));
+        });
+        if (bg.inter_floor_edges) {
+          bg.inter_floor_edges.forEach(e => activeEdges.push(e));
+        }
+      }
+      
+      if (activeNodes.length === 0) return;
+      
+      // 1. Center boundaries
+      const xVals = activeNodes.map(n => n.x);
+      const yVals = activeNodes.map(n => n.y);
+      const minX = Math.min(...xVals);
+      const maxX = Math.max(...xVals);
+      const minY = Math.min(...yVals);
+      const maxY = Math.max(...yVals);
+      
+      const graphW = maxX - minX || 1;
+      const graphH = maxY - minY || 1;
+      
+      const padding = 50;
+      const fitScaleX = (canvas.clientWidth - padding * 2) / graphW;
+      const fitScaleY = (canvas.clientHeight - padding * 2) / graphH;
+      const fitScale = Math.min(fitScaleX, fitScaleY) * scale;
+      
+      const centerOffsetX = (canvas.clientWidth - graphW * fitScale) / 2 - minX * fitScale + panX;
+      const centerOffsetY = (canvas.clientHeight - graphH * fitScale) / 2 - minY * fitScale + panY;
+      
+      function transX(x) { return x * fitScale + centerOffsetX; }
+      function transY(y) { return y * fitScale + centerOffsetY; }
+      
+      window.canvasTransform = {
+        fitScale,
+        offsetX: centerOffsetX,
+        offsetY: centerOffsetY,
+        minX, maxX, minY, maxY,
+        transX, transY,
+        invX: (cx) => (cx - centerOffsetX) / fitScale,
+        invY: (cy) => (cy - centerOffsetY) / fitScale
+      };
+      
+      // Draw grid paper lines background
+      const gridSize = 50;
+      ctx.strokeStyle = "#e2e8f0";
+      ctx.lineWidth = 0.5;
+      
+      const startGridX = Math.floor(window.canvasTransform.invX(0) / gridSize) * gridSize;
+      const endGridX = Math.ceil(window.canvasTransform.invX(canvas.clientWidth) / gridSize) * gridSize;
+      const startGridY = Math.floor(window.canvasTransform.invY(0) / gridSize) * gridSize;
+      const endGridY = Math.ceil(window.canvasTransform.invY(canvas.clientHeight) / gridSize) * gridSize;
+      
+      for (let x = startGridX; x <= endGridX; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(transX(x), 0);
+        ctx.lineTo(transX(x), canvas.clientHeight);
+        ctx.stroke();
+      }
+      for (let y = startGridY; y <= endGridY; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, transY(y));
+        ctx.lineTo(canvas.clientWidth, transY(y));
+        ctx.stroke();
+      }
+
+      // Draw subplane frames for floors if inside building view
+      if (currentView !== "CAMPUS") {
+        const bg = BUILDING_GRAPHS[currentView];
+        if (bg) {
+          let minFloorX = Infinity, maxFloorX = -Infinity;
+          let minFloorY = Infinity, maxFloorY = -Infinity;
+          Object.keys(bg.floors).forEach(fKey => {
+            bg.floors[fKey].nodes.forEach(n => {
+              if (n.x < minFloorX) minFloorX = n.x;
+              if (n.x > maxFloorX) maxFloorX = n.x;
+              if (n.y < minFloorY) minFloorY = n.y;
+              if (n.y > maxFloorY) maxFloorY = n.y;
+            });
+          });
+          const floorW = maxFloorX - minFloorX || 200;
+          const floorH = maxFloorY - minFloorY || 150;
+          const floorSpacing = floorW + 150;
+
+          Object.keys(bg.floors).forEach(fKey => {
+            const fIndex = parseInt(fKey);
+            const fxMin = minFloorX + (fIndex - 1) * floorSpacing;
+            const fxMax = maxFloorX + (fIndex - 1) * floorSpacing;
+            
+            // Draw floor frame rectangle
+            ctx.strokeStyle = "rgba(100, 116, 139, 0.25)";
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([5, 5]);
+            
+            const pxMin = transX(fxMin) - 30;
+            const pxMax = transX(fxMax) + 30;
+            const pyMin = transY(minFloorY) - 30;
+            const pyMax = transY(maxFloorY) + 30;
+            
+            ctx.strokeRect(pxMin, pyMin, pxMax - pxMin, pyMax - pyMin);
+            ctx.setLineDash([]);
+            
+            // Fill subplane background very faintly
+            ctx.fillStyle = "rgba(241, 245, 249, 0.4)";
+            ctx.fillRect(pxMin, pyMin, pxMax - pxMin, pyMax - pyMin);
+            
+            // Draw floor subplane label
+            ctx.fillStyle = "#475569";
+            ctx.font = "bold 12px 'Inter', sans-serif";
+            ctx.textAlign = "left";
+            ctx.fillText(`MẶT BẰNG TẦNG ${fIndex}`, pxMin + 15, pyMin + 20);
+          });
+        }
+      }
+      
+      // 2. Draw Edges with visible glow representing pathways and routes students take
+      activeEdges.forEach(e => {
+        const fromNode = activeNodes.find(n => n.id === e.source);
+        const toNode = activeNodes.find(n => n.id === e.target);
+        
+        if (fromNode && toNode) {
+          const edgeId = getEdgeKey(e.source, e.target);
+          const traffic = edgeTrafficMap[edgeId] || 0;
+          
+          ctx.beginPath();
+          ctx.moveTo(transX(fromNode.x), transY(fromNode.y));
+          ctx.lineTo(transX(toNode.x), transY(toNode.y));
+          
+          if (traffic > 0) {
+            const ratio = traffic / maxEdgeTraffic;
+            ctx.lineWidth = 2.0 + ratio * 8.0; // thicker for heavy student pathways
+            
+            // Glow color coding: light blue -> orange -> solid red
+            if (ratio < 0.25) {
+              ctx.strokeStyle = `rgba(56, 189, 248, ${0.45 + ratio * 0.4})`;
+            } else if (ratio < 0.65) {
+              ctx.strokeStyle = `rgba(245, 158, 11, ${0.5 + ratio * 0.4})`;
+            } else {
+              ctx.strokeStyle = `rgba(239, 68, 68, ${0.65 + ratio * 0.35})`;
+            }
+          } else {
+            // Idle hallway / connection
+            ctx.strokeStyle = "#cbd5e1";
+            ctx.lineWidth = 1.2;
+          }
+          ctx.stroke();
+        }
+      });
+      
+      // 3. Draw Nodes
+      activeNodes.forEach(n => {
+        const cx = transX(n.x);
+        const cy = transY(n.y);
+        const traffic = trafficMap[n.id] || 0.0;
+        
+        let nodeColor = "#64748b"; // default junction gray
+        if (traffic > 0) {
+          const ratio = Math.min(traffic / (maxTrafficVal * 0.5), 1.0);
+          if (ratio < 0.3) {
+            nodeColor = "#0ea5e9"; // active blue
+          } else if (ratio < 0.7) {
+            nodeColor = "#d97706"; // active amber
+          } else {
+            nodeColor = "#dc2626"; // active red
+          }
+        }
+        
+        const isCandidate = currentCandidates.includes(n.id);
+        const isSelected = selectedRoom === n.id;
+        
+        if (n.type === "room") {
+          // Rooms drawn as bright architectural blueprint rectangles
+          ctx.fillStyle = isCandidate ? "rgba(224, 242, 254, 0.95)" : "#ffffff";
+          ctx.fillRect(cx - 9, cy - 6, 18, 12);
+          
+          ctx.lineWidth = isSelected ? 2.5 : 1.2;
+          ctx.strokeStyle = isSelected ? "var(--success)" : (isCandidate ? "var(--primary)" : "#475569");
+          ctx.strokeRect(cx - 9, cy - 6, 18, 12);
+        } else {
+          // Junction/Access points as dots
+          ctx.beginPath();
+          ctx.arc(cx, cy, 3.5, 0, 2 * Math.PI);
+          ctx.fillStyle = nodeColor;
+          ctx.fill();
+          ctx.strokeStyle = "#ffffff";
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+        
+        // Highlight candidates with pulsing green/blue rings
+        if (isCandidate) {
+          ctx.beginPath();
+          ctx.arc(cx, cy, 14, 0, 2 * Math.PI);
+          ctx.strokeStyle = isSelected ? "var(--success)" : "var(--primary)";
+          ctx.lineWidth = isSelected ? 3.0 : 1.8;
+          ctx.setLineDash([4, 3]);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+        
+        // Render labels *only* on candidate, hovered, or selected rooms to prevent overlapping clutter
+        const isHovered = hoverNode && hoverNode.id === n.id;
+        if (isCandidate || isSelected || isHovered) {
+          ctx.fillStyle = isSelected ? "var(--primary-hover)" : "var(--vp-text-main)";
+          ctx.font = isSelected ? "bold 10.5px 'Inter', sans-serif" : "600 9px 'Inter', sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText(n.label || n.id, cx, cy - 10);
+        }
+      });
+      
+      // Draw hover node halo
+      if (hoverNode) {
+        ctx.beginPath();
+        ctx.arc(transX(hoverNode.x), transY(hoverNode.y), 18, 0, 2 * Math.PI);
+        ctx.strokeStyle = "var(--primary)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+    }
+
+    function setupCanvasInteractions() {
+      const tooltip = document.getElementById("map-tooltip");
+      let isDragging = false;
+      let startMouseX = 0;
+      let startMouseY = 0;
+      
+      canvas.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startMouseX = e.clientX - panX;
+        startMouseY = e.clientY - panY;
+      });
+      
+      canvas.addEventListener("mousemove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        
+        if (isDragging) {
+          panX = e.clientX - startMouseX;
+          panY = e.clientY - startMouseY;
+          drawGraph();
+          tooltip.style.display = "none";
+          return;
+        }
+        
+        if (!window.canvasTransform) return;
+        const transform = window.canvasTransform;
+        
+        let foundNode = null;
+        let activeNodes = [];
+        
+        if (currentView === "CAMPUS") {
+          activeNodes = Object.values(window.currentGraphNodes).filter(n => n.building === "UIT");
+        } else {
+          // Fetch building layout and apply matching horizontal offsets for click-testing
+          const bg = BUILDING_GRAPHS[currentView];
+          if (bg) {
+            let minFloorX = Infinity, maxFloorX = -Infinity;
+            Object.keys(bg.floors).forEach(fKey => {
+              bg.floors[fKey].nodes.forEach(n => {
+                if (n.x < minFloorX) minFloorX = n.x;
+                if (n.x > maxFloorX) maxFloorX = n.x;
+              });
+            });
+            const floorW = maxFloorX - minFloorX || 200;
+            const floorSpacing = floorW + 150;
+
+            Object.keys(bg.floors).forEach(fKey => {
+              const floor = bg.floors[fKey];
+              const fIndex = parseInt(fKey);
+              floor.nodes.forEach(n => {
+                activeNodes.push({
+                  ...n,
+                  x: n.x + (fIndex - 1) * floorSpacing,
+                  y: n.y
+                });
+              });
+            });
+          }
+        }
+        
+        for (let i = 0; i < activeNodes.length; i++) {
+          const n = activeNodes[i];
+          const nx = transform.transX(n.x);
+          const ny = transform.transY(n.y);
+          const dist = Math.hypot(mx - nx, my - ny);
+          
+          if (dist <= 14) {
+            foundNode = n;
+            break;
+          }
+        }
+        
+        if (foundNode !== hoverNode) {
+          hoverNode = foundNode;
+          drawGraph();
+        }
+        
+        if (hoverNode) {
+          const traffic = (window.nodeTrafficMap && window.nodeTrafficMap[hoverNode.id]) || 0;
+          const cand = currentRankedCandidates.find(item => item.candidate_room === hoverNode.id);
+          const scoreCard = window.allRoomsScoreMap ? window.allRoomsScoreMap[hoverNode.id] : null;
+          
+          let tooltipHtml = `
+            <div class="tooltip-title">${hoverNode.label || hoverNode.id}</div>
+            <div class="tooltip-row">
+              <span class="tooltip-label">Loại đỉnh:</span>
+              <span class="tooltip-val">${hoverNode.type}</span>
+            </div>
+            <div class="tooltip-row">
+              <span class="tooltip-label">Lưu lượng tuần:</span>
+              <span class="tooltip-val">${traffic}</span>
+            </div>
+          `;
+          
+          if (hoverNode.type === "room" && scoreCard) {
+            tooltipHtml += `
+              <div style="border-top:1px solid var(--border); margin-top:0.4rem; padding-top:0.4rem;"></div>
+              <div class="tooltip-row">
+                <span class="tooltip-label">Tiếp cận (A):</span>
+                <span class="tooltip-val">${scoreCard.acc.toFixed(2)} (WTC: ${scoreCard.wtc.toFixed(1)}m)</span>
+              </div>
+              <div class="tooltip-row">
+                <span class="tooltip-label">Hiển thị (V):</span>
+                <span class="tooltip-val">${scoreCard.vis.toFixed(2)} (Thô: ${scoreCard.rawVis.toFixed(1)})</span>
+              </div>
+              <div class="tooltip-row">
+                <span class="tooltip-label">Riêng tư (P):</span>
+                <span class="tooltip-val">${scoreCard.priv.toFixed(2)} (Thô: ${scoreCard.rawRisk.toFixed(1)})</span>
+              </div>
+              <div class="tooltip-row" style="color:var(--success); font-weight:600;">
+                <span class="tooltip-label">Điểm FinalScore:</span>
+                <span class="tooltip-val">${scoreCard.finalScore.toFixed(3)}</span>
+              </div>
+            `;
+          }
+          
+          if (cand) {
+            tooltipHtml += `
+              <div style="border-top:1px dashed var(--primary); margin-top:0.4rem; padding-top:0.4rem;"></div>
+              <div class="tooltip-row" style="color:var(--primary); font-weight:600;">
+                <span class="tooltip-label">Hạng Đề xuất D3:</span>
+                <span class="tooltip-val">#${cand.final_rank} / ${currentRankedCandidates.length}</span>
+              </div>
+            `;
+          }
+          
+          tooltip.innerHTML = tooltipHtml;
+          tooltip.style.left = `${mx + 15}px`;
+          tooltip.style.top = `${my + 15}px`;
+          tooltip.style.display = "block";
+        } else {
+          tooltip.style.display = "none";
+        }
+      });
+      
+      window.addEventListener("mouseup", () => {
+        isDragging = false;
+      });
+      
+      canvas.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        
+        if (!window.canvasTransform) return;
+        const transform = window.canvasTransform;
+        const gx = transform.invX(mx);
+        const gy = transform.invY(my);
+        
+        const zoomFactor = e.deltaY < 0 ? 1.15 : 0.85;
+        scale = Math.max(0.3, Math.min(8.0, scale * zoomFactor));
+        
+        const newX = gx * (transform.fitScale * zoomFactor) + transform.offsetX;
+        const newY = gy * (transform.fitScale * zoomFactor) + transform.offsetY;
+        
+        panX = panX + (mx - newX);
+        panY = panY + (my - newY);
+        
+        drawGraph();
+        tooltip.style.display = "none";
+      });
+    }
+  </script>
+</body>
+</html>
