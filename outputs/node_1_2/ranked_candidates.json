@@ -1,0 +1,38 @@
+[
+  {
+    "candidate_room": "B1.02",
+    "accessibility_indicator": 1.0,
+    "visibility_indicator": 0.1429,
+    "privacy_indicator": 0.8571,
+    "final_score": 0.8,
+    "explanation": "Phòng B1.02 có điểm tiếp cận 1.00, độ hiển thị 0.14, độ riêng tư 0.86. WTC đi bộ: 183.2m, Visibility thô: 293.2, Risk thô: 136.0.",
+    "final_rank": 1
+  },
+  {
+    "candidate_room": "A-F2-RIGHT-ROOM-01",
+    "accessibility_indicator": 0.4767,
+    "visibility_indicator": 0.0,
+    "privacy_indicator": 1.0,
+    "final_score": 0.6668,
+    "explanation": "Phòng A-F2-RIGHT-ROOM-01 có điểm tiếp cận 0.48, độ hiển thị 0.00, độ riêng tư 1.00. WTC đi bộ: 215.8m, Visibility thô: 0.0, Risk thô: 0.0.",
+    "final_rank": 2
+  },
+  {
+    "candidate_room": "A-F1-TOP-ROOM-01",
+    "accessibility_indicator": 0.998,
+    "visibility_indicator": 1.0,
+    "privacy_indicator": 0.0,
+    "final_score": 0.4993,
+    "explanation": "Mật độ giao thông trước phòng A-F1-TOP-ROOM-01 rất lớn (Exposure Risk thô: 952.0 lượt). Yêu cầu lắp đặt thêm vách cách âm, rèm cửa che tầm nhìn và biển báo hạn chế tụ tập trước cửa nếu lựa chọn vị trí này.",
+    "final_rank": 3
+  },
+  {
+    "candidate_room": "C103",
+    "accessibility_indicator": 0.0,
+    "visibility_indicator": 0.353,
+    "privacy_indicator": 0.6292,
+    "final_score": 0.3676,
+    "explanation": "Vị trí phòng C103 cách xa giảng đường chính (nỗ lực đi bộ trung bình có trọng số WTC: 245.6m). Cần thiết lập sơ đồ hướng dẫn tại sảnh chính các tòa nhà để sinh viên dễ dàng định vị lối đi.",
+    "final_rank": 4
+  }
+]

@@ -21,7 +21,7 @@
 10. [Chi tiết Luồng Dữ liệu (Data Flow Diagram)](#10-chi-tiết-luồng-dữ-liệu-data-flow-diagram)
 11. [Chi tiết Thu thập và Xử lý Dữ liệu Kiểm chứng (Evaluation Data)](#11-chi-tiết-thu-thập-và-xử-lý-dữ-liệu-kiểm-chứng-evaluation-data)
 12. [Đạo đức và Tác động Xã hội (Ethic & Social Impacts)](#12-đạo-đức-và-tác-động-xã-hội-ethic-social-impacts)
-13. [Kết luận và Khuyến nghị Phát triển](#13-kết-luận-và-khuyến-nghị-phát-triển)
+13. [Kết luận, Khuyến nghị Phát triển & Demo](#13-kết-luận-khuyến-nghị-phát-triển--demo)
 
 ---
 
@@ -62,48 +62,166 @@ Hệ thống nhận vào danh sách các phòng ứng viên tiềm năng (Candid
 
 ## 2. Các Dữ liệu Đầu vào của Hệ thống (Inputs)
 
-Để mô hình hóa không gian trường học và dòng di chuyển của sinh viên, hệ thống yêu cầu ba thành phần dữ liệu đầu vào chính. Các dữ liệu này được ký hiệu lần lượt là $D_1, D_2,$ và $D_3$.
+Để mô hình hóa không gian trường học và dòng di chuyển của sinh viên, hệ thống yêu cầu ba thành phần dữ liệu đầu vào chính được lưu trữ dưới dạng định dạng **JSON** để đảm bảo tính nhất quán và dễ dàng xử lý bằng lập trình. Các dữ liệu này được ký hiệu lần lượt là $D_1, D_2,$ và $D_3$.
 
 ### 2.1. Danh sách Sự kiện Hàng tuần của Sinh viên UIT ($D_1$)
-Dữ liệu $D_1$ đại diện cho hành vi sinh hoạt học thuật của toàn bộ sinh viên tại trường thông qua thời khóa biểu chính thức. Mỗi sự kiện học tập (buổi học, thi, sinh hoạt chuyên đề) được ghi nhận cụ thể nhằm xác định nhu cầu có mặt của sinh viên tại các địa điểm nhất định theo thời gian.
-*   **Thành phần của một sự kiện:** Mỗi bản ghi sự kiện bao gồm:
-    *   `room_id`: Mã định danh phòng diễn ra sự kiện.
-    *   `weekday`: Ngày trong tuần (Thứ Hai đến Chủ Nhật).
-    *   `start_period` (Tiết bắt đầu) và `end_period` (Tiết kết thúc): Xác định khung thời gian sinh viên có mặt tại phòng học.
-*   **Định dạng của `room_id`:** Định dạng tiêu chuẩn tuân theo cấu trúc: `[Building][Floor][Room Number]`.
-    *   *Building (Tòa nhà):* Ký tự chữ đại diện cho block tòa nhà (Ví dụ: A, B, C, E...).
-    *   *Floor (Tầng):* Ký số đại diện cho số tầng (Ví dụ: 1, 2, 3... trong đó tầng trệt thường là 1).
-    *   *Room Number (Số phòng):* Ký số gồm 2 chữ số đại diện cho số thứ tự phòng trong tầng.
-    *   *Ví dụ minh họa:* `C103` đại diện cho Phòng số 03 nằm tại Tầng 1 của Tòa nhà C.
-*   **Ý nghĩa mô hình hóa:** Từ dữ liệu thời khóa biểu này, hệ thống có thể suy ra số lượng sinh viên ước tính sẽ có mặt tại một phòng học cụ thể vào một ngày và tiết học cụ thể. Từ đó, xác định được các cặp điểm xuất phát (Origin) và điểm đích (Destination) khi sinh viên di chuyển giữa các tiết học kế tiếp nhau trong tuần.
+Dữ liệu $D_1$ đại diện cho hành vi sinh hoạt học thuật của toàn bộ sinh viên tại trường thông qua thời khóa biểu chính thức. Dữ liệu này được chuẩn hóa dưới dạng tệp **JSON** (tham chiếu từ tệp thực tế [normalized_timetable.json](file:///d:/CS117/THERAPY_ROOM_PROJECT/data/normalized/normalized_timetable.json)).
+
+*   **Cấu trúc dữ liệu JSON của một sự kiện (Mock Input):**
+    ```json
+    {
+      "event_id": "EVT_000002",
+      "course_code": "MATH3013",
+      "class_group": "MATH3013.Q21.CTTT",
+      "room_id": "B1.02",
+      "building": "B",
+      "floor": 1,
+      "day": "Tue",
+      "day_vn": "Thứ 3",
+      "start_period": 1,
+      "end_period": 1,
+      "start_time": "07:30",
+      "end_time": "08:15",
+      "enrollment_estimate": 54
+    }
+    ```
+*   **Chi tiết các thuộc tính:**
+    *   `event_id`: Mã định danh duy nhất cho sự kiện học tập.
+    *   `course_code`: Mã môn học để liên kết với chương trình đào tạo.
+    *   `class_group`: Mã nhóm lớp học di chuyển tập thể (cohort).
+    *   `room_id`: Mã phòng diễn ra sự kiện. Định dạng phòng học tuân theo chuẩn `[Tòa][Tầng].[Số phòng]` (ví dụ: `B1.02` là tòa B, tầng 1, phòng 02) hoặc `[Tòa][Tầng][Số phòng]` (ví dụ: `C103` là tòa C, tầng 1, phòng 03).
+    *   `building`, `floor`: Tên tòa nhà và số tầng để ánh xạ không gian.
+    *   `day` / `day_vn`: Thứ trong tuần của sự kiện (dùng để sắp xếp và nhóm di chuyển).
+    *   `start_period` / `end_period`: Tiết học bắt đầu và kết thúc (từ tiết 1 đến tiết 10).
+    *   `start_time` / `end_time`: Giờ bắt đầu và kết thúc sự kiện để ước lượng thời điểm di chuyển.
+    *   `enrollment_estimate`: Sĩ số sinh viên đăng ký tham gia lớp học (dùng làm trọng số lưu lượng dòng di chuyển).
+*   **Ý nghĩa mô hình hóa:** Từ dữ liệu JSON thời khóa biểu này, hệ thống trích xuất các luồng di chuyển kế tiếp của các nhóm lớp học (`class_group`) giữa các tiết học trong cùng một ngày để tạo thành các cặp Origin-Destination (O-D) kèm theo quy mô dòng người (`enrollment_estimate`).
 
 ### 2.2. Đồ thị Không gian UIT ($D_2$)
-Đồ thị không gian $D_2$ là xương sống của toàn bộ hệ thống, mô tả cấu trúc vật lý của khuôn viên trường UIT dưới dạng một đồ thị có trọng số nhúng trong không gian: $G = (V, E, pos, w)$.
+Đồ thị không gian $D_2$ là xương sống của toàn bộ hệ thống, mô tả cấu trúc vật lý của khuôn viên trường UIT dưới dạng một đồ thị có trọng số nhúng trong không gian: $G = (V, E, pos, w)$. Dữ liệu đồ thị được chia làm hai cấp độ và lưu trữ dưới dạng tệp **JSON**: đồ thị khuôn viên chung (campus graph) và đồ thị chi tiết từng tòa nhà (building graphs).
 
-#### 2.2.1. Tập hợp các đỉnh không gian ($V$ - Spatial Nodes)
+#### 2.2.1. Định dạng JSON của Đồ thị Khuôn viên Chung (Campus Graph)
+Ví dụ cấu trúc trích xuất từ tệp thực tế [campus_graph.json](file:///d:/CS117/THERAPY_ROOM_PROJECT/data/graphs/campus_graph.json):
+```json
+{
+  "campus": "UIT",
+  "coordinate_system": { "type": "normalized", "width": 1000, "height": 1000 },
+  "nodes": [
+    {
+      "id": "UIT-GATE-A",
+      "label": "Gate A",
+      "type": "gate",
+      "building": null,
+      "floor": null,
+      "x": 230,
+      "y": 90,
+      "zone": "UIT-CAMPUS",
+      "accessible": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "UIT-GATE-A",
+      "target": "UIT-GARAGE",
+      "distance": 30,
+      "type": "gate_entry",
+      "bidirectional": true,
+      "accessible": true
+    }
+  ],
+  "building_entry_edges": [
+    {
+      "source": "UIT-OUTDOOR-A-FRONT",
+      "target": "A-F1-BUILDING-ENTRANCE",
+      "distance": 8,
+      "type": "building_entry",
+      "bidirectional": true,
+      "accessible": true
+    }
+  ]
+}
+```
+
+#### 2.2.2. Định dạng JSON của Đồ thị Tòa nhà (Building Graph)
+Ví dụ cấu trúc trích xuất từ tệp thực tế [building_a_graph.json](file:///d:/CS117/THERAPY_ROOM_PROJECT/data/graphs/building_a_graph.json):
+```json
+{
+  "building": "A",
+  "coordinate_system": { "type": "normalized", "width": 1000, "height": 1000 },
+  "floors": {
+    "1": {
+      "nodes": [
+        {
+          "id": "A-F1-RING-TOP-LEFT",
+          "label": "Ring Top Left",
+          "type": "junction",
+          "floor": 1,
+          "x": 250,
+          "y": 220,
+          "zone": "A-F1-MAIN-RING",
+          "accessible": true
+        }
+      ],
+      "edges": [
+        {
+          "source": "A-F1-RING-TOP-LEFT",
+          "target": "A-F1-RING-TOP-MID",
+          "distance": 15,
+          "type": "hallway",
+          "bidirectional": true,
+          "accessible": true
+        }
+      ]
+    }
+  },
+  "inter_floor_edges": [
+    {
+      "source": "A-F1-ELEVATOR",
+      "target": "A-F2-ELEVATOR",
+      "distance": 3,
+      "type": "elevator",
+      "bidirectional": true,
+      "accessible": true
+    }
+  ]
+}
+```
+
+#### 2.2.3. Tập hợp các đỉnh không gian ($V$ - Spatial Nodes)
 Tập hợp các đỉnh $V$ đại diện cho các vị trí vật lý quan trọng trên bản đồ trường, được chia làm 3 loại chính:
-1.  **Đỉnh Phòng học (Room Nodes):** Đại diện cho các phòng học vật lý cụ thể, được định danh bằng `room_id` tương thích với dữ liệu $D_1$. Đây là các điểm xuất phát (Origin) hoặc điểm đích (Destination) của các dòng di chuyển sinh viên.
-2.  **Đỉnh Tiếp cận (Access Nodes):** Đại diện cho các điểm lối vào ngay trước cửa phòng học hoặc các vị trí trên hành lang, lối đi bộ. Các đỉnh này đóng vai trò trung gian kết nối các phòng học với mạng lưới giao thông nội khu và là nơi đo lường lượng người đi qua (pass-by traffic) trước cửa mỗi phòng.
-3.  **Đỉnh Kiểm soát/Điểm mốc (Checkpoint Nodes):** Đại diện cho các vị trí chuyển tiếp và các địa điểm công cộng quan trọng trong trường như cổng chính (Gate A, Gate B), khu vực giữ xe (parking area), thư viện, các góc tòa nhà, trung tâm sảnh lớn và các lối vào/ra chính của các tòa nhà.
+1.  **Đỉnh Phòng học (Room Nodes):** Đại diện cho các phòng học vật lý cụ thể, được định danh bằng `room_id` tương thích với dữ liệu $D_1$ (ví dụ: `B1.02`). Đây là các điểm xuất phát (Origin) hoặc điểm đích (Destination) của các dòng di chuyển sinh viên.
+2.  **Đỉnh Tiếp cận (Access Nodes):** Đại diện cho các điểm lối vào ngay trước cửa phòng học hoặc các vị trí trên hành lang, lối đi bộ. Các đỉnh này đóng vai trò trung gian kết nối các phòng học với mạng lưới giao thông nội khu và là nơi đo lường lượng người đi qua (pass-by traffic) trước cửa mỗi phòng (ví dụ: `B1.02-ACCESS`).
+3.  **Đỉnh Kiểm soát/Điểm mốc (Checkpoint/Junction Nodes):** Đại diện cho các vị trí chuyển tiếp và các địa điểm công cộng quan trọng trong trường như cổng chính (`UIT-GATE-A`, `UIT-GATE-B`), khu vực giữ xe (`UIT-GARAGE`), sảnh lớn các tòa nhà, trung tâm sảnh lớn và các lối vào/ra chính của các tòa nhà.
 
-#### 2.2.2. Tọa độ không gian ($pos(v)$)
-Mỗi đỉnh $v \in V$ được gắn với một tọa độ không gian 3 chiều $pos(v) = (x, y, z)$:
-*   $x, y$: Là tọa độ trên mặt bằng sàn (mặt phẳng 2D), giúp xác định khoảng cách hình học theo chiều ngang.
-*   $z$: Đại diện cho mức độ cao tương đối theo tầng (floor level) để mô tả cấu trúc phân tầng của các tòa nhà cao tầng tại UIT.
+#### 2.2.4. Tọa độ không gian ($pos(v)$)
+Mỗi đỉnh $v \in V$ được gắn với một tọa độ không gian 3 chiều $pos(v) = (x, y, z)$ trong tệp JSON:
+*   `x`, `y`: Là tọa độ trên mặt bằng sàn (mặt phẳng 2D), giúp xác định khoảng cách hình học theo chiều ngang.
+*   `floor` (tương ứng với trục $z$): Đại diện cho mức độ cao tương đối theo tầng (floor level) để mô tả cấu trúc phân tầng của các tòa nhà cao tầng tại UIT.
 
-#### 2.2.3. Tập hợp các cạnh di chuyển hợp lệ ($E$ - Valid Edges)
+#### 2.2.5. Tập hợp các cạnh di chuyển hợp lệ ($E$ - Valid Edges)
 Tập hợp các cạnh $E$ đại diện cho các lối đi hợp lệ kết nối các đỉnh trong khuôn viên trường, bao gồm ba loại chính:
 1.  **Cạnh Hành lang (Hallway Edges):** Kết nối các đỉnh tiếp cận và đỉnh phòng học cùng nằm trên một hành lang bên trong một tòa nhà.
-2.  **Cạnh Cầu thang/Thang máy (Staircase/Elevator Edges):** Kết nối thẳng đứng giữa các tầng khác nhau trong cùng một tòa nhà (thay đổi giá trị tọa độ $z$).
+2.  **Cạnh Cầu thang/Thang máy (Staircase/Elevator Edges):** Kết nối thẳng đứng giữa các tầng khác nhau trong cùng một tòa nhà (thay đổi giá trị của `floor`).
 3.  **Cạnh Liên tòa nhà (Inter-building Edges):** Các tuyến đường đi bộ ngoài trời kết nối các tòa nhà với nhau và kết nối các tòa nhà tới các đỉnh checkpoint (như cổng trường, bãi xe).
 
-#### 2.2.4. Trọng số cạnh ($w(e)$)
-Mỗi cạnh $e \in E$ có một trọng số $w(e) > 0$. Trọng số này biểu thị chi phí di chuyển thực tế (movement cost) qua cạnh đó. Chi phí này có thể được tính bằng khoảng cách vật lý (mét) hoặc thời gian di chuyển dự kiến, có tính đến các hệ số cản trở di chuyển thẳng đứng (như leo cầu thang bộ).
+#### 2.2.6. Trọng số cạnh ($w(e)$)
+Mỗi cạnh $e \in E$ có một thuộc tính `distance` đóng vai trò là trọng số $w(e) > 0$. Trọng số này biểu thị chi phí di chuyển thực tế (movement cost) qua cạnh đó. Chi phí này được tính bằng khoảng cách vật lý (mét) hoặc thời gian di chuyển dự kiến, có tính đến các hệ số cản trước di chuyển thẳng đứng (như leo cầu thang bộ).
 
 ### 2.3. Danh sách Phòng Ứng viên ($D_3$)
-Dữ liệu $D_3$ là danh sách gồm $k$ giá trị `room_id` ($k > 0$) đại diện cho các phòng học hoặc không gian trống hiện đang có sẵn mà nhà trường cân nhắc để đặt phòng tư vấn tâm lý. Đây chính là đối tượng cần được đánh giá, chấm điểm và xếp hạng để tìm ra vị trí tối ưu nhất.
-*   *Trường hợp $k \le 3$:* Hệ thống sẽ đánh giá toàn bộ và trả về $k - 1$ phòng thay thế tốt nhất bên cạnh phòng được khuyến nghị cao nhất.
-*   *Trường hợp $k > 3$:* Hệ thống sẽ trả về 1 phòng tối ưu nhất cùng đúng 3 lựa chọn thay thế tốt tiếp theo.
+Dữ liệu $D_3$ là tệp **JSON** chứa một mảng danh sách gồm $k$ giá trị `room_id` ($k > 0$) đại diện cho các phòng học hoặc không gian trống hiện đang có sẵn mà nhà trường cân nhắc để đặt phòng tư vấn tâm lý. Đây chính là đối tượng cần được đánh giá, chấm điểm và xếp hạng để tìm ra vị trí tối ưu nhất.
+
+*   **Cấu trúc dữ liệu JSON của ứng viên:**
+    ```json
+    [
+      "A-F1-TOP-ROOM-01",
+      "B1.02",
+      "C103",
+      "E2.01"
+    ]
+    ```
+*   **Xử lý số lượng:**
+    *   *Trường hợp $k \le 3$:* Hệ thống sẽ đánh giá toàn bộ và trả về $k - 1$ phòng thay thế tốt nhất bên cạnh phòng được khuyến nghị cao nhất.
+    *   *Trường hợp $k > 3$:* Hệ thống sẽ trả về 1 phòng tối ưu nhất cùng đúng 3 lựa chọn thay thế tốt tiếp theo.
 
 ---
 
@@ -125,7 +243,7 @@ Trong thế giới thực, sinh viên không phải lúc nào cũng chọn duy n
 ### 3.3. Quy tắc Đổi Chi phí Di chuyển theo Chiều dọc (Vertical Movement Cost)
 Di chuyển giữa các tầng khác nhau trong một tòa nhà tiêu tốn năng lượng và thời gian khác biệt rõ rệt so với di chuyển trên hành lang bằng phẳng. Hệ thống quy đổi chi phí di chuyển thẳng đứng thành khoảng cách đi bộ tương đương (mét):
 *   **Di chuyển bằng Cầu thang bộ (Stairs):** Mỗi tầng chênh lệch độ cao ($\Delta z = 1$) sẽ cộng thêm **6 mét** vào tổng chi phí di chuyển ($+6m$ cost). Việc leo cầu thang bộ đòi hỏi nhiều thể lực và tốn nhiều thời gian hơn, do đó chịu mức phạt (penalty) cao gấp đôi so với thang máy.
-*   **Di chuyển bằng Thang máy (Elevator):** Mỗi lần sử dụng thang máy để di chuyển giữa các tầng khác nhau (bất kể chênh lệch bao nhiêu tầng) sẽ cộng thêm một mức chi phí cố định là **3 mét** ($+3m$ fixed cost). Mức chi phí cố định này đại diện cho thời gian chờ đợi thang máy mở cửa và thời gian di chuyển trung bình bên trong cabin thang máy.
+*   **Di chuyển bằng Thang máy (Elevator):** Mỗi lần sử dụng thang máy để di chuyển giữa các tầng khác nhau (bất kể chênh lệch bao nhiêu tầng) sẽ cộng thêm một mức chi phí cố định là **3 mét** ($+3m$ fixed cost). Mô hình chi phí cố định được lựa chọn vì: (1) Thời gian di chuyển của thang máy trong các tòa nhà thấp tầng (3–5 tầng) tại UIT chênh lệch rất ít giữa việc đi 1 tầng hay 3 tầng — phần lớn thời gian tiêu tốn là **chờ đợi thang máy mở cửa và đóng cửa**, vốn là hằng số bất kể số tầng; (2) Trong phạm vi tòa nhà UIT (tối đa 5 tầng), sai số giữa mô hình cố định và mô hình tuyến tính (VD: $1m + 0.5m/\text{tầng}$) không đáng kể so với tổng chi phí di chuyển toàn tuyến.
 *   **Bỏ qua các độ cao khác:** Các khoảng chênh lệch độ cao nhỏ ngoài sàn nhà (như bậc tam cấp sảnh, độ dốc nhỏ của lối đi xe lăn...) được coi là không đáng kể và được bỏ qua để đơn giản hóa việc tính toán.
 
 ---
@@ -158,6 +276,8 @@ Hệ tọa độ không gian 2D ($x, y$) được thiết lập dựa trên các
 ---
 
 ## 5. Các Chỉ số Đo lường và Đánh giá (Metrics)
+
+> **Lưu ý quan trọng:** Các chỉ số trong phần này là **các metrics đánh giá hiệu quả thực tế sau triển khai (post-deployment evaluation metrics)**, được sử dụng để kiểm chứng xem vị trí phòng tư vấn được đề xuất có thực sự mang lại hiệu quả trong thực tế hay không. Chúng **khác biệt** với các chỉ số nội bộ mô hình (model-internal scoring indicators) $A(r), V(r), P(r) \in [0, 1]$ — vốn là đầu ra trực tiếp của thuật toán xếp hạng và được trình bày chi tiết ở Mục 9 (Modules P3–P5). Mối quan hệ giữa hai nhóm chỉ số: nếu mô hình nội bộ hoạt động chính xác, thì vị trí có $A(r), V(r), P(r)$ cao sẽ dẫn đến CUR, UPR, PSR cao trong thực tế.
 
 Để đánh giá và so sánh chất lượng của từng vị trí phòng ứng viên tiềm năng một cách khách quan và khoa học, hệ thống sử dụng 5 chỉ số đo lường (Metrics) chuyên biệt, phản ánh cả khía cạnh định lượng, định tính và hiệu năng kỹ thuật:
 
@@ -248,6 +368,7 @@ Các yêu cầu phi chức năng (NFRs) đặt ra những tiêu chuẩn chất l
 *   **Công thức kiểm chứng:**
     $$Runtime \leq 120s$$
 *   **Mục tiêu:** Đảm bảo hiệu năng hệ thống mượt mà, cho phép chạy thử nghiệm nhiều phương án danh sách ứng viên ($D_3$) khác nhau một cách nhanh chóng mà không gây nghẽn hệ thống.
+*   **Ghi chú:** Ngưỡng 120 giây là giới hạn trên cho trường hợp tổng quát (bao gồm đồ thị quy mô lớn và số lượng ứng viên nhiều). Trong phạm vi thử nghiệm thực tế với bộ dữ liệu UIT đã chuẩn hóa, mục tiêu vận hành là runtime dưới **10 giây**.
 
 ---
 
@@ -258,7 +379,248 @@ Một trong những thách thức kỹ thuật lớn nhất của dự án là s
     *   Tuy nhiên, nếu đặt ở khu vực sầm uất như vậy, sinh viên khi bước vào phòng sẽ bị quan sát bởi rất nhiều người qua đường, làm giảm nghiêm trọng tính riêng tư ($R_3$). Sinh viên sẽ có cảm giác e ngại và không muốn sử dụng dịch vụ.
     *   Ngược lại, nếu đặt phòng ở góc khuất, tầng cao vắng vẻ để đạt $R_3$ rất cao, sinh viên lại gặp khó khăn trong việc tìm kiếm, di chuyển xa ($R_1$ giảm) và ít người biết tới phòng ($R_2$ giảm).
 2.  **Giải pháp Tối ưu hóa Đa mục tiêu:**
-    Hệ thống không thể tối ưu hóa đơn lẻ một chỉ số mà phải tìm ra một tập hợp các giải pháp Pareto tối ưu (Pareto-optimal solutions). Bằng cách chuẩn hóa và sử dụng thuật toán tính điểm vô hướng hóa đa mục tiêu (Mul## 9. Chi tiết Kiến trúc Giải pháp & Các Module Thành phần (Solution & Modules)
+    Hệ thống không thể tối ưu hóa đơn lẻ một chỉ số mà phải tìm ra một tập hợp các giải pháp Pareto tối ưu (Pareto-optimal solutions). Bằng cách chuẩn hóa và sử dụng thuật toán tính điểm vô hướng hóa đa mục tiêu (Multi-objective Weighted Scalarization) với bộ trọng số ưu tiên $w_A, w_V, w_P$ (trong đó $w_A + w_V + w_P = 1$), hệ thống quy đổi vector điểm số 3 chiều $(A, V, P)$ của mỗi phòng ứng viên thành một điểm số vô hướng duy nhất $FinalScore$. Phòng có $FinalScore$ cao nhất chính là nghiệm xấp xỉ Pareto-optimal tốt nhất theo hệ trọng số đã chọn, và báo cáo đánh đổi (Trade-off Report) sẽ giúp nhà quản lý hiểu rõ các đánh đổi còn lại giữa các mục tiêu.
+
+---
+
+## 7. Vận dụng Computational/AI Thinking (CAT) trong Giải quyết Vấn đề
+
+Phần này trình bày tuần tự từng bước vận dụng các kỹ thuật Computational/AI Thinking (CAT) — bao gồm **Abstraction/Generalization**, **Pattern Recognition (Grouping/Matching)** và **Decomposition** — để xây dựng lời giải cuối cùng từ bài toán gốc.
+
+---
+
+### Step 1: Abstraction — Trừu tượng hóa bài toán thực tế
+
+*   **Kỹ thuật CAT:** Abstraction
+*   **Đối tượng:** Bài toán gốc — *"Tìm vị trí tối ưu nhất để đặt phòng tư vấn tâm lý tại UIT"*
+*   **Quá trình:** Bài toán thực tế chứa vô số yếu tố phức tạp: tâm lý cá nhân sinh viên, thời tiết, sự kiện đặc biệt, chất lượng cơ sở vật chất phòng, thẩm mỹ nội thất, quy chuẩn phòng cháy chữa cháy... Ta loại bỏ các yếu tố không thể mô hình hóa bằng dữ liệu có sẵn (thời tiết, tâm lý cá nhân, sự kiện bất ngờ) và giữ lại **ba thuộc tính cốt lõi** có thể đo lường thông qua dữ liệu không gian và thời khóa biểu:
+    *   **Accessibility** (Khả năng tiếp cận vật lý)
+    *   **Visibility** (Tính hiển thị/nhận diện tự nhiên)
+    *   **Privacy** (Tính riêng tư khi sử dụng)
+*   **Kết quả:** Bài toán gốc $\rightarrow$ **Bài toán xếp hạng vị trí đa mục tiêu (Multi-objective Facility Location Ranking)** trên đồ thị không gian có trọng số, với 3 hàm mục tiêu $A(r), V(r), P(r)$ cần được cân bằng.
+
+---
+
+### Step 2: Abstraction — Trừu tượng hóa không gian vật lý UIT
+
+*   **Kỹ thuật CAT:** Abstraction
+*   **Đối tượng:** Khuôn viên UIT trong thế giới thực (tòa nhà, hành lang, sân bãi, cầu thang, thang máy)
+*   **Quá trình:** Không gian vật lý phức tạp 3 chiều của UIT được trừu tượng hóa thành một **đồ thị vô hướng có trọng số** $G = (V, E, pos, w)$, trong đó:
+    *   Các phòng học, lối đi, sảnh, cổng trường $\rightarrow$ các **đỉnh (nodes)** với tọa độ 3D $(x, y, z)$
+    *   Các hành lang, cầu thang, lối đi bộ $\rightarrow$ các **cạnh (edges)** với trọng số biểu thị chi phí di chuyển (mét)
+    *   Chênh lệch tầng $\rightarrow$ chi phí quy đổi tuyến tính (cầu thang: +6m/tầng, thang máy: +3m cố định)
+*   **Kết quả:** Không gian UIT thực tế $\rightarrow$ **Đồ thị nhúng không gian $G = (V, E, pos, w)$** với ~hàng trăm đỉnh và cạnh, cho phép áp dụng các thuật toán đồ thị kinh điển.
+
+---
+
+### Step 3: Abstraction — Trừu tượng hóa hành vi di chuyển sinh viên
+
+*   **Kỹ thuật CAT:** Abstraction
+*   **Đối tượng:** Hành vi di chuyển thực tế của hàng nghìn sinh viên UIT trong khuôn viên trường
+*   **Quá trình:** Hệ thống không có dữ liệu GPS hay camera theo dõi sinh viên thực tế. Ta trừu tượng hóa hành vi di chuyển bằng cách:
+    *   Mỗi lớp học phần $\rightarrow$ một **nhóm di chuyển tập thể (cohort)** có sĩ số cố định
+    *   Thời khóa biểu tuần $\rightarrow$ một chuỗi các **sự kiện có mặt** tại phòng học cụ thể theo thời gian
+    *   Di chuyển giữa hai tiết học kế tiếp $\rightarrow$ một **cặp Origin-Destination (O-D)** trên đồ thị
+    *   Sinh viên chọn đường đi $\rightarrow$ chọn ngẫu nhiên đều trong tập các đường đi có chi phí $\le 1.15 \times$ đường ngắn nhất (bounded rationality)
+*   **Kết quả:** Hành vi di chuyển phức tạp $\rightarrow$ **Tập hợp các cặp O-D có trọng số (sĩ số)** + **quy tắc phân bổ lưu lượng xác suất** trên đồ thị $G$.
+
+---
+
+### Step 4: Decomposition (Level 1) — Phân rã bài toán xếp hạng thành 6 module chính
+
+*   **Kỹ thuật CAT:** Decomposition
+*   **Đối tượng:** Bài toán đã trừu tượng hóa — *"Xếp hạng $k$ phòng ứng viên trên đồ thị $G$ theo 3 hàm mục tiêu $A, V, P$"*
+*   **Quá trình:** Bài toán tổng thể được phân rã thành một pipeline tuần tự gồm 6 module xử lý:
+    *   **P1:** Trích xuất nhu cầu di chuyển từ thời khóa biểu (Input: $D_1$ → Output: O-D pairs)
+    *   **P2:** Ước lượng tuyến đường và lưu lượng trên đồ thị (Input: O-D pairs + $D_2$ → Output: Traffic maps)
+    *   **P3:** Đánh giá Accessibility cho từng ứng viên (Input: Traffic + $D_2$ + $D_3$ → Output: $A(r)$)
+    *   **P4:** Đánh giá Visibility cho từng ứng viên (Input: Traffic + $D_2$ + $D_3$ → Output: $V(r)$)
+    *   **P5:** Đánh giá Privacy cho từng ứng viên (Input: Traffic + $D_2$ + $D_3$ → Output: $P(r)$)
+    *   **P6:** Xếp hạng và sinh báo cáo khuyến nghị (Input: $A, V, P$ → Output: Ranking + Trade-off Report)
+*   **Kết quả:** Bài toán tổng thể $\rightarrow$ **6 sub-problems P1–P6** có đầu vào/đầu ra rõ ràng, liên kết tuần tự qua các luồng dữ liệu trung gian.
+
+---
+
+### Step 5: Decomposition (Level 2) — Phân rã P1 thành các bước xử lý dữ liệu
+
+*   **Kỹ thuật CAT:** Decomposition
+*   **Đối tượng:** Module P1 — *"Trích xuất nhu cầu di chuyển từ thời khóa biểu"*
+*   **Quá trình:** P1 được chia thành 2 bước xử lý tuần tự:
+    *   **P1.1:** Sắp xếp các sự kiện học tập theo trình tự thời gian (gom nhóm theo lớp → sắp xếp khóa kép theo ngày + tiết)
+    *   **P1.3:** Trích xuất các cặp phòng di chuyển kế tiếp (áp dụng cửa sổ trượt kích thước 2 trên chuỗi sự kiện đã sắp xếp)
+*   **Kết quả:** P1 $\rightarrow$ **P1.1 (Sort Events) + P1.3 (Extract O-D Pairs)**
+*   **Lưu ý:** Sub-module P1.2 (Loại bỏ tiết bù) đã được xem xét trong giai đoạn thiết kế ban đầu nhưng được lược bỏ khỏi pipeline cuối cùng vì dữ liệu thời khóa biểu đầu vào $D_1$ đã được giả định chỉ chứa lịch học chính thức (xem Ràng buộc C3 trong tài liệu kỹ thuật). Việc lọc tiết bù, nếu cần, được thực hiện ở bước tiền xử lý dữ liệu trước khi đưa vào hệ thống.
+
+---
+
+### Step 6: Pattern Recognition — Matching trên P1.1
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Matching
+*   **Đối tượng:** Sub-problem P1.1 — *"Sắp xếp danh sách sự kiện theo nhiều khóa"*
+*   **Quá trình:** Bài toán "sắp xếp dữ liệu theo khóa chính (ngày) và khóa phụ (tiết)" khớp với bài toán kinh điển **Multi-key Sorting**. Giải pháp đã biết: sử dụng thuật toán sắp xếp ổn định (Timsort $O(n \log n)$) với bộ so sánh kết hợp hai khóa.
+*   **Kết quả:** P1.1 $\mapsto$ **Multi-key Sorting** → sử dụng Timsort với khóa `(weekday, start_period)`.
+
+---
+
+### Step 7: Pattern Recognition — Matching trên P1.3
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Matching
+*   **Đối tượng:** Sub-problem P1.3 — *"Từ chuỗi sự kiện có thứ tự, trích xuất các cặp phòng liên tiếp"*
+*   **Quá trình:** Bài toán "quét qua một dãy tuần tự và trích xuất các cặp phần tử kề nhau" khớp với kỹ thuật **Sliding Window** (cửa sổ trượt kích thước 2) — một mẫu thiết kế thuật toán kinh điển trong xử lý chuỗi dữ liệu.
+*   **Kết quả:** P1.3 $\mapsto$ **Sliding Window (size=2)** trên chuỗi sự kiện theo từng cohort/ngày.
+
+---
+
+### Step 8: Decomposition (Level 2) — Phân rã P2 thành các bước tính toán đồ thị
+
+*   **Kỹ thuật CAT:** Decomposition
+*   **Đối tượng:** Module P2 — *"Ước lượng tuyến đường và lưu lượng trên đồ thị"*
+*   **Quá trình:** P2 được chia thành 4 sub-problems:
+    *   **P2.1:** Tìm đường đi ngắn nhất giữa các cặp O-D
+    *   **P2.2:** Tổng hợp lưu lượng trên các đỉnh (node traffic)
+    *   **P2.3:** Tổng hợp lưu lượng trên các cạnh (edge traffic)
+    *   **P2.4:** Tổng hợp lượt đi qua tại các nút tiếp cận của phòng ứng viên
+*   **Kết quả:** P2 $\rightarrow$ **P2.1 + P2.2 + P2.3 + P2.4**
+
+---
+
+### Step 9: Pattern Recognition — Matching trên P2.1
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Matching
+*   **Đối tượng:** Sub-problem P2.1 — *"Tìm đường đi có chi phí nhỏ nhất giữa hai đỉnh trên đồ thị có trọng số dương"*
+*   **Quá trình:** Đây chính xác là bài toán **Single-Source Shortest Path (SSSP)** trên đồ thị có trọng số dương — một bài toán kinh điển trong lý thuyết đồ thị. Giải pháp tối ưu đã biết: **thuật toán Dijkstra** với hàng đợi ưu tiên (min-heap), độ phức tạp $O((|V| + |E|) \log |V|)$. Để tìm thêm các đường đi tiệm cận tối ưu ($cost \le 1.15 \times C_{min}$), áp dụng biến thể **Yen's K-Shortest Paths** hoặc DFS có nhánh cận.
+*   **Kết quả:** P2.1 $\mapsto$ **Dijkstra's Algorithm + Yen's K-Shortest Paths**
+
+---
+
+### Step 10: Pattern Recognition — Matching trên P2.2 & P2.3
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Matching
+*   **Đối tượng:** Sub-problems P2.2 và P2.3 — *"Đếm số lượt mỗi đỉnh/cạnh xuất hiện trong tập đường đi, có trọng số theo sĩ số và xác suất chọn tuyến"*
+*   **Quá trình:** Bài toán này khớp với mẫu **Accumulation / Frequency Counting trên đồ thị** — duyệt qua tất cả các tuyến đường, với mỗi tuyến phân bổ lưu lượng (sĩ số × xác suất) và cộng dồn vào bộ đếm tại mỗi đỉnh/cạnh.
+*   **Kết quả:** P2.2, P2.3 $\mapsto$ **Traffic Accumulation** (duyệt tuyến đường + cộng dồn lưu lượng).
+
+---
+
+### Step 11: Decomposition (Level 2) — Phân rã P3, P4, P5
+
+*   **Kỹ thuật CAT:** Decomposition
+*   **Đối tượng:** Modules P3, P4, P5 — đánh giá từng tiêu chí Accessibility, Visibility, Privacy
+*   **Quá trình:** Mỗi module được phân rã thành 3 bước cùng cấu trúc:
+    *   **Bước X.1:** Xác định/tính toán giá trị thô đặc trưng cho tiêu chí
+    *   **Bước X.2:** Tính toán chỉ số tổng hợp thô
+    *   **Bước X.3:** Chuẩn hóa chỉ số về khoảng $[0, 1]$
+*   **Kết quả:**
+    *   P3 $\rightarrow$ P3.1 (Distance matrix) + P3.2 (Weighted Travel Cost) + P3.3 (Normalize)
+    *   P4 $\rightarrow$ P4.1 (Exposure zone) + P4.2 (Pass-by count) + P4.3 (Normalize)
+    *   P5 $\rightarrow$ P5.1 (Sensitive zone) + P5.2 (Exposure risk) + P5.3 (Normalize)
+
+---
+
+### Step 12: Pattern Recognition — Grouping trên P3, P4, P5
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Grouping
+*   **Đối tượng:** Cấu trúc chung của P3, P4, P5
+*   **Quá trình:** Nhận dạng rằng cả 3 module P3, P4, P5 đều tuân theo **cùng một mẫu cấu trúc 3 bước**: (1) Xác định vùng/khoảng cách đặc trưng → (2) Tính chỉ số thô → (3) Chuẩn hóa Min-Max. Chúng chỉ khác nhau ở:
+    *   **P3:** Vùng đặc trưng = toàn bộ core activity nodes; chỉ số thô = weighted travel cost; chuẩn hóa nghịch đảo (cost thấp → điểm cao)
+    *   **P4:** Vùng đặc trưng = exposure zone (bán kính 10m); chỉ số thô = pass-by count có suy giảm khoảng cách; chuẩn hóa thuận (traffic cao → điểm cao)
+    *   **P5:** Vùng đặc trưng = sensitive zone (bán kính 3m); chỉ số thô = exposure risk; chuẩn hóa nghịch đảo (risk cao → điểm thấp)
+*   **Kết quả:** P3, P4, P5 được nhóm thành một **pattern chung "Zone-Aggregate-Normalize"**, giúp thiết kế code tái sử dụng và giảm thiểu sai sót.
+
+---
+
+### Step 13: Pattern Recognition — Matching trên các bước chuẩn hóa (P3.3, P4.3, P5.3)
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Matching
+*   **Đối tượng:** Sub-problems P3.3, P4.3, P5.3 — *"Ánh xạ giá trị thô về khoảng $[0, 1]$"*
+*   **Quá trình:** Bài toán "chuyển đổi một dãy giá trị thực về khoảng $[0, 1]$" khớp chính xác với kỹ thuật **Min-Max Normalization** — phương pháp chuẩn hóa kinh điển trong khoa học dữ liệu. Đối với các chỉ số nghịch đảo (Accessibility, Privacy: giá trị thô cao = xấu), sử dụng biến thể **Inverse Min-Max**: $Score = (Max - Value) / (Max - Min)$.
+*   **Lưu ý về trường hợp đặc biệt:** Khi số lượng phòng ứng viên $k = 1$, giá trị $Max = Min$, dẫn đến phép chia cho 0. Trong trường hợp này, hệ thống mặc định gán điểm $1.0$ cho phòng ứng viên duy nhất, vì không có đối tượng so sánh nào khác. Khi $k = 2$, Min-Max normalization sẽ luôn trả về cặp giá trị $(0, 1)$ hoặc $(1, 0)$ — đây là hạn chế cố hữu của phương pháp Min-Max khi tập mẫu quá nhỏ, nhưng vẫn đảm bảo tính nhất quán trong việc xếp hạng tương đối giữa hai ứng viên.
+*   **Kết quả:** P3.3, P4.3, P5.3 $\mapsto$ **Min-Max Normalization** (thuận hoặc nghịch đảo tùy theo hướng tối ưu).
+
+---
+
+### Step 14: Decomposition (Level 2) — Phân rã P6
+
+*   **Kỹ thuật CAT:** Decomposition
+*   **Đối tượng:** Module P6 — *"Xếp hạng ứng viên và sinh báo cáo khuyến nghị"*
+*   **Quá trình:** P6 được phân rã thành 3 bước:
+    *   **P6.1:** Xác thực và đồng bộ hóa bảng vector điểm số (kiểm tra NaN, ngoài phạm vi)
+    *   **P6.2:** Tính điểm Scalarization Score đa mục tiêu bằng tổ hợp tuyến tính có trọng số
+    *   **P6.3:** Phân tích sự đánh đổi và xuất báo cáo Trade-off
+*   **Kết quả:** P6 $\rightarrow$ **P6.1 (Validate) + P6.2 (Weighted Scalarization) + P6.3 (Trade-off Report)**
+
+---
+
+### Step 15: Pattern Recognition — Matching trên P6.2
+
+*   **Kỹ thuật CAT:** Pattern Recognition — Matching
+*   **Đối tượng:** Sub-problem P6.2 — *"Kết hợp 3 hàm mục tiêu $A(r), V(r), P(r)$ thành 1 điểm số duy nhất để xếp hạng"*
+*   **Quá trình:** Bài toán "quy đổi vector đa mục tiêu thành điểm số vô hướng" khớp với phương pháp **Weighted Sum Scalarization** — kỹ thuật kinh điển trong tối ưu hóa đa mục tiêu (Multi-Objective Optimization). Công thức: $FinalScore(r) = w_A \cdot A(r) + w_V \cdot V(r) + w_P \cdot P(r)$, với $w_A + w_V + w_P = 1$.
+*   **Kết quả:** P6.2 $\mapsto$ **Weighted Sum Scalarization** → sắp xếp giảm dần theo $FinalScore$.
+
+---
+
+### Step 16: Generalization — Tổng quát hóa pipeline giải pháp
+
+*   **Kỹ thuật CAT:** Generalization
+*   **Đối tượng:** Toàn bộ pipeline P1→P6 đã xây dựng
+*   **Quá trình:** Nhận dạng rằng pipeline giải pháp (Mô hình hóa đồ thị → Mô phỏng lưu lượng từ lịch trình → Đánh giá đa tiêu chí → Xếp hạng có trọng số) hoàn toàn **tổng quát hóa được** cho bất kỳ bài toán **đánh giá vị trí cơ sở dịch vụ (Facility Location Evaluation)** nào trên đồ thị khuôn viên, không giới hạn ở phòng tư vấn tâm lý. Ví dụ:
+    *   Đánh giá vị trí phòng y tế tại UIT
+    *   Đánh giá vị trí quầy dịch vụ sinh viên tại bất kỳ trường đại học nào
+    *   Đánh giá vị trí cửa hàng tiện lợi trong tòa nhà văn phòng lớn
+*   **Kết quả:** Pipeline giải pháp dự án $\rightarrow$ **Mô hình Facility Location Evaluation tổng quát trên đồ thị không gian có trọng số**, có thể tái sử dụng bằng cách thay đổi hàm mục tiêu và bộ trọng số.
+
+---
+
+## 8. Cây Phân rã Bài toán (Decomposition Hierarchy/Breakdown Tree)
+
+Dựa trên quá trình vận dụng CAT ở Mục 7, cấu trúc phân rã bài toán được tổng hợp thành cây phân rã sau đây. Mỗi nút lá (leaf node) tương ứng với một sub-problem đã được nhận dạng (Pattern Recognition — Matching) và có giải pháp thuật toán cụ thể được trình bày chi tiết ở Mục 9.
+
+```
+Decomposition Hierarchy / Breakdown Tree
+=========================================
+
+🎯 ROOT: Đánh giá & Xếp hạng vị trí phòng tư vấn tâm lý UIT
+│
+├──  P1: Trích xuất nhu cầu di chuyển từ TKB
+│   ├── P1.1: Sắp xếp events theo thời gian ⟶ Multi-key Sorting (Timsort)
+│   └── P1.3: Trích xuất O-D pairs ⟶ Sliding Window (size=2)
+│
+├──  P2: Ước lượng tuyến đường & lưu lượng trên đồ thị
+│   ├── P2.1: Tìm shortest paths ⟶ Dijkstra + Yen's K-Shortest Paths
+│   ├── P2.2: Tổng hợp Node traffic ⟶ Traffic Accumulation
+│   ├── P2.3: Tổng hợp Edge traffic ⟶ Traffic Accumulation
+│   └── P2.4: Access node pass count ⟶ Targeted Node Lookup
+│
+├──  P3: Đánh giá Accessibility
+│   ├── P3.1: Distance matrix từ core nodes ⟶ Dijkstra SSSP
+│   ├── P3.2: Weighted Travel Cost ⟶ Weighted Average
+│   └── P3.3: Chuẩn hóa A(r) ∈ [0,1] ⟶ Inverse Min-Max Normalization
+│
+├──  P4: Đánh giá Visibility
+│   ├── P4.1: Xác định Exposure zone (≤10m) ⟶ BFS bán kính giới hạn
+│   ├── P4.2: Pass-by count với suy giảm λ ⟶ Weighted Accumulation
+│   └── P4.3: Chuẩn hóa V(r) ∈ [0,1] ⟶ Min-Max Normalization
+│
+├──  P5: Đánh giá Privacy
+│   ├── P5.1: Xác định Sensitive zone (≤3m) ⟶ BFS bán kính giới hạn
+│   ├── P5.2: Exposure risk ⟶ Traffic Accumulation
+│   └── P5.3: Chuẩn hóa P(r) ∈ [0,1] ⟶ Inverse Min-Max Normalization
+│
+└──  P6: Xếp hạng & Báo cáo khuyến nghị
+    ├── P6.1: Validate score table ⟶ NaN/Range Check + Median Imputation
+    ├── P6.2: FinalScore = wA·A + wV·V + wP·P ⟶ Weighted Sum Scalarization
+    └── P6.3: Trade-off Report ⟶ Threshold-based Rule Engine
+```
+
+**Chú thích cây phân rã:**
+*   Các **nút gốc và nút trung gian** (P1–P6) là kết quả của kỹ thuật **Decomposition**.
+*   Các **nút lá** (P1.1, P1.3, P2.1–P2.4, P3.1–P3.3, P4.1–P4.3, P5.1–P5.3, P6.1–P6.3) là kết quả của kỹ thuật **Pattern Recognition — Matching**, mỗi nút được ánh xạ tới một thuật toán/kỹ thuật đã biết (ghi sau mũi tên ⟶).
+*   Luồng dữ liệu chạy từ trên xuống dưới theo thứ tự P1 → P2 → P3/P4/P5 (song song) → P6, với 22 thành phần dữ liệu trung gian được mô tả chi tiết trong Mục 10 (Data Flow Diagram).
+
+---
+
+## 9. Chi tiết Kiến trúc Giải pháp & Các Module Thành phần (Solution & Modules)
 
 Dưới đây là mô tả chi tiết, sâu sắc nhất về toán học, giải thuật, cấu trúc dữ liệu và đặc biệt là chi tiết **Đầu vào (Inputs)** và **Đầu ra (Outputs)** (được mã hóa theo số thứ tự luồng dữ liệu từ **1** đến **22** trong Sơ đồ Luồng Dữ liệu) của từng mô-đun lớn và nhỏ trong Cây Phân rã:
 
@@ -439,7 +801,7 @@ Mô-đun P4 tính toán độ hiển thị tự nhiên của phòng ứng viên 
 *   **Thuật toán & Xử lý chi tiết:**
     *   Hệ thống tính toán giá trị hiển thị thô bằng cách cộng dồn lưu lượng tại các đỉnh trong `[13]`, kết hợp với một hệ số suy giảm khoảng cách $\lambda(v, r)$ (do sinh viên đứng càng gần cửa phòng thì càng dễ nhận biết biển phòng tư vấn hơn):
         $$RawVisibility(r) = \sum_{v \in EZ(r)} Traffic(v) \cdot \lambda(v, r)$$
-        *Trong đó:* Hệ số suy giảm được chọn là $\lambda(v, r) = \frac{1}{1 + 0.1 \cdot d(v, a_r)}$.
+        *Trong đó:* Hệ số suy giảm được chọn là $\lambda(v, r) = \frac{1}{1 + 0.1 \cdot d(v, a_r)}$. Hàm nghịch đảo tuyến tính $\frac{1}{1 + \alpha \cdot d}$ (với $\alpha = 0.1$) được lựa chọn thay vì hàm Gaussian hoặc exponential decay vì: (1) Trong bán kính nhỏ ($d \le 10m$), sự khác biệt giữa các hàm decay là không đáng kể; (2) Hàm nghịch đảo tuyến tính dễ giải thích trực quan cho stakeholder — tại $d = 0m$ (ngay trước cửa), $\lambda = 1.0$ (nhận diện hoàn toàn); tại $d = 10m$ (biên vùng hiển thị), $\lambda = 0.5$ (khả năng nhận diện giảm một nửa); (3) Hệ số $\alpha = 0.1$ được hiệu chỉnh sao cho tại biên $10m$, visibility suy giảm còn $50\%$, phản ánh thực tế rằng biển báo phòng vẫn có thể đọc được ở khoảng cách này nhưng với xác suất thấp hơn.
 
 #### P4.3: Chuẩn hóa chỉ số Visibility về khoảng $[0, 1]$
 *   **Đầu vào (Inputs):** 
@@ -542,6 +904,7 @@ Mô-đun P6 đóng vai trò là bộ não phân tích quyết định của toà
         *   $w_P = 0.50$: Ưu tiên hàng đầu cho tính riêng tư (50% trọng số), nhằm tối đa hóa sự an tâm cho sinh viên sử dụng dịch vụ.
         *   $w_A = 0.35$: Ưu tiên tiếp theo cho khả năng tiếp cận (35% trọng số), đảm bảo sinh viên không phải di chuyển quá xa.
         *   $w_V = 0.15$: Trọng số thấp nhất dành cho tính hiển thị (15% trọng số), chỉ cần ở mức vừa đủ để sinh viên nhận biết được phòng.
+        *   *Cơ sở lựa chọn trọng số:* Bộ trọng số mặc định được xác định dựa trên đặc thù bối cảnh dịch vụ tâm lý — một lĩnh vực mà tính riêng tư là yếu tố tiên quyết ảnh hưởng trực tiếp đến quyết định sử dụng dịch vụ của sinh viên. Nghiên cứu về rào cản tâm lý trong việc tìm kiếm hỗ trợ (help-seeking barriers) cho thấy lo ngại bị kỳ thị (stigma) là nguyên nhân hàng đầu khiến sinh viên không sử dụng dịch vụ tư vấn. Do đó, Privacy được ưu tiên cao nhất ($50\%$). Accessibility được ưu tiên tiếp theo ($35\%$) vì sinh viên cần tiếp cận thuận tiện trong giờ nghỉ giữa các tiết học. Visibility chỉ cần ở mức vừa đủ ($15\%$) vì nhà trường có thể bổ sung bằng biện pháp truyền thông ngoại vi (poster, website). Hệ thống cho phép điều chỉnh bộ trọng số tùy theo ý kiến stakeholder, và báo cáo trade-off sẽ minh bạch hóa tác động của mỗi phương án trọng số lên kết quả xếp hạng.
     3.  *Sắp xếp xếp hạng:* Sắp xếp danh sách ứng viên theo thứ tự giảm dần của $FinalScore(r)$ bằng thuật toán sắp xếp (ví dụ: Timsort).
 
 #### P6.3: Phân tích sự đánh đổi và xuất báo cáo Trade-off
@@ -556,7 +919,7 @@ Mô-đun P6 đóng vai trò là bộ não phân tích quyết định của toà
     *   Hệ thống chạy một động cơ luật dựa trên các ngưỡng (threshold-based rules):
         *   *Luật 1 (Cảnh báo riêng tư yếu):* Nếu $P(r) < 0.3$, hệ thống tự động chèn khuyến nghị: *"Mật độ giao thông trước phòng rất lớn. Yêu cầu lắp đặt thêm vách cách âm, rèm cửa che tầm nhìn và biển báo hạn chế tụ tập trước cửa nếu lựa chọn vị trí này."*
         *   *Luật 2 (Cảnh báo khoảng cách xa):* Nếu $A(r) < 0.3$, hệ thống chèn khuyến nghị: *"Vị trí cách xa giảng đường chính. Cần thiết lập sơ đồ hướng dẫn tại sảnh chính các tòa nhà để sinh viên dễ dàng định vị lối đi."*
-        *   *Luật 3 (Vị trí tối ưu hài hòa):* Nếu tất cả các chỉ số đều nằm trong khoảng $[0.5, 0.8]$, hệ thống nhận định: *"Đây là vị trí cân bằng rất tốt, đáp ứng hài hòa cả 3 tiêu chí tiếp cận, riêng tư và nhận diện tự nhiên."*�a Ứng viên (Evaluate Accessibility)
+        *   *Luật 3 (Vị trí tối ưu hài hòa):* Nếu tất cả các chỉ số đều nằm trong khoảng $[0.5, 0.8]$, hệ thống nhận định: *"Đây là vị trí cân bằng rất tốt, đáp ứng hài hòa cả 3 tiêu chí tiếp cận, riêng tư và nhận diện tự nhiên."*
 
 ---
 
@@ -652,14 +1015,40 @@ Sức khỏe tinh thần và tâm lý là những chủ đề cực kỳ nhạy 
 
 ---
 
-## 13. Khác (Others - Demo & Links)
+## 13. Kết luận, Khuyến nghị Phát triển & Demo
+
+### 13.1. Kết luận
+
+Dự án đã xây dựng thành công một mô hình hỗ trợ ra quyết định khoa học cho bài toán đánh giá và xếp hạng vị trí phòng tư vấn tâm lý tại UIT. Bằng cách vận dụng có hệ thống các kỹ thuật Computational/AI Thinking (Abstraction, Decomposition, Pattern Recognition — Matching/Grouping, và Generalization), bài toán thực tế phức tạp đã được chuyển đổi thành một pipeline tính toán rõ ràng gồm 6 module (P1–P6), mỗi module ánh xạ tới các thuật toán kinh điển đã được chứng minh tính đúng đắn.
+
+Các đóng góp chính của dự án bao gồm:
+*   **Mô hình hóa không gian UIT** dưới dạng đồ thị có trọng số $G = (V, E, pos, w)$ với hệ tọa độ 3D, cho phép tính toán khoảng cách và lưu lượng chính xác trên toàn khuôn viên trường.
+*   **Mô phỏng dòng di chuyển sinh viên** từ dữ liệu thời khóa biểu, sử dụng mô hình bounded rationality ($1.15 \times$ shortest path) để phân bổ lưu lượng thực tế trên nhiều tuyến đường.
+*   **Đánh giá đa mục tiêu** cân bằng 3 tiêu chí mâu thuẫn nội tại (Accessibility, Visibility, Privacy) thông qua phương pháp Weighted Sum Scalarization, với báo cáo trade-off minh bạch cho stakeholder.
+*   **Tuân thủ nghiêm ngặt các nguyên tắc đạo đức** — không suy luận tâm lý cá nhân, ẩn danh hóa dữ liệu, không giám sát thời gian thực, và luôn đảm bảo con người nắm quyền quyết định cuối cùng.
+
+### 13.2. Hạn chế
+
+*   Mô hình dựa hoàn toàn trên thời khóa biểu danh nghĩa, không phản ánh tỷ lệ vắng mặt thực tế hoặc các hoạt động ngoại khóa của sinh viên.
+*   Phương pháp Min-Max normalization có hạn chế khi số lượng phòng ứng viên $k$ quá nhỏ ($k \le 2$).
+*   Bộ trọng số mặc định ($w_P, w_A, w_V$) được xác định dựa trên lập luận định tính, chưa được hiệu chỉnh bằng phương pháp thống kê (VD: AHP hoặc khảo sát quy mô lớn).
+
+### 13.3. Khuyến nghị Phát triển
+
+*   **Giai đoạn ngắn hạn:** Tích hợp dữ liệu thực tế về tỷ lệ điểm danh (attendance rate) để hiệu chỉnh lưu lượng mô phỏng; tiến hành khảo sát AHP với stakeholder để xác định bộ trọng số chính xác hơn.
+*   **Giai đoạn trung hạn:** Mở rộng mô hình cho toàn bộ Đại học Quốc gia TP.HCM; thêm phân tích theo khung giờ (time-slot analysis) để xác định thời điểm sinh viên có nhu cầu cao nhất.
+*   **Giai đoạn dài hạn:** Tổng quát hóa thành một công cụ Facility Location Evaluation có thể tái sử dụng cho các loại dịch vụ khác (phòng y tế, quầy dịch vụ sinh viên, căn tin...).
+
+### 13.4. Demo & Tài nguyên
 
 Để minh họa trực quan giải pháp và mã nguồn của dự án, nhóm thực hiện cung cấp các liên kết tài nguyên sau:
 
 *   **Mã nguồn chương trình (GitHub):** [UIT CS117 Psychological Counseling Room Ranking System](https://github.com/uit-cs117-counseling-ranking)  
     *Mã nguồn bao gồm: Khối trích xuất thời khóa biểu P1, Thuật toán Dijkstra tìm đường đi ngắn nhất P2, Khối chuẩn hóa điểm số P3-P5 và thuật toán tối ưu đa mục tiêu P6.*
+    *(Lưu ý: Link placeholder — cần cập nhật thành URL GitHub thực của dự án trước khi nộp.)*
 *   **Video Demo minh họa:** [YouTube Link - Video Demo Giải pháp Đánh giá Vị trí Phòng tư vấn UIT](https://youtube.com/uit-counseling-room-location-evaluation)  
     *Video dài 5 phút thuyết minh về Decomposition Tree, giải thích chi tiết luồng di chuyển của sinh viên UIT mô phỏng trên đồ thị không gian 3D và trực quan hóa kết quả xếp hạng các phòng ứng viên.*
+    *(Lưu ý: Link placeholder — cần cập nhật thành URL YouTube thực trước khi nộp.)*
 
 
 
