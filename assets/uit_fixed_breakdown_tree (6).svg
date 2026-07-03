@@ -1,0 +1,213 @@
+<svg width="1350" height="505" viewBox="0 0 1350 505" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1350" height="505" fill="#FFFFFF"/>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&amp;display=swap');
+      text { font-family: 'Montserrat', Arial, sans-serif; }
+      .root-title { font-size: 12px; font-weight: 700; fill: #FFF8EC; text-anchor: middle; }
+      .module-title { font-size: 10.5px; font-weight: 700; fill: #FFF8EC; text-anchor: middle; }
+      .node-title { font-size: 9.5px; font-weight: 700; fill: #2D3A22; text-anchor: middle; }
+      .desc-dark { font-size: 7.8px; font-weight: 500; fill: #2F3E22; text-anchor: middle; }
+      .desc-light { font-size: 8.2px; font-weight: 500; fill: #E6EFE0; text-anchor: middle; }
+      .num { font-size: 7px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+      .ledger-title { font-size: 9px; font-weight: 700; fill: #2D3A22; text-anchor: middle; }
+      .ledger-text { font-size: 7.2px; font-weight: 500; fill: #3A4F2A; }
+    </style>
+  </defs>
+
+  <g id="connectors" stroke="#3A4F2A" stroke-width="3">
+    <line x1="560" y1="85" x2="560" y2="110"/>
+    <line x1="130" y1="110" x2="1010" y2="110"/>
+    <line x1="130" y1="110" x2="130" y2="135"/>
+    <line x1="306" y1="110" x2="306" y2="135"/>
+    <line x1="482" y1="110" x2="482" y2="135"/>
+    <line x1="658" y1="110" x2="658" y2="135"/>
+    <line x1="834" y1="110" x2="834" y2="135"/>
+    <line x1="1010" y1="110" x2="1010" y2="135"/>
+    <path d="M 53 185 L 53 292" fill="none"/>
+    <line x1="53" y1="237" x2="65" y2="237"/>
+    <line x1="53" y1="291" x2="65" y2="291"/>
+    <path d="M 229 185 L 229 400" fill="none"/>
+    <line x1="229" y1="237" x2="241" y2="237"/>
+    <line x1="229" y1="291" x2="241" y2="291"/>
+    <line x1="229" y1="345" x2="241" y2="345"/>
+    <line x1="229" y1="399" x2="241" y2="399"/>
+    <path d="M 405 185 L 405 346" fill="none"/>
+    <line x1="405" y1="237" x2="417" y2="237"/>
+    <line x1="405" y1="291" x2="417" y2="291"/>
+    <line x1="405" y1="345" x2="417" y2="345"/>
+    <path d="M 581 185 L 581 346" fill="none"/>
+    <line x1="581" y1="237" x2="593" y2="237"/>
+    <line x1="581" y1="291" x2="593" y2="291"/>
+    <line x1="581" y1="345" x2="593" y2="345"/>
+    <path d="M 757 185 L 757 346" fill="none"/>
+    <line x1="757" y1="237" x2="769" y2="237"/>
+    <line x1="757" y1="291" x2="769" y2="291"/>
+    <line x1="757" y1="345" x2="769" y2="345"/>
+    <path d="M 933 185 L 933 346" fill="none"/>
+    <line x1="933" y1="237" x2="945" y2="237"/>
+    <line x1="933" y1="291" x2="945" y2="291"/>
+    <line x1="933" y1="345" x2="945" y2="345"/>
+  </g>
+
+  <g id="root" transform="translate(430,20)">
+    <rect width="260" height="65" rx="5" fill="#2D3A22" stroke="#3A4F2A" stroke-width="2.5"/>
+    <line x1="22" y1="0" x2="22" y2="65" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 2"/>
+    <line x1="238" y1="0" x2="238" y2="65" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 2"/>
+    <text x="130" y="21" class="root-title">ROOT PROBLEM</text>
+    <text x="130" y="39" class="desc-light">Recommend the most suitable location for a</text>
+    <text x="130" y="51" class="desc-light">student psychological counseling room at UIT</text>
+  </g>
+
+  <g id="modules">
+    <g transform="translate(50,135)">
+      <rect width="160" height="50" rx="4" fill="#7A9A60" stroke="#2D3A22" stroke-width="2"/>
+      <text x="80" y="18" class="module-title">MODULE P1</text>
+      <text x="80" y="32" class="desc-light">Extract movement demand</text>
+      <text x="80" y="43" class="desc-light">from timetable</text>
+    </g>
+    <g transform="translate(226,135)">
+      <rect width="160" height="50" rx="4" fill="#7A9A60" stroke="#2D3A22" stroke-width="2"/>
+      <text x="80" y="16" class="module-title">MODULE P2</text>
+      <text x="80" y="30" class="desc-light">Estimate routes and</text>
+      <text x="80" y="41" class="desc-light">traffic on the graph</text>
+    </g>
+    <g transform="translate(402,135)">
+      <rect width="160" height="50" rx="4" fill="#7A9A60" stroke="#2D3A22" stroke-width="2"/>
+      <text x="80" y="18" class="module-title">MODULE P3</text>
+      <text x="80" y="32" class="desc-light">Evaluate candidate</text>
+      <text x="80" y="43" class="desc-light">accessibility</text>
+    </g>
+    <g transform="translate(578,135)">
+      <rect width="160" height="50" rx="4" fill="#7A9A60" stroke="#2D3A22" stroke-width="2"/>
+      <text x="80" y="18" class="module-title">MODULE P4</text>
+      <text x="80" y="32" class="desc-light">Evaluate candidate</text>
+      <text x="80" y="43" class="desc-light">visibility</text>
+    </g>
+    <g transform="translate(754,135)">
+      <rect width="160" height="50" rx="4" fill="#7A9A60" stroke="#2D3A22" stroke-width="2"/>
+      <text x="80" y="18" class="module-title">MODULE P5</text>
+      <text x="80" y="32" class="desc-light">Evaluate candidate</text>
+      <text x="80" y="43" class="desc-light">privacy</text>
+    </g>
+    <g transform="translate(930,135)">
+      <rect width="160" height="50" rx="4" fill="#7A9A60" stroke="#2D3A22" stroke-width="2"/>
+      <text x="80" y="18" class="module-title">MODULE P6</text>
+      <text x="80" y="32" class="desc-light">Rank candidates and</text>
+      <text x="80" y="43" class="desc-light">generate report</text>
+    </g>
+  </g>
+
+  <g id="leaves">
+    <g transform="translate(65,211)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P1.1</text><text x="72" y="31" class="desc-dark">Sort events by</text><text x="72" y="42" class="desc-dark">chronological order</text></g>
+    <g transform="translate(65,265)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P1.3</text><text x="72" y="31" class="desc-dark">Extract consecutive</text><text x="72" y="42" class="desc-dark">room-to-room pairs</text></g>
+
+    <g transform="translate(241,211)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P2.1</text><text x="72" y="31" class="desc-dark">Find shortest path</text><text x="72" y="42" class="desc-dark">using Dijkstra</text></g>
+    <g transform="translate(241,265)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P2.2</text><text x="72" y="31" class="desc-dark">Compute</text><text x="72" y="42" class="desc-dark">node traffic</text></g>
+    <g transform="translate(241,319)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P2.3</text><text x="72" y="31" class="desc-dark">Compute</text><text x="72" y="42" class="desc-dark">edge traffic</text></g>
+    <g transform="translate(241,373)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P2.4</text><text x="72" y="31" class="desc-dark">Aggregate pass-by counts</text><text x="72" y="42" class="desc-dark">through access nodes</text></g>
+
+    <g transform="translate(417,211)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="14" class="node-title">P3.1</text><text x="72" y="27" class="desc-dark">Distance from core</text><text x="72" y="37.5" class="desc-dark">activity nodes to</text><text x="72" y="48" class="desc-dark">candidate rooms</text></g>
+    <g transform="translate(417,265)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P3.2</text><text x="72" y="31" class="desc-dark">Compute average</text><text x="72" y="42" class="desc-dark">walking distance</text></g>
+    <g transform="translate(417,319)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P3.3</text><text x="72" y="31" class="desc-dark">Normalize Accessibility</text><text x="72" y="42" class="desc-dark">indicator to [0,1]</text></g>
+
+    <g transform="translate(593,211)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P4.1</text><text x="72" y="31" class="desc-dark">Locate recognition</text><text x="72" y="42" class="desc-dark">exposure zone</text></g>
+    <g transform="translate(593,265)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P4.2</text><text x="72" y="31" class="desc-dark">Compute pass-by</text><text x="72" y="42" class="desc-dark">frequency near room</text></g>
+    <g transform="translate(593,319)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P4.3</text><text x="72" y="31" class="desc-dark">Normalize Visibility</text><text x="72" y="42" class="desc-dark">indicator to [0,1]</text></g>
+
+    <g transform="translate(769,211)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P5.1</text><text x="72" y="31" class="desc-dark">Identify boundary of</text><text x="72" y="42" class="desc-dark">the sensitive zone</text></g>
+    <g transform="translate(769,265)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P5.2</text><text x="72" y="31" class="desc-dark">Compute exposure</text><text x="72" y="42" class="desc-dark">risk indicator</text></g>
+    <g transform="translate(769,319)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P5.3</text><text x="72" y="31" class="desc-dark">Normalize Privacy</text><text x="72" y="42" class="desc-dark">indicator to [0,1]</text></g>
+
+    <g transform="translate(945,211)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P6.1</text><text x="72" y="31" class="desc-dark">Validate and sync</text><text x="72" y="42" class="desc-dark">score vector table</text></g>
+    <g transform="translate(945,265)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P6.2</text><text x="72" y="31" class="desc-dark">Compute multi-objective</text><text x="72" y="42" class="desc-dark">Scalarization Score</text></g>
+    <g transform="translate(945,319)"><rect width="145" height="52" rx="3" fill="#E2ECC8" stroke="#C2D4A9" stroke-width="1.5"/><text x="72" y="18" class="node-title">P6.3</text><text x="72" y="31" class="desc-dark">Analyze</text><text x="72" y="42" class="desc-dark">trade-offs</text></g>
+  </g>
+
+  <g id="data-dots">
+    <g fill="#C83E2B">
+      <circle cx="441" cy="38" r="6"/><circle cx="441" cy="52" r="6"/><circle cx="441" cy="66" r="6"/>
+      <circle cx="679" cy="38" r="6"/><circle cx="679" cy="52" r="6"/><circle cx="679" cy="66" r="6"/>
+
+      <circle cx="60" cy="160" r="6"/><circle cx="200" cy="160" r="6"/>
+      <circle cx="236" cy="151" r="6"/><circle cx="236" cy="169" r="6"/><circle cx="376" cy="145" r="6"/><circle cx="376" cy="155" r="6"/><circle cx="376" cy="165" r="6"/><circle cx="376" cy="175" r="6"/>
+      <circle cx="412" cy="149" r="6"/><circle cx="412" cy="160" r="6"/><circle cx="412" cy="171" r="6"/><circle cx="552" cy="160" r="6"/>
+      <circle cx="588" cy="142" r="5"/><circle cx="588" cy="150" r="5"/><circle cx="588" cy="158" r="5"/><circle cx="588" cy="166" r="5"/><circle cx="588" cy="174" r="5"/><circle cx="588" cy="182" r="5"/><circle cx="728" cy="160" r="6"/>
+      <circle cx="764" cy="143" r="5.5"/><circle cx="764" cy="151" r="5.5"/><circle cx="764" cy="160" r="5.5"/><circle cx="764" cy="168" r="5.5"/><circle cx="764" cy="177" r="5.5"/><circle cx="904" cy="160" r="6"/>
+      <circle cx="940" cy="141" r="4.2"/><circle cx="940" cy="147.6" r="4.2"/><circle cx="940" cy="154.3" r="4.2"/><circle cx="940" cy="161" r="4.2"/><circle cx="940" cy="167.6" r="4.2"/><circle cx="940" cy="174.3" r="4.2"/><circle cx="940" cy="181" r="4.2"/><circle cx="1080" cy="153" r="5"/><circle cx="1080" cy="163" r="5"/><circle cx="1080" cy="173" r="5"/>
+
+      <circle cx="74" cy="237" r="6"/><circle cx="201" cy="237" r="6"/>
+      <circle cx="74" cy="291" r="6"/><circle cx="201" cy="291" r="6"/>
+
+      <circle cx="250" cy="228" r="6"/><circle cx="250" cy="246" r="6"/><circle cx="377" cy="237" r="6"/>
+      <circle cx="250" cy="282" r="6"/><circle cx="250" cy="300" r="6"/><circle cx="377" cy="291" r="6"/>
+      <circle cx="250" cy="336" r="6"/><circle cx="250" cy="354" r="6"/><circle cx="377" cy="345" r="6"/>
+      <circle cx="250" cy="390" r="6"/><circle cx="250" cy="408" r="6"/><circle cx="377" cy="399" r="6"/>
+
+      <circle cx="426" cy="225" r="6"/><circle cx="426" cy="236" r="6"/><circle cx="426" cy="247" r="6"/><circle cx="553" cy="237" r="6"/>
+      <circle cx="426" cy="282" r="6"/><circle cx="426" cy="300" r="6"/><circle cx="553" cy="291" r="6"/>
+      <circle cx="426" cy="345" r="6"/><circle cx="553" cy="345" r="6"/>
+
+      <circle cx="602" cy="228" r="6"/><circle cx="602" cy="246" r="6"/><circle cx="729" cy="237" r="6"/>
+      <circle cx="602" cy="220" r="4.5"/><circle cx="602" cy="229" r="4.5"/><circle cx="602" cy="238" r="4.5"/><circle cx="602" cy="247" r="4.5"/><circle cx="602" cy="256" r="4.5"/><circle cx="729" cy="291" r="6"/>
+      <circle cx="602" cy="345" r="6"/><circle cx="729" cy="345" r="6"/>
+
+      <circle cx="778" cy="228" r="6"/><circle cx="778" cy="246" r="6"/><circle cx="905" cy="237" r="6"/>
+      <circle cx="778" cy="276" r="5"/><circle cx="778" cy="286" r="5"/><circle cx="778" cy="296" r="5"/><circle cx="778" cy="306" r="5"/><circle cx="905" cy="291" r="6"/>
+      <circle cx="778" cy="345" r="6"/><circle cx="905" cy="345" r="6"/>
+
+      <circle cx="954" cy="225" r="6"/><circle cx="954" cy="236" r="6"/><circle cx="954" cy="247" r="6"/><circle cx="1081" cy="237" r="6"/>
+      <circle cx="954" cy="282" r="6"/><circle cx="954" cy="300" r="6"/><circle cx="1081" cy="290" r="6"/><circle cx="1081" cy="301" r="6"/>
+      <circle cx="954" cy="330" r="6"/><circle cx="954" cy="340" r="6"/><circle cx="954" cy="349" r="6"/><circle cx="1081" cy="345" r="6"/>
+    </g>
+
+    <g class="num">
+      <text x="441" y="40.5">1</text><text x="441" y="54.5">2</text><text x="441" y="68.5">3</text>
+      <text x="679" y="40.5">20</text><text x="679" y="54.5">21</text><text x="679" y="68.5">22</text>
+
+      <text x="60" y="162.5">1</text><text x="200" y="162.5">5</text>
+      <text x="236" y="153.5">2</text><text x="236" y="171.5">5</text><text x="376" y="147.5">6</text><text x="376" y="157.5">7</text><text x="376" y="167.5">8</text><text x="376" y="177.5">9</text>
+      <text x="412" y="151.5">2</text><text x="412" y="162.5">3</text><text x="412" y="173.5">6</text><text x="552" y="162.5">12</text>
+      <text x="588" y="144.2">2</text><text x="588" y="152.2">3</text><text x="588" y="160.2">6</text><text x="588" y="168.2">7</text><text x="588" y="176.2">8</text><text x="588" y="184.2">9</text><text x="728" y="162.5">15</text>
+      <text x="764" y="145.5">2</text><text x="764" y="153.5">3</text><text x="764" y="162.5">6</text><text x="764" y="170.5">7</text><text x="764" y="179.5">8</text><text x="904" y="162.5">18</text>
+      <text x="940" y="143">3</text><text x="940" y="149.6">11</text><text x="940" y="156.3">12</text><text x="940" y="163">14</text><text x="940" y="169.6">15</text><text x="940" y="176.3">17</text><text x="940" y="183">18</text><text x="1080" y="155.2">20</text><text x="1080" y="165.2">21</text><text x="1080" y="175.2">22</text>
+
+      <text x="74" y="239.5">1</text><text x="201" y="239.5">4</text><text x="74" y="293.5">4</text><text x="201" y="293.5">5</text>
+      <text x="250" y="230.5">2</text><text x="250" y="248.5">5</text><text x="377" y="239.5">6</text><text x="250" y="284.5">5</text><text x="250" y="302.5">6</text><text x="377" y="293.5">7</text><text x="250" y="338.5">5</text><text x="250" y="356.5">6</text><text x="377" y="347.5">8</text><text x="250" y="392.5">3</text><text x="250" y="410.5">6</text><text x="377" y="401.5">9</text>
+      <text x="426" y="227.5">2</text><text x="426" y="238.5">3</text><text x="426" y="249.5">6</text><text x="553" y="239.5">10</text><text x="426" y="284.5">6</text><text x="426" y="302.5">10</text><text x="553" y="293.5">11</text><text x="426" y="347.5">11</text><text x="553" y="347.5">12</text>
+      <text x="602" y="230.5">2</text><text x="602" y="248.5">3</text><text x="729" y="239.5">13</text><text x="602" y="222.2">6</text><text x="602" y="231.2">7</text><text x="602" y="240.2">8</text><text x="602" y="249.2">9</text><text x="602" y="258.2">13</text><text x="729" y="293.5">14</text><text x="602" y="347.5">14</text><text x="729" y="347.5">15</text>
+      <text x="778" y="230.5">2</text><text x="778" y="248.5">3</text><text x="905" y="239.5">16</text><text x="778" y="278.2">6</text><text x="778" y="288.2">7</text><text x="778" y="298.2">8</text><text x="778" y="308.2">16</text><text x="905" y="293.5">17</text><text x="778" y="347.5">17</text><text x="905" y="347.5">18</text>
+      <text x="954" y="227.5">12</text><text x="954" y="238.5">15</text><text x="954" y="249.5">18</text><text x="1081" y="239.5">19</text><text x="954" y="284.5">3</text><text x="954" y="302.5">19</text><text x="1081" y="292.5">20</text><text x="1081" y="303.5">21</text><text x="954" y="332.5">11</text><text x="954" y="342.5">14</text><text x="954" y="351.5">17</text><text x="1081" y="347.5">22</text>
+    </g>
+  </g>
+
+  <g id="data-flow" transform="translate(1125,20)">
+    <rect width="205" height="460" rx="5" fill="#F4F7F0" stroke="#C2D4A9" stroke-width="1.5"/>
+    <text x="102" y="16" class="ledger-title">DATA FLOW</text>
+    <line x1="10" y1="24" x2="195" y2="24" stroke="#C2D4A9" stroke-width="1.2"/>
+    <g transform="translate(12,38)">
+      <g transform="translate(0,0)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">1</text><text x="16" y="2.5" class="ledger-text">D1: weekly event list</text></g>
+      <g transform="translate(0,17)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">2</text><text x="16" y="2.5" class="ledger-text">D2: UIT graph G=(V,E)</text></g>
+      <g transform="translate(0,34)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">3</text><text x="16" y="2.5" class="ledger-text">D3: candidate room list</text></g>
+      <g transform="translate(0,51)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">4</text><text x="16" y="2.5" class="ledger-text">chronological_events</text></g>
+      <g transform="translate(0,68)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">5</text><text x="16" y="2.5" class="ledger-text">origin_destination_pairs</text></g>
+      <g transform="translate(0,85)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">6</text><text x="16" y="2.5" class="ledger-text">shortest_path_routes</text></g>
+      <g transform="translate(0,102)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">7</text><text x="16" y="2.5" class="ledger-text">node_traffic</text></g>
+      <g transform="translate(0,119)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">8</text><text x="16" y="2.5" class="ledger-text">edge_traffic</text></g>
+      <g transform="translate(0,136)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">9</text><text x="16" y="2.5" class="ledger-text">access_node_pass_count</text></g>
+      <g transform="translate(0,153)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">10</text><text x="16" y="2.5" class="ledger-text">distance_matrix</text></g>
+      <g transform="translate(0,170)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">11</text><text x="16" y="2.5" class="ledger-text">weighted_travel_cost</text></g>
+      <g transform="translate(0,187)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">12</text><text x="16" y="2.5" class="ledger-text">accessibility_indicator</text></g>
+      <g transform="translate(0,204)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">13</text><text x="16" y="2.5" class="ledger-text">exposure_zone</text></g>
+      <g transform="translate(0,221)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">14</text><text x="16" y="2.5" class="ledger-text">pass_by_count</text></g>
+      <g transform="translate(0,238)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">15</text><text x="16" y="2.5" class="ledger-text">visibility_indicator</text></g>
+      <g transform="translate(0,255)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">16</text><text x="16" y="2.5" class="ledger-text">sensitive_zone</text></g>
+      <g transform="translate(0,272)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">17</text><text x="16" y="2.5" class="ledger-text">exposure_risk</text></g>
+      <g transform="translate(0,289)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">18</text><text x="16" y="2.5" class="ledger-text">privacy_indicator</text></g>
+      <g transform="translate(0,306)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">19</text><text x="16" y="2.5" class="ledger-text">normalized_score_table</text></g>
+      <g transform="translate(0,323)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">20</text><text x="16" y="2.5" class="ledger-text">primary_recommendation</text></g>
+      <g transform="translate(0,340)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">21</text><text x="16" y="2.5" class="ledger-text">alternative_rooms</text></g>
+      <g transform="translate(0,357)"><circle cx="6" cy="0" r="5.5" fill="#C83E2B"/><text x="6" y="2.5" class="num">22</text><text x="16" y="2.5" class="ledger-text">trade_off_explanation</text></g>
+    </g>
+  </g>
+</svg>
