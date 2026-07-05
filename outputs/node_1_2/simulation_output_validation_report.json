@@ -1,9 +1,0 @@
-{
-  "output_dir": "outputs/node_1_2",
-  "total_agents": 1000,
-  "total_routes": 9830,
-  "total_node_traffic_items": 344,
-  "total_edge_traffic_items": 388,
-  "errors": [],
-  "warnings": []
-}
